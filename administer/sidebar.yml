@@ -1,0 +1,56 @@
+---
+section: administer
+title: Administre seu cluster
+entries:
+- title: Monitorar processos de cluster
+  entries:
+  - title: Exibir status do painel e do cluster
+    url: "/administer/view-dashboard.html"
+  - title: Ver Insights
+    url: "/administer/view-insights.html"
+  - title: Monitorar o desempenho
+    url: "/administer/monitor-cluster-performance.html"
+  - title: Ver eventos e registrar
+    url: "/administer/view-events-log.html"
+  - title: Ver empregos
+    url: "/administer/view-jobs.html"
+- title: Gerenciar rede e segurança
+  entries:
+  - title: Gerenciar rede de cluster
+    url: "/administer/manage-cluster-networking.html"
+  - title: Gerenciar portas Ethernet
+    url: "/administer/manage-ethernet-ports.html"
+  - title: Preparar serviços de autenticação
+    url: "/administer/prepare-authentication.html"
+  - title: Gerenciar usuários e funções
+    url: "/administer/manage-users-roles.html"
+  - title: Gerenciar certificados
+    url: "/administer/manage-certificates.html"
+- title: Gerenciar VMs de armazenamento
+  entries:
+  - title: Exibir seus SVMs
+    url: "/administer/display-svms.html"
+  - title: Criar um SVM de dados
+    url: "/administer/create-svm.html"
+  - title: Configurar um SVM de dados
+    url: "/administer/configure-svm.html"
+  - title: Migrar uma SVM
+    url: "/administer/migrate-svm.html"
+- title: Apoie o cluster
+  entries:
+  - title: Gerenciar AutoSupport
+    url: "/administer/manage-autosupport.html"
+  - title: Visualizar e enviar casos de suporte
+    url: "/administer/submit-view-case.html"
+- title: Atualizar e manter o cluster
+  entries:
+  - title: Expandir cluster
+    url: "/administer/expand-cluster.html"
+  - title: Atualizar ONTAP
+    url: "/administer/upgrade-ontap.html"
+  - title: Atualizar firmware
+    url: "/administer/update-firmware.html"
+  - title: Manter o hardware
+    url: "/administer/maintain-hardware.html"
+- title: Administração adicional
+  url: "/administer/additional-ontap-cluster.html"

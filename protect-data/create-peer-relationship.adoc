@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-peer-relationship.html 
+keywords: afx, afx system, peering, peer relationship 
+summary: 'Um relacionamento de pares define conexões de rede que permitem que clusters e máquinas virtuais (VMs) de armazenamento troquem dados com segurança. Você pode criar um relacionamento de pares entre VMs de armazenamento em diferentes clusters para habilitar a proteção de dados e a recuperação de desastres usando o SnapMirror.' 
+---
+= Crie um relacionamento de pares SVM entre clusters em um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um relacionamento de pares define conexões de rede que permitem que clusters e máquinas virtuais (VMs) de armazenamento troquem dados com segurança. Você pode criar um relacionamento de pares entre VMs de armazenamento em diferentes clusters para habilitar a proteção de dados e a recuperação de desastres usando o SnapMirror.
+
+.Antes de começar
+Você deve ter estabelecido um relacionamento de par de cluster entre os clusters local e remoto antes de poder criar um relacionamento de par de VM de armazenamento. link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Criar um relacionamento de pares de cluster"] se você ainda não o fez.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Proteção > Visão geral*.
+. Em *Pares de VM de armazenamento* selecione *Adicionar um par de VM de armazenamento*.
+. Selecione a VM de armazenamento no cluster local; em seguida, selecione a VM de armazenamento no cluster remoto.
+. Selecione *Adicionar um peer de VM de armazenamento*.
+
+
+.Informações relacionadas
+* https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Saiba mais sobre relacionamentos entre pares"^] .
+

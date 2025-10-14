@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: manage-data/manage-volumes.html 
+keywords: afx, afx system, manage volumes 
+summary: Há várias tarefas administrativas que você pode executar como parte da administração dos volumes definidos no seu cluster AFX. 
+---
+= Gerenciar os volumes do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Há várias tarefas administrativas que você pode executar como parte da administração dos volumes definidos no seu cluster AFX.
+
+
+
+== Criar uma qtree
+
+Uma qtree é uma subdivisão lógica dentro de um volume que você pode criar para organizar e administrar dados.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Armazenamento* e depois *Qtrees*.
+. Selecioneimage:icon_add_blue_bg.png["Adicionar com fundo azul"] e fornecer a configuração básica, incluindo nome, volume e estilo de segurança; opcionalmente, configurar uma cota.
+. Selecione *Salvar* para adicionar a qtree.
+
+
+
+
+== Criar uma cota
+
+Uma cota é um limite definido na quantidade de espaço de armazenamento ou número de arquivos que podem ser usados por um usuário, grupo ou qtree.  Cotas são usadas para gerenciar e controlar o uso de recursos dentro de um sistema AFX.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Armazenamento* e depois *Cotas*.
+. Selecione a aba *Uso* para exibir uma lista das cotas ativas em todos os volumes.
+. Selecione a aba *Volumes* para exibir uma lista dos volumes definidos no cluster AFX; selecione um volume específico para exibir informações adicionais.
+. Para definir uma cota, selecione a aba *Regras*.
+. Forneça os detalhes da configuração, incluindo a meta de cota, o tipo e os limites.
+. Selecione *Salvar* para adicionar a cota.
+

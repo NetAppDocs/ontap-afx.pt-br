@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: administer/prepare-authentication.html 
+keywords: afx, afx cluster, authentication 
+summary: Você precisa preparar os serviços de autenticação e autorização usados pelo sistema AFX para definir contas e funções de usuário. 
+---
+= Preparar serviços de autenticação do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você precisa preparar os serviços de autenticação e autorização usados pelo sistema AFX para as definições de conta e função de usuário.
+
+
+
+== Configurar LDAP
+
+Você pode configurar um servidor Lightweight Directory Access Protocol (LDAP) para manter informações de autenticação em um local central.
+
+.Antes de começar
+Você deve ter gerado uma solicitação de assinatura de certificado e adicionado um certificado digital de servidor assinado pela CA.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Selecioneimage:icon_gear_white_bg.png["contorno de uma engrenagem mecânica azul"] ao lado de *LDAP*.
+. Selecioneimage:icon_add.gif["azul adicionar com fundo branco"] e forneça o nome ou endereço IP do servidor LDAP.
+. Forneça as informações de configuração necessárias, incluindo o esquema, o DN base, a porta e a vinculação.
+. Selecione *Salvar*.
+
+
+
+
+== Configurar autenticação SAML
+
+A autenticação SAML (Security Assertion Markup Language) permite que os usuários sejam autenticados por um provedor de identidade seguro (IdP) em vez de provedores que usam outros protocolos, como LDAP.
+
+.Antes de começar
+* O provedor de identidade que você planeja usar para autenticação remota deve ser configurado.  Consulte a documentação do provedor para obter detalhes de configuração.
+* Você deve ter o URI do provedor de identidade.
+
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Selecioneimage:icon_gear_white_bg.png["contorno azul de uma engrenagem mecânica"] em *Segurança* ao lado de *Autenticação SAML*.
+. Selecione *Ativar autenticação SAML*.
+. Forneça o *URL do IdP* e o endereço IP do *sistema host* e selecione *Salvar*.
++
+Uma janela de confirmação exibe as informações de metadados, que foram copiadas automaticamente para sua área de transferência.
+
+. Navegue até o sistema IdP que você especificou e copie os metadados da sua área de transferência para atualizar os metadados do sistema.
+. Retorne à janela de confirmação no Gerenciador do Sistema e selecione *Eu configurei o IdP com o URI do host ou metadados*.
+. Selecione *Logout* para habilitar a autenticação baseada em SAML.
++
+O sistema IdP exibirá uma tela de autenticação.
+
+
+
+
+
+== Informações relacionadas
+
+* link:../administer/manage-users-roles.html["Gerenciar usuários e funções do cluster AFX"]
+* https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["Configurar autenticação SAML para usuários remotos do ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/authentication-access-control/index.html["Autenticação e controle de acesso"^]
+

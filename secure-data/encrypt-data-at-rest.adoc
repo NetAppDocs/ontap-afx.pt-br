@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: secure-data/encrypt-data-at-rest.html 
+keywords: afx, afx system, encryption, encrypt data 
+summary: Você pode criptografar seus dados no nível de hardware e software para proteção de camada dupla.  Quando você criptografa dados em repouso, eles não podem ser lidos se o meio de armazenamento for reutilizado, devolvido, extraviado ou roubado. 
+---
+= Criptografar dados em repouso em um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criptografar seus dados no nível de hardware e software para proteção de camada dupla.  Quando você criptografa dados em repouso, eles não podem ser lidos se o meio de armazenamento for reutilizado, devolvido, extraviado ou roubado.
+
+O NetApp Storage Encryption (NSE) oferece suporte à criptografia de hardware usando unidades de autocriptografia (SEDs).  Os SEDs criptografam os dados conforme eles são gravados.  Cada SED contém uma chave de criptografia exclusiva.  Dados criptografados armazenados no SED não podem ser lidos sem a chave de criptografia do SED.  Os nós que tentam ler um SED devem ser autenticados para acessar a chave de criptografia do SED.  Os nós são autenticados obtendo uma chave de autenticação de um gerenciador de chaves e, em seguida, apresentando a chave de autenticação ao SED.  Se a chave de autenticação for válida, o SED fornecerá ao nó sua chave de criptografia para acessar os dados que ele contém.
+
+.Antes de começar
+Use o gerenciador de chaves integrado do AFX ou um gerenciador de chaves externo para fornecer chaves de autenticação aos seus nós.  Além do NSE, você também pode habilitar a criptografia de software para adicionar outra camada de segurança aos seus dados.
+
+.Passos
+. No gerenciador do sistema, selecione *Cluster* e depois *Configurações*.
+. Na seção *Segurança*, em *Criptografia*, selecione *Configurar*.
+. Configurar o gerenciador de chaves.
++
+[cols="2"]
+|===
+| Opção | Passos 
+
+
+| Configurar o gerenciador de chaves integrado  a| 
+.. Selecione *Onboard Key Manager* para adicionar os servidores de chaves.
+.. Digite uma senha.
+
+
+
+
+| Configurar um gerenciador de chaves externo  a| 
+.. Selecione *Gerenciador de chaves externas* para adicionar os servidores de chaves.
+.. Selecioneimage:icon_add.gif["um sinal de mais azul seguido pela palavra adicionar"] para adicionar os servidores principais.
+.. Adicione os certificados CA do servidor KMIP.
+.. Adicione os certificados do cliente KMIP.
+
+
+|===
+. Selecione *Criptografia de camada dupla* para habilitar a criptografia de software.
+. Selecione *Salvar*.
+

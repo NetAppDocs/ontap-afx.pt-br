@@ -1,0 +1,174 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-switches.html 
+keywords: afx, afx 1k, install, setup, switches, cisco 9332, cisco 9336, switches, 
+summary: Aprenda a instalar os interruptores para o sistema de armazenamento AFX 1K e prateleiras de armazenamento. 
+---
+= Instale os switches para seu sistema de armazenamento AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de concluir a preparação para a instalação do sistema de armazenamento AFX 1K, você deve instalar os switches no gabinete ou no rack da empresa de telecomunicações.
+
+Instale os switches Cisco Nexus 9332D-GX2B ou 9364D-GX2A no gabinete ou rack.  Instale um kit de painel pass-through se estiver usando o switch Cisco Nexus 9364D-GX2A.
+
+.Antes de começar
+Certifique-se de ter os seguintes componentes disponíveis:
+
+* O kit de painel pass-through, disponível na NetApp (número da peça X8784-R6).
++
+O kit do painel de passagem da NetApp contém o seguinte hardware:
+
++
+** Um painel de obturação de passagem
+** Quatro parafusos 10-32 x 0,75
+** Quatro porcas de clipe 10-32
+
+
+* Para cada interruptor, oito parafusos 10-32 ou 12-24 e porcas de encaixe para montar os suportes e trilhos deslizantes nos postes dianteiros e traseiros do gabinete.
+* O kit de trilho padrão da Cisco para instalar o switch em um gabinete NetApp .
+
+
+
+NOTE: Os cabos de ligação não estão incluídos no kit de passagem.  Entre em contato com a NetApp para solicitar os cabos de ligação corretos caso eles não sejam enviados com seus switches.
+
+
+NOTE: Os Cisco 9332D-GX2B e 9364D-GX2A são switches de entrada do lado da porta.  As portas de rede dos switches devem ser instaladas voltadas para a parte frontal do gabinete, e os exaustores devem ser voltados para a parte traseira do gabinete.  Com essa configuração, você deve garantir que usará cabos longos o suficiente para ir das portas de rede na parte frontal do gabinete até as portas de armazenamento na parte traseira do gabinete.  + Para obter informações mais detalhadas sobre esses switches, visite o site da Cisco : https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Guia de instalação de hardware do switch Cisco Nexus 9332D-GX2B NX-OS Mode"^] e https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide.html["Guia de instalação de hardware do switch Cisco Nexus 9364D-GX2A NX-OS Mode"^] .
+
+.Passos
+. Instale o painel de obturação de passagem.
++
+.. Determine a localização vertical dos interruptores e do painel de bloqueio no gabinete ou rack.
+.. Instale duas porcas de clipe em cada lado nos furos quadrados apropriados para os trilhos frontais do gabinete.
+.. Centralize o painel verticalmente para evitar intrusão no espaço do rack adjacente e, em seguida, aperte os parafusos.
+.. Insira os conectores fêmeas de ambos os cabos de ligação pela parte traseira do painel e através do conjunto de escovas.
++
+image::../media/cisco_9148_jumper_cords.gif[Conectores fêmeas do cabo de ligação]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Chamada número 1]
+ a| 
+Conector fêmea do cabo de ligação.
+
+|===
+
+
+. Instale os suportes de montagem em rack no chassi do switch.
++
+.. Posicione um suporte de montagem em rack frontal em um lado do chassi do switch de modo que a orelha de montagem fique alinhada com a placa frontal do chassi (no lado da PSU ou do ventilador) e, em seguida, use quatro parafusos M4 para fixar o suporte ao chassi.
++
+image::../media/3132q_front_bracket.gif[suporte frontal]
+
+.. Repita a etapa 2a com o outro suporte de montagem em rack frontal no outro lado do switch.
+.. Instale o suporte de montagem em rack traseiro no chassi do switch.
+.. Repita a etapa 2c com o outro suporte de montagem em rack traseiro no outro lado do switch.
+
+
+. Instale as porcas de clipe nos locais dos furos quadrados para todos os quatro postes IEA.
++
+image::../media/ru_locations_for_3132q_v.gif[Localização das porcas de clipe]
+
++
+Monte os dois switches 9332D-GX2B em locais do gabinete que forneçam acesso eficiente aos controladores e prateleiras, como as fileiras do meio.
+
+. Instale os trilhos deslizantes no gabinete ou rack.
++
+.. Posicione o primeiro trilho deslizante no local desejado na parte traseira do poste traseiro esquerdo, insira parafusos com o tipo de rosca correspondente e aperte-os com os dedos.
++
+image::../media/drw_3132q_v_slider_rails_ieops-2494.svg[Instalação do trilho deslizante]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Chamada número 1]
+ a| 
+Ao deslizar suavemente o trilho deslizante, alinhe-o aos furos dos parafusos no rack.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Chamada número 2]
+ a| 
+Aperte os parafusos dos trilhos deslizantes aos postes do gabinete.
+
+|===
+.. Repita o passo 4a para o poste traseiro do lado direito.
+.. Repita as etapas 4a e 4b nos locais desejados no gabinete.
+
+
+. Instale o interruptor no gabinete ou rack.
++
+
+NOTE: Esta etapa requer duas pessoas: uma para segurar o interruptor pela frente e outra para guiá-lo até os trilhos deslizantes traseiros.
+
++
+.. Posicione a parte traseira do interruptor no local desejado no gabinete.
++
+image::../media/drw_switch_cabinet_position_generic_ieops-2348.svg[Posicionamento 3232C em U39-40]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Chamada número 1]
+ a| 
+À medida que o chassi é empurrado em direção aos postes traseiros, alinhe as duas guias de montagem do rack traseiro com os trilhos deslizantes
+
+
+
+ a| 
+image::../media/icon_round_2.png[Chamada número 2]
+ a| 
+Deslize suavemente o interruptor até que os suportes de montagem em rack dianteiros fiquem alinhados com os postes dianteiros.
+
+|===
+.. Fixe o interruptor ao gabinete ou rack.
++
+image::../media/3132q_attaching.gif[Acessório de interruptor]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Chamada número 1]
+ a| 
+Com uma pessoa segurando a parte frontal do chassi nivelada, a outra pessoa deve apertar completamente os quatro parafusos traseiros nos postes do gabinete.
+
+|===
+.. Com o chassi agora apoiado sem assistência, aperte completamente os parafusos dianteiros nos postes.
+.. Repita as etapas 5a a 5c para o segundo interruptor no local desejado no gabinete.
++
+
+NOTE: Ao usar o switch totalmente instalado como suporte, não é necessário segurar a parte frontal do segundo switch durante o processo de instalação.
+
+
+
+. Quando os interruptores estiverem instalados, conecte os cabos de ligação às entradas de energia dos interruptores.
+. Conecte os plugues machos de ambos os cabos de ligação às tomadas PDU mais próximas disponíveis.
++
+
+NOTE: Para manter a redundância, os dois cabos devem ser conectados a PDUs diferentes.
+
+. Conecte a porta de gerenciamento em cada switch a qualquer um dos switches de gerenciamento (se solicitado) ou conecte-os diretamente à sua rede de gerenciamento.
++
+A porta de rede de gerenciamento é a porta RJ-45 inferior, próxima à PSU direita.  Passe o cabo CAT6 de cada switch pelo painel de passagem após instalar os switches para conectar aos switches de gerenciamento ou à rede.
+
+
+
+.O que vem a seguir?
+Depois de instalar os interruptores no gabinete ou rack, vocêlink:deploy-hardware.html["instale o sistema de armazenamento AFX 1K e prateleiras no armário ou rack"] .

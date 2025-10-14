@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: administer/configure-svm.html 
+keywords: afx, afx system, configure svm 
+summary: Depois de criar um SVM de dados, você pode atualizar a configuração com base em seus requisitos e nas necessidades dos clientes. 
+---
+= Configurar um sistema de armazenamento AFX SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de criar um SVM de dados, você pode atualizar a configuração com base em seus requisitos e nas necessidades dos clientes.
+
+.Sobre esta tarefa
+Há quatro caminhos de acesso à configuração do SVM, conforme refletido nas guias na página inicial de um SVM de dados específico.  Isso inclui:
+
+* Visão geral
++
+Isso fornece uma visão geral rápida do painel com os detalhes de configuração atuais relacionados a interfaces e serviços de rede, protocolos, armazenamento e proteção.
+
+* Configurações
++
+Você pode acessar e atualizar toda a configuração do SVM organizada em diversas áreas, como protocolos, serviços, políticas e segurança.
+
+* Replicação
++
+Esta página fornece uma lista dos relacionamentos de replicação atuais definidos para o SVM.
+
+* Sistema de arquivos
++
+Você pode rastrear a atividade e as análises do SVM
+
+
+
+.Antes de começar
+Você precisa decidir qual SVM deseja exibir e atualizar.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *VMs de Armazenamento*.
+. Selecione o SVM desejado e depois a aba *Configurações*.
+. Revise as opções de configuração na página; selecione e atualize as configurações conforme desejado.
+

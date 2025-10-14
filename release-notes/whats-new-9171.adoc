@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9171.html 
+keywords: 'afx, release notes, what"s new, 9.17.1' 
+summary: Saiba mais sobre os novos recursos incluídos no ONTAP 9.17.1 que estão disponíveis com seu sistema de armazenamento AFX. 
+---
+= Novidades no ONTAP 9.17.1 para sistemas de armazenamento AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos incluídos no ONTAP 9.17.1 que estão disponíveis com seu sistema de armazenamento AFX.
+
+
+
+== Plataformas
+
+[cols="2,4"]
+|===
+| Atualizar | Descrição 
+
+
+| Plataformas  a| 
+Os seguintes componentes do sistema de armazenamento NetApp AFX estão disponíveis junto com a tecnologia de suporte relacionada.  Juntos, essa plataforma oferece uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes NAS e S3 de alto desempenho.
+
+* Controladores AFX 1K
+* Prateleiras NX224
+* Switches Cisco Nexus 9332D-GX2B e Nexus 9364D-GX2A
+
+
+|===
+.Informações relacionadas
+* https://docs.netapp.com/us-en/ontap/release-notes/index.html["Destaques do lançamento do ONTAP 9"^]
+

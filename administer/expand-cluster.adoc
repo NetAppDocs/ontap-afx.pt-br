@@ -1,0 +1,148 @@
+---
+sidebar: sidebar 
+permalink: administer/expand-cluster.html 
+keywords: afx, afx system, expansion, cluster expansion, expand cluster, add nodes 
+summary: Você pode expandir a capacidade de computação de um cluster AFX independentemente da capacidade de armazenamento.  A expansão é realizada sem interrupção e aumenta o desempenho linearmente à medida que os volumes são rebalanceados entre os nós.  Esse recurso é um benefício significativo à medida que você se adapta às necessidades contínuas dos seus usuários do AFX. 
+---
+= Expandir um cluster de sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode expandir a capacidade de computação de um cluster AFX independentemente da capacidade de armazenamento.  A expansão é realizada sem interrupção e aumenta o desempenho linearmente à medida que os volumes são rebalanceados entre os nós.  Esse recurso é um benefício significativo à medida que você se adapta às necessidades contínuas dos usuários do seu sistema AFX.
+
+
+
+== Prepare-se para expandir um cluster
+
+Antes de expandir um cluster AFX, você deve estar familiarizado com os requisitos básicos e a abordagem geral para solução de problemas.
+
+
+
+=== Requisitos
+
+Você precisa das credenciais para uma conta de administrador de cluster e ser capaz de se conectar ao ONTAP CLI usando SSH.  Ao expandir um cluster, você deve adicionar um número par de nós e respeitar as limitações de tamanho do seu sistema AFX com base na versão.
+
+
+
+=== Solução de problemas
+
+Há alguns conceitos e cenários de solução de problemas que você deve conhecer ao realizar a expansão do cluster.
+
+
+
+==== Rebalanceamento automático de volume
+
+O Gerenciamento Automatizado de Topologia (ATM) é um componente interno do sistema AFX que detecta desequilíbrios de alocação e reequilibra volumes entre os nós do cluster.  Ele se baseia na tecnologia Zero Copy Volume Move (ZCVM) para realocar volumes usando atualizações de metadados em vez de copiar os dados.  ZCVM é a tecnologia de movimentação de volume padrão disponível com sistemas de armazenamento AFX.
+
+
+
+==== Possíveis cenários de solução de problemas
+
+Há vários cenários que você pode precisar investigar durante os movimentos de volume associados à expansão de um cluster AFX.
+
+Os volumes não estão sendo movidos pelo ATM:: Isso pode ocorrer quando o cluster já está balanceado ou quando não há volumes qualificados para mover.
+Confusão sobre como ou quando o ATM deve estar ativo:: Pode parecer que os volumes não são distribuídos tão rapidamente quanto o esperado.  O ATM tenta detectar e responder a eventos de hardware a cada cinco minutos.  No pior caso, uma operação de rebalanceamento é iniciada 40 minutos após a última conclusão.
+
+
+
+
+==== Comandos CLI
+
+Há vários comandos que você pode usar para monitorar uma operação de expansão de cluster.
+
+* `volume move show`
+* `volume move show -instance`
+
+
+Você deve entrar em contato com o suporte da NetApp para obter assistência adicional, conforme necessário.
+
+
+
+== Adicionar nós para expandir um cluster
+
+Este procedimento descreve como adicionar um par de nós a um cluster existente e pode ser adaptado a outros ambientes de implantação.  Você precisará usar as interfaces administrativas do ONTAP CLI e do System Manager.
+
+.Passos
+. Conecte-se ao ONTAP CLI e defina o nível de privilégio avançado:
++
+`afx> set advanced`
+
+. Exiba os locais dos volumes dos nós atuais; observe o número de volumes por nó:
++
+`afx> vol show -fields node,size,constituent-count -is-constituent true -node *`
+
+. Exiba os endereços IP de interconexão do cluster e salve para uso em etapas posteriores:
++
+`afx> net int show -role cluster`
+
+. Efetue login no processador de serviço de cada nó que você deseja adicionar ao cluster.
+. No prompt, digite *system console* para acessar o console do nó.
+. Inicialize o nó para exibir o prompt do menu de inicialização:
++
+`LOADER> boot_ontap menu`
+
++
+Se o menu não carregar, use a técnica *Ctrl+C* para acessar o menu de inicialização.
+
+. Selecione uma das opções de inicialização no menu, conforme apropriado; se solicitado, digite *sim* para continuar.
++
+Se você for enviado de volta para o LOADER a partir daqui, digite *boot_ontap* no prompt do LOADER.
+
+. Use o assistente de configuração de cluster para configurar um LIF de gerenciamento de nó, uma sub-rede e um gateway.
++
+Esta configuração será usada pelo System Manager para detectar o nó a ser adicionado ao cluster.  Insira os valores conforme solicitado, incluindo porta, endereço IP, máscara de rede e gateway padrão.
+
+. Pressione *CTL+C* para acessar a CLI.
+. Modifique os endereços de interconexão do cluster para que eles sejam roteáveis na sua rede; use a configuração apropriada para seu ambiente:
++
+`afx> net int show -role cluster`
+
++
+`afx> net int modify -vserver Cluster -lif clus1 -address 192.168.100.201`
+
++
+`afx> net int modify -vserver Cluster -lif clus2 -address 192.168.100.202`
+
++
+Esta etapa só é necessária se as outras interfaces não usarem os endereços 169.254.xx que o ONTAP cria automaticamente.
+
+. Repita os passos acima no outro controlador de nó AFX.
+. Acesse o Gerenciador do Sistema usando o endereço IP de gerenciamento do cluster.
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Visão Geral*; selecione a aba *Nós*.
+. Localize a seção *Não faz parte deste cluster*; selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
++
+** Se os nós foram descobertos antes que os endereços IP de interconexão do cluster fossem alterados, você precisará redescobrir os nós saindo da janela e navegando de volta.
+** Opcionalmente, você pode usar a CLI para adicionar os nós em vez do System Manager; veja o comando `cluster add-node` .
+
+
+. Forneça os detalhes de configuração no menu *Adicionar nós*; você pode adicionar endereços IP de gerenciamento manualmente ou usando uma sub-rede.
+. Conecte-se ao ONTAP CLI para monitorar o status da operação de adição de nó:
++
+`afx> add-node-status`
+
+. Após a conclusão das operações, confirme o posicionamento do volume em todos os nós; emita o comando uma vez para cada nó usando o nome do nó apropriado:
++
+`afx> set advanced`
+
++
+`afx> vol show -fields node,size,constituent-count -is-constituent true -node NODE_NAME`
+
+
+
+.Resultado
+* Adicionar novos nós ao cluster não causa interrupções.
+* Os movimentos de volume devem acontecer automaticamente.
+* O desempenho será escalonado linearmente.
+
+
+
+
+== Informações relacionadas
+
+* link:../get-started/prepare-cluster-admin.html["Prepare-se para administrar seu sistema AFX"]
+* link:../faq-ontap-afx.html["Perguntas frequentes sobre sistemas de armazenamento ONTAP AFX"]
+* https://mysupport.netapp.com/["Site de suporte da NetApp"^]
+

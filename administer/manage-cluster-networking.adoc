@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-cluster-networking.html 
+keywords: afx, afx system, networking, cluster networking, broadcast domain, ipsace, subnet, network interface 
+summary: Você precisa configurar a rede do seu sistema de armazenamento AFX.  O ambiente de rede oferece suporte a vários cenários de conexão, incluindo clientes acessando dados nas SVMs e comunicação entre clusters. 
+---
+= Gerenciar a rede de cluster do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você precisa configurar a rede do seu sistema de armazenamento AFX.  O ambiente de rede oferece suporte a vários cenários, incluindo clientes acessando dados nas SVMs e comunicação entre clusters.
+
+
+NOTE: Criar um recurso de rede é um primeiro passo importante.  Você também precisa executar ações administrativas adicionais, como editar ou excluir definições de rede, conforme necessário.
+
+
+
+== Criar um domínio de transmissão
+
+Um domínio de transmissão simplifica o gerenciamento da sua rede de cluster agrupando portas que fazem parte da mesma rede de camada dois.  As máquinas virtuais de armazenamento (SVMs) podem então ter portas atribuídas no grupo para tráfego de dados ou gerenciamento.
+
+Existem vários domínios de transmissão criados durante a configuração do cluster, incluindo:
+
+Padrão:: Este domínio de transmissão contém portas no espaço IP “Padrão”.  Essas portas são usadas principalmente para fornecer dados.  Portas de gerenciamento de cluster e de nó também estão incluídas.
+Conjunto:: Este domínio de transmissão contém portas no espaço IP “Cluster”.  Essas portas são usadas para comunicação do cluster e incluem todas as portas do cluster de todos os nós no cluster.
+
+
+Você pode criar domínios de transmissão adicionais depois que seu cluster for inicializado.  Quando você cria um domínio de transmissão, um grupo de failover que contém as mesmas portas é criado automaticamente.
+
+.Sobre esta tarefa
+O valor da unidade máxima de transmissão (MTU) das portas definidas para um domínio de transmissão é atualizado para o valor de MTU definido no domínio de transmissão.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Rede* e depois *Visão Geral*.
+. Em *Domínios de transmissão*, selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça o nome do domínio de transmissão ou aceite o padrão.
++
+Todos os nomes de domínio de transmissão devem ser exclusivos dentro de um IPspace.
+
+. Forneça a unidade máxima de transmissão (MTU).
++
+A MTU é o maior pacote de dados que pode ser aceito no domínio de transmissão.
+
+. Escolha as portas desejadas e selecione *Salvar*.
+
+
+
+
+== Criar um IPspace
+
+Um IPspace é um domínio administrativo para endereços IP e configurações de rede relacionadas.  Esses espaços podem ser usados para dar suporte às suas SVMs por meio de administração e roteamento isolados.  Por exemplo, eles são úteis quando clientes têm endereços IP sobrepostos do mesmo endereço IP e intervalo de sub-rede.
+
+
+TIP: Você precisa ter um IPspace antes de poder criar uma sub-rede.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Rede* e depois *Visão Geral*.
+. Em *IPspaces*, selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça o nome do IPspace ou aceite o padrão.
++
+Todos os nomes de IPspace devem ser exclusivos dentro de um cluster.
+
+. Selecione *Salvar*.
+
+
+.O que vem a seguir
+Você pode usar o IPspace para criar uma sub-rede.
+
+
+
+== Criar uma sub-rede
+
+Uma sub-rede ou sub-rede impõe uma divisão lógica do espaço de endereço IP na sua rede.  Ele permite que você aloque blocos dedicados de endereços IP para a criação de uma interface de rede (LIF).  As sub-redes simplificam a criação de LIF, permitindo que você use o nome da sub-rede em vez de uma combinação específica de endereço IP e máscara de rede.
+
+.Antes de começar
+Você deve ter um domínio de transmissão e um espaço IP onde a sub-rede será definida.  Observe também:
+
+* Todos os nomes de sub-rede devem ser exclusivos dentro de um IPspace específico.
+* O intervalo de endereços IP usado para uma sub-rede não pode se sobrepor aos endereços IP de outras sub-redes.
+
+
+.Passos
+. No Gerenciador do Sistema, selecione *Rede* e depois *Visão Geral*.
+. Na aba *Sub-redes*, selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça os detalhes da configuração, incluindo o nome da sub-rede, detalhes do endereço IP e domínio de transmissão.
+. Selecione *Salvar*.
+
+
+.O que vem a seguir
+A nova sub-rede simplificará a criação de suas interfaces de rede.
+
+
+
+== Criar uma interface de rede
+
+Uma interface de rede lógica (LIF) consiste em um endereço IP e parâmetros de configuração de rede relacionados.  Ele pode ser associado a uma porta física ou lógica e normalmente é usado pelos clientes para acessar dados fornecidos por um SVM.  Os LIFs fornecem resiliência em caso de falha e podem migrar entre as portas do nó para que a comunicação não seja interrompida.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Rede* e depois *Visão Geral*.
+. Na aba *Interfaces de rede*, selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça os detalhes da configuração, incluindo o nome da interface, o tipo de interface, os protocolos permitidos e os detalhes do endereço IP.
+. Selecione *Salvar*.
+
+
+
+
+== Informações relacionadas
+
+* link:../administer/manage-ethernet-ports.html["Gerenciar portas Ethernet AFX"]
+* https://docs.netapp.com/us-en/ontap/networking/configure_broadcast_domains_cluster_administrators_only_overview.html["Saiba mais sobre domínios de transmissão ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_ipspaces_cluster_administrators_only_overview.html["Saiba mais sobre a configuração do ONTAP IPspace"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_subnets_cluster_administrators_only_overview.html["Saiba mais sobre sub-redes para a rede ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/concepts/network-connectivity-concept.html["Visão geral da arquitetura de rede"^]
+

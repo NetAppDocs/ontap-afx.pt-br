@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: get-started/compare-unified-ontap.html 
+keywords: afx, afx system, compare afx, compare unified ontap 
+summary: 'Os sistemas NetApp AFX executam uma personalidade personalizada do ONTAP que difere da personalidade do ONTAP (chamada de Unified ONTAP) que é executada no armazenamento AFF e FAS .  Você deve estar ciente de como os sistemas AFX são semelhantes e diferentes dos sistemas FAS e AFF .  Isso fornece uma perspectiva valiosa e pode ser útil ao implantar o AFX em seu ambiente.' 
+---
+= Compare o sistema de armazenamento AFX com os sistemas AFF e FAS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os sistemas NetApp AFX executam uma personalidade personalizada do ONTAP que difere da personalidade do ONTAP (chamada de Unified ONTAP) que é executada no armazenamento AFF e FAS .  Você deve estar ciente de como os sistemas AFX são semelhantes e diferentes dos sistemas FAS e AFF .  Isso fornece uma perspectiva valiosa e pode ser útil ao implantar o AFX em seu ambiente.
+
+
+TIP: Esta documentação do AFX inclui links para vários tópicos no site de documentação do Unified ONTAP .  O conteúdo adicional fornece mais profundidade e uma perspectiva diferente que pode ser útil ao administrar seu sistema de armazenamento AFX.
+
+
+
+== Diferenças de configuração
+
+Existem algumas áreas em que a configuração do AFX difere dos sistemas AFF e FAS .
+
+Balanceamento de Capacidade Avançado:: O recurso de balanceamento de capacidade avançado, controlado usando o `-gdd` O parâmetro CLI é habilitado por padrão para todos os volumes FlexGroup .
+
+
+
+
+== Recursos do Unified ONTAP não suportados ou restritos
+
+Embora os sistemas de armazenamento AFX, AFF e FAS sejam muito semelhantes, há vários recursos que não são suportados pelo AFX.  Você deve revisar as atualizações e alterações do AFX no local apropriadolink:../release-notes/whats-new-9171.html["O que há de novo"] seção com base no seu lançamento.
+
+Os seguintes recursos, organizados em várias categorias, não estão disponíveis ou foram alterados no AFX.
+
+
+
+=== Características gerais
+
+* FabricPool
+* MetroCluster
+* Proteção anti-ransomware baseada em IA
+* API ONTAPI (ZAPI)
+
+
+
+
+=== Recursos relacionados a SAN
+
+* Administração SAN e acesso do cliente
+* Volumes provisionados espessos
+
+
+
+
+=== Recursos relacionados a agregados
+
+Os seguintes recursos agregados não estão disponíveis nos sistemas AFX:
+
+* Acesso direto a agregados de disco
+* Criptografia agregada da NetApp (NAE)
+* Desduplicação em nível de agregação
+* SyncMirror (espelhamento agregado)
+* Gestão de RAID
+
+
+
+
+=== Replicação de dados
+
+* Nenhuma replicação de um volume de um sistema AFF ou FAS que contém um LUN
+* Os volumes AFX FlexGroup só podem ser replicados para o Unified ONTAP 9.16.1 ou posterior
+
+
+
+
+== Alterações na interface da linha de comando
+
+O ONTAP CLI disponível com o AFX geralmente espelha o CLI disponível com os sistemas AFF e FAS .  Mas há várias diferenças, incluindo:
+
+* Novos comandos AFX relacionados a:
++
+** Exibindo a capacidade da zona de disponibilidade de armazenamento
+** Mídia de inicialização
+
+
+* Nenhum comando relacionado a SAN
+* Os comandos de gerenciamento agregado não são mais necessários
+* Os comandos FlexAggr só podem exibir ou mostrar os FlexAggrs
+
+
+
+
+== Informações relacionadas
+
+* link:../get-started/system-design.html["Características do sistema AFX"]
+* link:../get-started/software-architecture.html["Detalhes da arquitetura AFX"]
+* link:../faq-ontap-afx.html["Perguntas frequentes sobre sistemas de armazenamento AFX"]
+* link:../administer/additional-ontap-cluster.html["Administração adicional do cluster AFX"]
+* link:../administer/additional-ontap-svm.html["Administração adicional do AFX SVM"]
+

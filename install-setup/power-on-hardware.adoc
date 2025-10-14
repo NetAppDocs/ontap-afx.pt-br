@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: install-setup/power-on-hardware.html 
+keywords: afx, afx 1k, power on 
+summary: Ligue cada prateleira para atribuir um ID de prateleira exclusivo, ligue os nós do controlador AFX e prenda os cabos de alimentação. 
+---
+= Ligue seu sistema de armazenamento AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de instalar o hardware do rack para seu sistema de armazenamento AFX 1K e instalar os cabos para os nós do controlador e prateleiras de armazenamento, você deve ligar as prateleiras de armazenamento e os nós do controlador.
+
+
+
+== Etapa 1: Ligue a prateleira e atribua o ID da prateleira
+
+Cada prateleira tem um ID de prateleira exclusivo, garantindo sua distinção na configuração do seu sistema de armazenamento.
+
+.Sobre esta tarefa
+* Um ID de prateleira válido é de 01 a 99.
+* Você deve desligar e ligar uma prateleira (desconecte os dois cabos de alimentação, aguarde no mínimo 10 segundos e conecte-os novamente) para que a ID da prateleira entre em vigor.
+
+
+.Passos
+. Ligue a prateleira conectando os cabos de alimentação primeiro à prateleira, prendendo-os no lugar com o retentor do cabo de alimentação e, em seguida, conectando os cabos de alimentação às fontes de alimentação em circuitos diferentes.
++
+A prateleira liga e inicializa automaticamente quando conectada.
+
+. Remova a tampa da extremidade esquerda para acessar o botão de identificação da prateleira atrás do painel frontal.
++
+image::../media/drw_tp_change_shelf_id_ieops-2381.svg[Alterar ID da prateleira NX224]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Chamada número 1]
+ a| 
+Tampa da extremidade da prateleira
+
+
+
+ a| 
+image::../media/icon_round_2.png[[Chamada número 2]
+ a| 
+Placa frontal da prateleira
+
+
+
+ a| 
+image::../media/icon_round_3.png[[Chamada número 3]
+ a| 
+Número de identificação da prateleira
+
+
+
+ a| 
+image::../media/icon_round_4.png[[Chamada número 4]
+ a| 
+Botão de identificação da prateleira
+
+|===
+. Alterar o primeiro número do ID da prateleira:
++
+.. Insira a ponta esticada de um clipe de papel ou de uma caneta esferográfica de ponta fina no pequeno orifício para pressionar suavemente o botão de identificação da prateleira.
+.. Pressione suavemente e segure o botão de ID da prateleira até que o primeiro número no visor digital pisque e, em seguida, solte o botão.
++
+O número pisca em 15 segundos, ativando o modo de programação de ID da prateleira.
+
++
+
+NOTE: Se o ID demorar mais de 15 segundos para piscar, pressione e segure o botão de ID da prateleira novamente, certificando-se de pressioná-lo completamente.
+
+.. Pressione e solte o botão ID da prateleira para avançar o número até atingir o número desejado de 0 a 9.
++
+Cada pressão e liberação podem durar apenas um segundo.
+
++
+O primeiro número continua piscando.
+
+
+
+. Alterar o segundo número do ID da prateleira:
++
+.. Pressione e segure o botão até que o segundo número no visor digital pisque.
++
+Pode levar até três segundos para o número piscar.
+
++
+O primeiro número no visor digital para de piscar.
+
+.. Pressione e solte o botão ID da prateleira para avançar o número até atingir o número desejado de 0 a 9.
++
+O segundo número continua piscando.
+
+
+
+. Bloqueie o número desejado e saia do modo de programação pressionando e segurando o botão ID da prateleira até que o segundo número pare de piscar.
++
+Pode levar até três segundos para o número parar de piscar.
+
++
+Ambos os números no visor digital começam a piscar e o LED âmbar acende após cerca de cinco segundos, alertando que o ID da prateleira pendente ainda não entrou em vigor.
+
+. Desligue e ligue a prateleira por pelo menos 10 segundos para que a ID da prateleira entre em vigor.
++
+.. Desconecte o cabo de alimentação de ambas as fontes de alimentação na prateleira.
+.. Aguarde 10 segundos.
+.. Conecte os cabos de alimentação novamente nas fontes de alimentação da prateleira para concluir o ciclo de energia.
++
+A fonte de alimentação liga assim que você conecta o cabo de alimentação.  Seu LED bicolor deve acender em verde.
+
+
+
+. Recoloque a tampa da extremidade esquerda.
+
+
+
+
+== Etapa 2: Ligue os nós do controlador
+
+Depois de ligar suas prateleiras de armazenamento e atribuir IDs exclusivos a elas, ligue a energia dos nós do controlador de armazenamento.
+
+.Passos
+. Conecte seu laptop à porta serial do console.  Isso permite que você monitore a sequência de inicialização quando os controladores são ligados.
++
+.. Defina a porta serial do console no laptop para 115.200 baud com N-8-1.
++
+Consulte a ajuda on-line do seu laptop para obter instruções sobre como configurar a porta serial do console.
+
+.. Conecte o cabo do console ao laptop e conecte a porta serial do console no controlador usando o cabo do console que veio com seu sistema de armazenamento.
+.. Conecte o laptop ao switch na sub-rede de gerenciamento.
++
+image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Conexões do console]
+
+
+
+
+
+. Atribua um endereço TCP/IP ao laptop, usando um que esteja na sub-rede de gerenciamento.
+. Conecte os cabos de alimentação nas fontes de alimentação do controlador e, em seguida, conecte-os às fontes de alimentação em circuitos diferentes.
++
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Diagrama de conexão de energia do sistema de armazenamento A1K e A70 ou A90]
+
++
+** O sistema começa a inicializar.  A inicialização pode levar até oito minutos.
+** Os LEDs piscam e os ventiladores ligam, indicando que os controladores estão ligando.
+** Os ventiladores podem fazer barulho na inicialização, o que é normal.
+
+
+
+
+. Prenda os cabos de alimentação usando o dispositivo de fixação em cada fonte de alimentação.
+
+
+.O que vem a seguir?
+Depois de ligar seu sistema de armazenamento AFX 1K, vocêlink:../install-setup/cluster-setup.html["configurar um cluster AFX"] .

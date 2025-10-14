@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-users-roles.html 
+keywords: afx, afx system, users, roles 
+summary: Você pode definir contas de usuário e funções com base nos serviços de autenticação e autorização disponíveis com o AFX. 
+---
+= Gerenciar usuários e funções do cluster do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode definir contas de usuário e funções com base nos serviços de autenticação e autorização disponíveis com o AFX.
+
+
+NOTE: Cada usuário do ONTAP precisa ter uma função atribuída.  Uma função inclui privilégios e determina quais ações o usuário pode executar.
+
+
+
+== Criar uma função de conta
+
+As funções para administradores de cluster e administradores de VM de armazenamento são criadas automaticamente quando seu cluster AFX é configurado e inicializado.  Você pode criar funções de conta de usuário adicionais para definir funções específicas que os usuários atribuídos às funções podem executar no seu cluster.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Na seção *Segurança*, ao lado de *Usuários e funções*, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"] .
+. Em *Funções*, selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça o nome da função e os atributos.
+. Selecione *Salvar*.
+
+
+
+
+== Criar uma conta de cluster
+
+Você pode criar uma conta em nível de cluster para usar ao executar a administração do cluster ou do SVM.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Na seção *Segurança*, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"] ao lado de *Usuários e funções*.
+. Selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] . em *Usuários*.
+. Digite um nome de usuário e selecione a função do usuário.
++
+A função deve ser apropriada para o usuário.  Por exemplo, a função *admin* é capaz de executar toda a gama de tarefas de configuração no seu cluster.
+
+. Selecione o método de login do usuário e o método de autenticação; normalmente será *Senha*.
+. Digite uma senha para o usuário.
+. Selecione *Salvar*.
+
+
+.Resultado
+Uma nova conta é criada e fica disponível para uso com seu cluster AFX.
+
+
+
+== Informações relacionadas
+
+* link:../administer/prepare-authentication.html["Preparar serviços de autenticação"]
+* link:../administer/additional-ontap-svm.html["Administração adicional do AFX SVM"]
+

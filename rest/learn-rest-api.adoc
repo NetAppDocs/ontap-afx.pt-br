@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: rest/learn-rest-api.html 
+keywords: afx, afx system, rest api, rest, automation 
+summary: A API REST fornecida com o AFX é baseada na API REST Unified ONTAP .  Há uma série de mudanças que o adaptam às características e capacidades únicas da personalidade AFX. 
+---
+= Saiba mais sobre a API REST do sistema de armazenamento AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+A API REST fornecida com o AFX é baseada na API REST Unified ONTAP .  Há uma série de mudanças que o adaptam às características e capacidades únicas da personalidade AFX.
+
+
+
+== Recursos não suportados
+
+AFX é um sistema de armazenamento NAS e S3 de alto desempenho.  Ele permite que os clientes acessem dados usando NFS, SMB/CIFS e S3.  Devido a essa especialização, há vários recursos sem suporte, incluindo:
+
+* Metrocluster
+* Rede de área de armazenamento (SAN)
+* Agregados de disco
+
+
+
+
+== Pontos de extremidade de API removidos
+
+Vários endpoints foram removidos da API REST correspondentes aos recursos não suportados.
+
+.Lista de endpoints não suportados
+[%collapsible]
+====
+[source, text]
+----
+/cluster/counter/tables
+/cluster/metrocluster
+/cluster/metrocluster/diagnostics
+/cluster/metrocluster/dr-groups
+/cluster/metrocluster/interconnects
+/cluster/metrocluster/nodes
+/cluster/metrocluster/operations
+/cluster/metrocluster/svms
+/network/fc/fabrics
+/network/fc/interfaces
+/network/fc/logins
+/network/fc/ports
+/network/fc/wwpn-aliases
+/protocols/nvme/interfaces
+/protocols/nvme/services
+/protocols/nvme/subsystem-controllers
+/protocols/nvme/subsystem-maps
+/protocols/nvme/subsystems
+/protocols/san/fcp/services
+/protocols/san/igroups
+/protocols/san/initiators
+/protocols/san/iscsi/credentials
+/protocols/san/iscsi/services
+/protocols/san/iscsi/sessions
+/protocols/san/lun-maps
+/protocols/san/portsets
+/protocols/san/vvol-bindings
+/storage/luns
+/storage/namespaces
+----
+====
+
+
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap-automation["Automação ONTAP"^]
+* https://docs.netapp.com/us-en/asa-r2/learn-more/rest-api-support.html["Suporte à API REST para ASA r2"^]
+

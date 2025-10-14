@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: install-setup/prepare-hardware.html 
+keywords: prepare, hardware installation, afx, afx 1k 
+summary: Prepare-se para instalar o sistema de armazenamento AFX 1K no seu ambiente ONTAP e registre o hardware para acessar os benefícios de suporte. 
+---
+= Prepare-se para instalar seu sistema de armazenamento AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prepare-se para instalar seu sistema de armazenamento AFX 1K preparando o local, desembalando as caixas e comparando o conteúdo das caixas com a nota fiscal e registrando o sistema para acessar os benefícios de suporte.
+
+
+
+== Etapa 1: Prepare o local
+
+Para instalar seu sistema de armazenamento AFX 1K, certifique-se de que o local e o gabinete ou rack que você planeja usar atendam às especificações da sua configuração.
+
+.Passos
+. Usar https://hwu.netapp.com["Hardware Universe da NetApp"^] para confirmar se seu local atende aos requisitos ambientais e elétricos do seu sistema de armazenamento.
+. Certifique-se de ter espaço adequado no armário ou rack para seu sistema de armazenamento, prateleiras e interruptores:
++
+** 2U para cada nó do controlador AFX e prateleira NX224
+** 1U ou 2U por switch, dependendo do modelo do switch.
+
+
+
+
+
+
+== Etapa 2: Desembale as caixas
+
+Depois de garantir que o local e o armário atendem às especificações, desembale as caixas e compare o conteúdo com a nota fiscal.
+
+.Passos
+. Abra cuidadosamente todas as caixas e disponha o conteúdo de forma organizada.
+. Compare o conteúdo que você desempacotou com a lista na nota fiscal.  Se você encontrar alguma discrepância, registre-a para medidas futuras.
++
+Você pode obter sua lista de embalagem escaneando o código QR na lateral da caixa de remessa.
+
++
+Os itens a seguir são alguns dos conteúdos que você pode ver nas caixas.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | *Cabos* |  
+
+
+ a| 
+** Moldura
+** Sistema de armazenamento
+** Kits de trilhos com instruções
+** Prateleira de armazenamento
+** Switch Cisco Nexus 9332D-GX2B ou 9364D-GX2A
+
+ a| 
+** Cabos Ethernet de gerenciamento (cabos RJ-45)
+** Cabos de rede
+** Cabos de alimentação
+** Cabos de armazenamento
+** Cabo de porta serial USB-C
+
+|  
+|===
+
+
+
+
+== Etapa 3: registre seu sistema de armazenamento
+
+Depois de garantir que seu site atende aos requisitos das especificações do seu sistema de armazenamento AFX 1K e verificar se você tem todas as peças solicitadas, registre seu sistema de armazenamento.
+
+.Passos
+. Localize os números de série do seu sistema de armazenamento.
++
+Você pode encontrar os números de série nos seguintes locais:
+
++
+** Na nota fiscal
+** No seu e-mail de confirmação
+** Em cada controlador ou para alguns sistemas, no módulo de gerenciamento do sistema de cada controlador
++
+image::../media/drw_ssn_label.svg[Exemplo do número de série do sistema]
+
+
+
+. Vá para o http://mysupport.netapp.com/["Site de suporte da NetApp"^] .
+. Decida se você precisa registrar seu sistema de armazenamento:
++
+[cols="1a,2a"]
+|===
+| Se você é um... | Siga estes passos... 
+
+
+ a| 
+Cliente NetApp existente
+ a| 
+.. Sign in com seu nome de usuário e senha.
+.. Selecione *Sistemas* > *Meus Sistemas*.
+.. Confirme se o novo número de série está listado.
+.. Se o número de série não estiver listado, siga as instruções para novos clientes da NetApp .
+
+
+
+
+ a| 
+Novo cliente da NetApp
+ a| 
+.. Clique em *Registrar agora* e crie uma conta.
+.. Selecione *Sistemas* > *Registrar Sistemas*.
+.. Digite o número de série do sistema de armazenamento e os detalhes solicitados.
+
+
+Depois que a NetApp aprovar seu registro, você poderá baixar o software necessário.  A aprovação leva até 24 horas.
+
+|===
+
+
+.O que vem a seguir?
+Depois de se preparar para instalar seu hardware AFX 1K, vocêlink:install-switches.html["instale os switches para seu sistema de armazenamento AFX 1K"] .

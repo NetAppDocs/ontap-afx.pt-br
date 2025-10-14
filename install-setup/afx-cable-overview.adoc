@@ -1,0 +1,62 @@
+---
+permalink: install-setup/afx-cable-overview.html 
+sidebar: sidebar 
+keywords: afx, afx 1k, cable, overview, cisco 9332, cisco 9364, cabling, hardware, switches, storage shelves, disk shelves, controller nodes 
+summary: Aprenda a conectar os nós do controlador à rede, aos switches e às prateleiras de armazenamento. 
+---
+= Configurações suportadas para seu sistema de armazenamento AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os componentes de hardware suportados e as opções de cabeamento para o sistema de armazenamento AFX 1K, incluindo prateleiras de disco de armazenamento compatíveis, switches e tipos de cabos necessários para a configuração adequada do sistema.
+
+
+
+== Configuração de cabeamento AFX 1K suportada
+
+A configuração inicial do sistema de armazenamento AFX 1K suporta no mínimo quatro nós de controlador conectados por meio de switches duplos às prateleiras de disco de armazenamento.
+
+Nós de controlador e prateleiras de disco adicionais expandem a configuração inicial do sistema de armazenamento AFX 1K.  As configurações expandidas do AFX 1K seguem a mesma metodologia de cabeamento baseada em switch do esquema descrito abaixo.
+
+image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemplo de cabeamento do sistema de armazenamento AFK 1K"]
+
+
+
+== Componentes de hardware suportados
+
+Revise as prateleiras de disco de armazenamento, switches e tipos de cabos compatíveis com o sistema de armazenamento AFX 1K.
+
+[cols="2,2,3,6"]
+|===
+| *Prateleira do Controlador* | *Prateleira de Disco* | *Switches suportados* | *Cabos suportados* 
+
+
+ a| 
+AFX 1K
+ a| 
+NX224
+ a| 
+* Cisco Nexus 9332D-GX2B (400GbE)
+* Cisco Nexus 9364D-GX2A (400GbE)
+
+ a| 
+* Cabos de breakout QSFP-DD 400GbE para 4x100GbE QSFP breakout
++
+
+NOTE: Cabos breakout são usados para conexões de 100 GbE entre switches, controladores e prateleiras de disco.
+
++
+** Cabos 100GbE para cluster de controlador e portas HA
+** Cabos 100GbE para prateleiras de disco
+
+
+* 2 cabos 400GbE para conexões ISL entre o switch A e o switch B
+* Cabos RJ-45 para conexões de gerenciamento
+
+
+|===
+.O que vem a seguir?
+Após revisar a configuração do sistema e os componentes de hardware suportados,link:install-network-reqs.html["revise os requisitos de rede para seu sistema de armazenamento AFX 1K"] .

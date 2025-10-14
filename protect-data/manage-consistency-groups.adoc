@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: protect-data/manage-consistency-groups.html 
+keywords: afx, afx system, consistency group, manage consistency group 
+summary: Você pode gerenciar os grupos de consistência em um sistema AFX.  Isso pode agilizar sua administração de armazenamento. 
+---
+= Gerenciar grupos de consistência em um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode gerenciar os grupos de consistência em um sistema AFX.  Isso pode agilizar sua administração de armazenamento.
+
+
+
+== Adicionar proteção de dados de instantâneo a um grupo de consistência
+
+Quando você adiciona proteção de dados de instantâneo a um grupo de consistência, instantâneos locais do grupo de consistência podem ser tirados em intervalos regulares com base em uma programação predefinida.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Proteção* e depois *Grupos de consistência*.
+. Passe o mouse sobre o grupo de consistência que você deseja proteger.
+. Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] ; então selecione *Editar*.
+. Em *Proteção local*, selecione *Agendar instantâneos*.
+. Selecione uma política de instantâneo.
++
+Aceite a política de instantâneo padrão, selecione uma política existente ou crie uma nova política.
+
++
+[cols="2,6a"]
+|===
+| Opção | Passos 
+
+
+| Selecione uma política de instantâneo existente  a| 
+Selecioneimage:icon_dropdown_arrow.gif["seta azul apontando para baixo"] ao lado da política padrão; em seguida, selecione a política existente que você deseja usar.
+
+
+
+| Criar uma nova política de snapshot  a| 
+.. Selecioneimage:icon_add.gif["sinal de mais azul seguido da palavra adicionar"] ; em seguida, insira o novo nome da política.
+.. Selecione o escopo da política.
+.. Em *Horários* selecioneimage:icon_add.gif["sinal de mais azul seguido da palavra adicionar"] .
+.. Selecione o nome que aparece em *Nome da programação*;
++
+então selecioneimage:icon_dropdown_arrow.gif["seta azul apontando para baixo"] .
+
+.. Selecione o cronograma da política.
+.. Em *Máximo de snapshots*, insira o número máximo de snapshots que você deseja manter do grupo de consistência.
+.. Opcionalmente, em * Rótulo SnapMirror * insira um rótulo SnapMirror .
+.. Selecione *Salvar*.
+
+
+|===
+. Selecione *Editar*.
+
+
+
+
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Saiba mais sobre grupos de consistência ONTAP"^]
+

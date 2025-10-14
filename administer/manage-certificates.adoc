@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-certificates.html 
+keywords: afx, afx system, certificates, pki 
+summary: Dependendo do seu ambiente, você precisará criar e gerenciar certificados digitais como parte da administração do AFX.  Há várias tarefas relacionadas que você pode executar. 
+---
+= Gerenciar certificados em um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dependendo do seu ambiente, você precisará criar e gerenciar certificados digitais como parte da administração do AFX.  Há várias tarefas relacionadas que você pode executar.
+
+
+
+== Gerar uma solicitação de assinatura de certificado
+
+Para começar a usar um certificado digital, você precisa gerar uma solicitação de assinatura de certificado (CSR).  Um CSR é usado para solicitar um certificado assinado de uma autoridade de certificação (CA). Como parte disso, o ONTAP cria um par de chaves pública/privada e inclui a chave pública no CSR.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Em *Segurança* e ao lado de *Certificados*, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"]
+. Selecioneimage:icon_generate_csr.png["retângulo azul contendo um sinal de mais seguido pelas palavras gerar RSC"] .
+. Forneça o nome comum do assunto e o país; opcionalmente, forneça a organização e a unidade organizacional.
+. Para alterar os valores padrão que definirão o certificado, selecioneimage:icon_more_options.png["duas setas voltadas para direções opostas, seguidas das palavras mais opções"] e faça as atualizações desejadas.
+. Selecione *Gerar*.
+
+
+.Resultado
+Você gerou um CSR que pode ser usado para solicitar um certificado de chave pública.
+
+
+
+== Adicionar uma autoridade de certificação confiável
+
+O ONTAP fornece um conjunto padrão de certificados raiz confiáveis ​​para uso com Transport Layer Security (TLS) e outros protocolos.  Você pode adicionar autoridades de certificação confiáveis ​​adicionais conforme necessário.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Em *Segurança* e ao lado de *Certificados*, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"] .
+. Selecione a aba *Autoridades de certificação confiáveis* e então selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça as informações de configuração, incluindo nome, escopo, nome comum, tipo e detalhes do certificado; você pode importar o certificado selecionando *Importar*.
+. Selecione *Adicionar*.
+
+
+.Resultado
+Você adicionou uma autoridade de certificação confiável ao seu sistema AFX.
+
+
+
+== Renovar ou excluir uma autoridade de certificação confiável
+
+Autoridades de certificação confiáveis devem ser renovadas anualmente.  Se você não quiser renovar um certificado expirado, você deve excluí-lo.
+
+.Passos
+. Selecione *Cluster* e depois *Configurações*.
+. Em *Segurança* e ao lado de *Certificados*, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"] .
+. Selecione a aba *Autoridades de certificação confiáveis*.
+. Selecione a autoridade de certificação confiável que você deseja renovar ou excluir.
+. Renovar ou excluir a autoridade de certificação.
++
+[cols="2"]
+|===
+| Para renovar a autoridade de certificação, faça o seguinte: | Para excluir a autoridade de certificação, faça o seguinte: 
+
+
+ a| 
+.. Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] e então selecione *Renovar*.
+.. Insira ou importe as informações do certificado e selecione *Renovar*.
+
+ a| 
+.. Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] e então selecione *Excluir*.
+.. Confirme que deseja excluir e selecione *Excluir*.
+
+
+|===
+
+
+.Resultado
+Você renovou ou excluiu uma autoridade de certificação confiável existente no seu sistema AFX.
+
+
+
+== Adicionar um certificado cliente/servidor ou autoridade de certificação local
+
+Você pode adicionar um certificado cliente/servidor ou uma autoridade de certificação local como parte da ativação de serviços web seguros.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Em *Segurança* e ao lado de *Certificados*, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"] .
+. Selecione *Certificados de cliente/servidor* ou *Autoridades de certificação locais* conforme necessário.
+. Adicione as informações do certificado e selecione *Salvar*.
+
+
+.Resultado
+Você adicionou um novo certificado cliente/servidor ou autoridades locais ao seu sistema AFX.
+
+
+
+== Renovar ou excluir um certificado cliente/servidor ou autoridades de certificação locais
+
+Os certificados de cliente/servidor e as autoridades de certificação locais devem ser renovados anualmente.  Se você não quiser renovar um certificado expirado ou autoridades de certificação locais, você deve excluí-los.
+
+.Passos
+. Selecione *Cluster* e depois *Configurações*.
+. Em *Segurança* e ao lado de Certificados, selecioneimage:icon_arrow.gif["seta azul apontando para a direita"] .
+. Selecione *Certificados de cliente/servidor* ou *Autoridades de certificação locais* conforme necessário.
+. Selecione o certificado que você deseja renovar ou excluir.
+. Renovar ou excluir a autoridade de certificação.
++
+[cols="2"]
+|===
+| Para renovar a autoridade de certificação, faça o seguinte: | Para excluir a autoridade de certificação, faça o seguinte: 
+
+
+ a| 
+.. Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] e então selecione *Renovar*.
+.. Insira ou importe as informações do certificado e selecione *Renovar*.
+
+ a| 
+Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] e então selecione *Excluir*.
+
+|===
+
+
+.Resultado
+Você renovou ou excluiu um certificado cliente/servidor existente ou uma autoridade de certificação local no seu sistema AFX.
+
+
+
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["Gerenciar certificados ONTAP com o System Manager"^]
+

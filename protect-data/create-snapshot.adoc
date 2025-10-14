@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-snapshot.html 
+keywords: afx, afx system, snapshots, create snapshot 
+summary: Para fazer backup de dados no seu sistema AFX, você precisa criar um snapshot.  Você pode criar um snapshot manualmente ou agendá-lo para ser criado automaticamente usando um grupo de consistência. 
+---
+= Crie um snapshot em um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para fazer backup de dados no seu sistema AFX, você precisa criar um snapshot.  Você pode criar um snapshot manualmente ou agendá-lo para ser criado automaticamente usando um grupo de consistência.
+
+
+
+== Antes de começar
+
+Um snapshot é uma cópia local, somente leitura, dos seus dados que você pode usar para restaurar volumes em pontos específicos no tempo.  Os instantâneos podem ser criados manualmente sob demanda ou automaticamente em intervalos regulares com base em umlink:policies-schedules.html["política e programação de snapshot"] .
+
+A política e a programação de snapshots especificam os detalhes, incluindo quando criar os snapshots, quantas cópias reter, como nomeá-los e como rotulá-los para replicação.  Por exemplo, um sistema pode criar um instantâneo todos os dias às 00h10, reter as duas cópias mais recentes, nomeá-las como "diárias" (com um carimbo de data/hora) e rotulá-las como "diárias" para replicação.
+
+.Tipos de instantâneos
+Você pode criar um snapshot sob demanda de um único volume ou de um grupo de consistência.  Você também pode criar instantâneos automatizados de um grupo de consistência contendo vários volumes.  No entanto, você não pode criar instantâneos automatizados de um único volume.
+
+* Snapshots sob demanda
++
+Você pode criar um instantâneo sob demanda de um volume a qualquer momento.  O volume não precisa ser membro de um grupo de consistência para ser protegido por um snapshot sob demanda.  Se você criar um instantâneo de um volume que é membro de um grupo de consistência, os outros volumes no grupo de consistência não serão incluídos no instantâneo.  Quando você cria um snapshot sob demanda de um grupo de consistência, todos os volumes no grupo de consistência são incluídos.
+
+* Snapshots automatizados
++
+Snapshots automatizados são criados com base nas definições de política de snapshot.  Para aplicar uma política de snapshot a um volume para criação automatizada de snapshots, os volumes precisam ser membros do mesmo grupo de consistência.  Se você aplicar uma política de snapshot a um grupo de consistência, todos os volumes no grupo de consistência serão protegidos.
+
+
+
+
+
+== Criar um instantâneo
+
+Crie um instantâneo de um volume ou grupo de consistência.
+
+[role="tabbed-block"]
+====
+.Instantâneo de um grupo de consistência
+--
+.Passos
+. No Gerenciador do Sistema, selecione *Proteção* e depois *Grupos de consistência*.
+. Passe o mouse sobre o nome do grupo de consistência que você deseja proteger.
+. Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] ; então selecione *Proteger*.
+. Se você quiser criar um snapshot imediato sob demanda, em *Proteção local*, selecione *Adicionar um snapshot agora*.
++
+A proteção local cria o snapshot no mesmo cluster que contém o volume.
+
++
+.. Digite um nome para o instantâneo ou aceite o nome padrão; em seguida, opcionalmente, insira um rótulo SnapMirror .
++
+O rótulo SnapMirror é usado pelo destino remoto.
+
+
+
+. Se você quiser criar snapshots automatizados usando uma política de snapshots, selecione *Agendar snapshots*.
++
+.. Selecione uma política de instantâneo.
++
+Aceite a política de instantâneo padrão, selecione uma política existente ou crie uma nova política.
+
++
+[cols="2,6a"]
+|===
+| Opção | Passos 
+
+
+| Selecione uma política de instantâneo existente  a| 
+Selecioneimage:icon_dropdown_arrow.gif["seta azul apontando para baixo"] ao lado da política padrão; em seguida, selecione a política existente que você deseja usar.
+
+
+
+| Criar uma nova política de snapshot  a| 
+... Selecioneimage:icon_add.gif["sinal de mais azul seguido da palavra adicionar"] ; em seguida, insira os parâmetros da política de instantâneo.
+... Selecione *Adicionar política*.
+
+
+|===
+
+
+. Se você quiser replicar seus instantâneos para um cluster remoto, em *Proteção remota*, selecione *Replicar para um cluster remoto*.
++
+.. Selecione o cluster de origem e a VM de armazenamento; em seguida, selecione a política de replicação.
++
+A transferência inicial de dados para replicação começa imediatamente por padrão.
+
+
+
+. Selecione *Salvar*.
+
+
+--
+.Instantâneo de um volume
+--
+.Passos
+. No Gerenciador do Sistema, selecione *Armazenamento* e depois *Volumes*.
+. Passe o mouse sobre o nome do volume que você deseja proteger.
+. Selecioneimage:icon_kabob.gif["três pontos azuis verticais"] ; então selecione *Proteger*.  Se você quiser criar um snapshot imediato sob demanda, em *Proteção local*, selecione *Adicionar um snapshot agora*.
++
+A proteção local cria o snapshot no mesmo cluster que contém o volume.
+
+. Digite um nome para o instantâneo ou aceite o nome padrão; em seguida, opcionalmente, insira um rótulo SnapMirror .
++
+O rótulo SnapMirror é usado pelo destino remoto.
+
+. Se você quiser criar snapshots automatizados usando uma política de snapshots, selecione *Agendar snapshots*.
++
+.. Selecione uma política de instantâneo.
++
+Aceite a política de instantâneo padrão, selecione uma política existente ou crie uma nova política.
+
++
+[cols="2,6a"]
+|===
+| Opção | Passos 
+
+
+| Selecione uma política de instantâneo existente  a| 
+Selecioneimage:icon_dropdown_arrow.gif["seta azul apontando para baixo"] ao lado da política padrão; em seguida, selecione a política existente que você deseja usar.
+
+
+
+| Criar uma nova política de snapshot  a| 
+... Selecioneimage:icon_add.gif["sinal de mais azul seguido da palavra adicionar"] ; em seguida, insira os parâmetros da política de instantâneo.
+... Selecione *Adicionar política*.
+
+
+|===
+
+
+. Se você quiser replicar seus instantâneos para um cluster remoto, em *Proteção remota*, selecione *Replicar para um cluster remoto*.
++
+.. Selecione o cluster de origem e a VM de armazenamento; em seguida, selecione a política de replicação.
++
+A transferência inicial de dados para replicação começa imediatamente por padrão.
+
+
+
+. Selecione *Salvar*.
+
+
+--
+====
+
+
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Criar uma política de snapshot do ONTAP"^]
+

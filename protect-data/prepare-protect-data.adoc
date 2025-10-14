@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: protect-data/prepare-protect-data.html 
+keywords: afx, afx system, prepare, prepare protect, prepare protect data 
+summary: Antes de proteger seus dados AFX, você deve estar familiarizado com alguns dos principais conceitos e o status atual do seu armazenamento. 
+---
+= Prepare-se para proteger os dados do seu sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de proteger seus dados da AFX, você deve estar familiarizado com alguns dos principais conceitos e recursos.
+
+
+TIP: Como muitos dos conceitos e procedimentos de administração disponíveis nos sistemas AFF e FAS são os mesmos dos sistemas de armazenamento AFX, pode ser útil revisar a documentação do Unified ONTAP .
+
+
+
+== Terminologia e opções
+
+Há vários termos relacionados à proteção de dados da AFX com os quais você deve estar familiarizado.
+
+Instantâneo:: Um instantâneo é uma imagem somente leitura de um volume em um determinado momento.  É uma tecnologia fundamental para os serviços de replicação e proteção de dados da ONTAP.
+Grupo de consistência:: Um grupo de consistência é uma coleção de volumes que são gerenciados como uma única unidade.  Você pode criar grupos de consistência para simplificar o gerenciamento de armazenamento e a proteção de dados para cargas de trabalho de aplicativos.  Por exemplo, você pode fazer um snapshot de vários volumes em uma operação usando o grupo de consistência em vez dos volumes individuais.
+Grupo de consistência hierárquica:: Grupos de consistência hierárquicos foram introduzidos com o ONTAP 9.16.1 e estão disponíveis com o AFX.  Com uma estrutura hierárquica, um ou mais grupos de consistência podem ser configurados como filhos de um pai.  Esses grupos hierárquicos permitem que você aplique políticas de snapshot individuais a grupos de consistência filhos e replique os snapshots de todos os filhos em um cluster remoto como uma única unidade, replicando o pai.
+SnapLock:: SnapLock é um recurso ONTAP que permite proteger seus arquivos movendo-os para um estado WORM (gravação única, leitura múltipla).  Isso impede modificação ou exclusão por um período de retenção especificado.  Os volumes SnapLock criados não podem ser convertidos de volumes não SnapLock após a criação com base na retenção.
+
+
+
+
+== Informações relacionadas
+
+* link:../administer/additional-ontap-svm.html["Administração adicional do AFX SVM"]
+* link:../get-started/prepare-cluster-admin.html["Prepare-se para administrar seu sistema AFX"]
+

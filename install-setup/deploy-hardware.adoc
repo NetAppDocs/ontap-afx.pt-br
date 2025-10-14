@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: install-setup/deploy-hardware.html 
+keywords: afx, afx 1k, install, setup, hardware, deploy 
+summary: Aprenda a instalar os kits de trilhos para o sistema de armazenamento AFX 1K e prateleiras de armazenamento, e a fixar o hardware AFX no gabinete ou rack de telecomunicações. 
+---
+= Instale seu sistema de armazenamento AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de instalar os switches, você deve instalar o hardware do seu sistema de armazenamento AFX 1K.  Primeiro, instale os kits de trilhos.  Em seguida, instale e proteja seu sistema de armazenamento em um gabinete ou rack de telecomunicações.
+
+.Antes de começar
+* Certifique-se de ter as instruções embaladas com o kit de trilhos.
+* Entenda as preocupações de segurança relacionadas ao peso do sistema de armazenamento e da prateleira de armazenamento.
+* Entenda que o fluxo de ar através do sistema de armazenamento entra pela frente, onde a moldura ou as tampas das extremidades estão instaladas, e sai pela parte traseira, onde as portas estão localizadas.
+
+
+.Passos
+. Instale os kits de trilhos para seu sistema de armazenamento e prateleiras de armazenamento, conforme necessário, usando as instruções incluídas nos kits.
+. Instale e fixe seu controlador no gabinete ou no rack da empresa de telecomunicações:
++
+.. Posicione o sistema de armazenamento nos trilhos no meio do gabinete ou do rack de telecomunicações e, em seguida, apoie o sistema de armazenamento pela parte inferior e deslize-o para o lugar.
+.. Fixe o sistema de armazenamento ao gabinete ou rack de telecomunicações usando os parafusos de montagem incluídos.
+
+
+. Fixe a moldura na parte frontal do controle.
+. Se o seu sistema de armazenamento AFX 1K veio com um dispositivo de gerenciamento de cabos, conecte-o à parte traseira do sistema de armazenamento.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Instalar dispositivo de gerenciamento de cabos]
+
+. Instale e fixe a prateleira de armazenamento:
++
+.. Posicione a parte traseira da prateleira de armazenamento sobre os trilhos, apoie a prateleira pela parte inferior e deslize-a para dentro do gabinete ou rack de telecomunicações.
++
+Em geral, prateleiras de armazenamento e controladores devem ser instalados próximos aos interruptores.  Se você estiver instalando várias prateleiras de armazenamento, coloque a primeira prateleira de armazenamento diretamente acima dos controladores.  Coloque a segunda prateleira de armazenamento diretamente sob os controladores.  Repita esse padrão para quaisquer prateleiras de armazenamento adicionais.
+
+.. Fixe a prateleira de armazenamento ao gabinete ou rack de telecomunicações usando os parafusos de montagem incluídos.
+
+
+
+
+.O que vem a seguir?
+Depois de instalar o hardware do seu sistema AFX, revise olink:afx-cable-overview.html["configurações de cabeamento suportadas para seu sistema de armazenamento AFX 1K"] .

@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: manage-data/monitor-debug-storage.html 
+keywords: afx, afx system, monitor, troubleshoot, debug 
+summary:  
+---
+= Monitorar e solucionar problemas de um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O sistema AFX inclui várias opções para monitorar o armazenamento que cada cluster gerencia.
+
+
+
+== Exibir clientes NAS
+
+Você pode exibir uma lista dos clientes NFS e SMB/CIFS atualmente conectados ao cluster AFX.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Clientes* no painel de navegação.
+. Selecione a aba *NFS* ou *SMB/CIFS* conforme desejado.
+. Personalize a exibição, bem como pesquise e baixe as informações do cliente conforme necessário.
+
+
+
+
+== Informações relacionadas
+
+* link:../manage-data/prepare-manage-data.html["Prepare-se para gerenciar seus dados AFX"]
+

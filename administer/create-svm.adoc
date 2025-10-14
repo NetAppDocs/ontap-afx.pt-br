@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: administer/create-svm.html 
+keywords: afx, afx system, svm, create svm 
+summary: Você pode criar uma SVM para fornecer isolamento e melhorar a segurança.  Você pode fazer isso para diferentes grupos ou projetos dentro da sua organização. 
+---
+= Crie um sistema de armazenamento AFX SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criar uma SVM para fornecer isolamento e melhorar a segurança.  Você pode fazer isso para diferentes grupos ou projetos dentro da sua organização.
+
+.Sobre esta tarefa
+Ao criar um SVM, você deve fornecer um nome e configurar pelo menos um protocolo para acesso do cliente.  Depois de selecionar um protocolo de cliente, você também será solicitado a informar a configuração de rede.  Você pode alterar a configuração do SVM conforme necessário após sua criação.
+
+.Antes de começar
+Você precisará do seguinte:
+
+* No mínimo quatro endereços IP
+* Nome de um IPspace
+
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *VMs de Armazenamento*.
+. Selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] .
+. Forneça um nome para o SVM.
+. Selecione um protocolo para acesso do cliente e forneça os detalhes de configuração conforme apropriado.
+. Adicione interfaces de rede para o SVM, incluindo os endereços IP e a máscara de sub-rede.
+. Em *Administração de VM de armazenamento*, opcionalmente:
++
+.. Habilite uma capacidade máxima e selecione um valor
+.. Gerenciar uma conta de administrador para o SVM
+
+
+. Selecione *Salvar*.
+
+
+.Informações relacionadas
+* link:../administer/configure-svm.html["Configurar um SVM do sistema AFX"]
+* link:../administer/manage-cluster-networking.html["Gerenciar a rede do cluster do sistema AFX"]
+

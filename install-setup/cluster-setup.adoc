@@ -1,0 +1,109 @@
+---
+sidebar: sidebar 
+permalink: install-setup/cluster-setup.html 
+keywords: afx, afx system, cluster setup, setup 
+summary: Depois que seu hardware AFX for instalado, você poderá concluir a configuração do cluster.  Este processo envolve duas fases de configuração relacionadas que você precisa executar sequencialmente. 
+---
+= Configure seu cluster ONTAP do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois que seu hardware AFX for instalado, você poderá concluir a configuração do cluster ONTAP .  Este processo envolve duas fases de configuração relacionadas que você precisa executar sequencialmente.
+
+
+
+== Executar configuração inicial do cluster
+
+Você pode conectar seu dispositivo laptop ao cluster AFX e definir vários valores de configuração global.
+
+.Sobre esta tarefa
+Há quatro áreas do cluster AFX que devem ser configuradas inicialmente.  Os três primeiros são obrigatórios, enquanto o último é opcional.
+
+.Antes de começar
+Você precisa ter as seguintes informações:
+
+* Endereço IP de gerenciamento de cluster
++
+O endereço IP de gerenciamento do cluster é um endereço IPv4 exclusivo para a interface de gerenciamento do cluster usado pelo administrador do cluster para acessar o SVM do administrador e gerenciar o cluster.  Você pode obter esse endereço IP com o administrador responsável por atribuir endereços IP na sua organização.
+
+* Máscara de sub-rede de rede
++
+Durante a configuração do cluster, o ONTAP requer um conjunto de interfaces de rede apropriadas para sua configuração.  Você pode ajustar a recomendação se necessário.
+
+
+
+Você também precisará do seguinte:
+
+* Endereço IP do gateway de rede
+* Nomes de domínio DNS
+* Endereços IP do servidor de nomes DNS
+* Endereços IP do servidor NTP
+* Máscara de sub-rede de dados
+
+
+.Passos
+. Descubra sua rede de cluster.
++
+.. Conecte seu laptop ao switch de gerenciamento e acesse os computadores e dispositivos da rede.
+.. Abra o Explorador de Arquivos.
+.. Selecione *Rede*; clique com o botão direito e selecione *Atualizar*.
+.. Selecione o ícone ONTAP e aceite quaisquer certificados exibidos na tela.
++
+A interface do usuário do Gerenciador do Sistema é exibida.
+
+
+
+. Defina a senha do administrador.
++
+Forneça e verifique a senha para o `admin` conta. Selecione *Continuar*.
+
+. Configure os endereços IP para os nós do cluster e do controlador.
++
+Forneça endereços IP e máscaras de sub-rede.
+
+. Configurar os serviços de rede. Selecione *Continuar*.
++
+Defina os detalhes dos seus servidores DNS e NTP.
+
+. Opcionalmente, configure a criptografia.
++
+Você pode definir os detalhes para criptografia de cluster. Selecione *Continuar*.
+
+
+
+.O que vem a seguir
+Você será redirecionado para a página de login do Gerenciador de Sistema.  Execute os passos descritos em<<Configuração completa do cluster>> .
+
+
+
+== Configuração completa do cluster
+
+Após a configuração inicial ser realizada, você pode concluir a configuração do cluster ONTAP usando o Gerenciador do Sistema.
+
+.Sobre esta tarefa
+Há três áreas do cluster ONTAP do sistema AFX configuradas durante a instalação.  Complete todos os três, se possível, mas somente o primeiro é necessário.
+
+.Antes de começar
+Você precisa ter as seguintes informações:
+
+* Detalhes de configuração da VLAN.
+* Detalhes de configuração do NAS e/ou S3.
+
+
+.Passos
+. Sign in no Gerenciador do Sistema usando a conta de administrador fornecida durante a configuração inicial do cluster.  Observe a janela pop-up no canto superior direito com três opções de configuração.
+. Selecione *VLAN e marcação* e selecione as opções de rede apropriadas para seu ambiente.
+. Selecione *Serviços de rede* e configure os protocolos de acesso do cliente para o SVM de dados padrão.
+. Selecione *Contêiner de dados* e crie um volume ou bucket S3.
+
+
+.O que vem a seguir
+Você develink:../get-started/prepare-cluster-admin.html["Prepare-se para administrar o AFX"] antes de usar seu cluster AFX em um ambiente de produção.
+
+.Informações relacionadas
+* link:../administer/configure-svm.html["Configurar um SVM de dados AFX"]
+* link:../get-started/prepare-cluster-admin.html["Prepare-se para administrar o AFX"]
+

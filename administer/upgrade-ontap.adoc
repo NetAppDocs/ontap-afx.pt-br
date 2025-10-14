@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: administer/upgrade-ontap.html 
+keywords: afx, afx system, upgrade, upgrade ontap 
+summary: Ao atualizar seu software ONTAP no seu sistema AFX, você pode aproveitar os novos e aprimorados recursos do ONTAP que podem ajudar a reduzir custos, acelerar cargas de trabalho críticas, melhorar a segurança e expandir o escopo de proteção de dados disponível para sua organização. 
+---
+= Atualizar o ONTAP em um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao atualizar seu software ONTAP no seu sistema AFX, você pode aproveitar os novos e aprimorados recursos do ONTAP que podem ajudar a reduzir custos, acelerar cargas de trabalho críticas, melhorar a segurança e expandir o escopo de proteção de dados disponível para sua organização.
+
+As atualizações de software ONTAP para sistemas de armazenamento AFX seguem o mesmo processo de atualizações para outros sistemas ONTAP .  Se você tiver um contrato ativo do SupportEdge para o Active IQ Digital Advisor (também conhecido como Digital Advisor), você develink:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["prepare-se para atualizar com o Upgrade Advisor"^] .  O Upgrade Advisor fornece inteligência que ajuda você a minimizar a incerteza e o risco avaliando seu cluster e criando um plano de atualização específico para sua configuração.  Se você não tiver um contrato ativo do SupportEdge para o Active IQ Digital Advisor, você develink:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["prepare-se para atualizar sem o Upgrade Advisor"^] .
+
+Depois de se preparar para a atualização, é recomendável que você execute as atualizações usandolink:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["atualização automatizada não disruptiva (ANDU) do System Manager"] .  O ANDU aproveita a tecnologia de failover de alta disponibilidade (HA) do ONTAP para garantir que os clusters continuem a fornecer dados sem interrupção durante a atualização.
+
+.Informações relacionadas
+* https://docs.netapp.com/us-en/ontap/upgrade/index.html["Saiba mais sobre a atualização do ONTAP"^] .
+

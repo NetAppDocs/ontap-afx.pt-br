@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-ethernet-ports.html 
+keywords: afx, afx system, ethernet, ethernet ports 
+summary: As portas usadas pelo sistema AFX fornecem uma base para conectividade e comunicação de rede.  Há várias opções de configuração disponíveis para personalizar o aspecto da camada dois da sua rede. 
+---
+= Gerenciar portas Ethernet do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As portas usadas pelo sistema AFX fornecem uma base para conectividade e comunicação de rede.  Há várias opções disponíveis para personalizar a configuração da camada dois da sua rede.
+
+
+
+== Criar um VLAN
+
+Uma VLAN consiste em portas de switch agrupadas em um domínio de broadcast.  As VLANs permitem aumentar a segurança, isolar possíveis problemas e limitar os caminhos disponíveis dentro da sua infraestrutura de rede IP.
+
+.Antes de começar
+Os switches implantados na rede devem estar em conformidade com os padrões IEEE 802.1Q ou ter uma implementação de VLANs específica do fornecedor.
+
+.Sobre esta tarefa
+Observe o seguinte:
+
+* Não é possível criar uma VLAN em uma porta de grupo de interface sem nenhuma porta membro.
+* Quando você configura uma VLAN em uma porta pela primeira vez, a porta pode ficar inativa, resultando em uma desconexão temporária da rede.  Adições subsequentes de VLAN à mesma porta não afetam o estado da porta.
+* Você não deve criar uma VLAN em uma interface de rede com o mesmo identificador da VLAN nativa do switch.  Por exemplo, se a interface de rede e0b estiver na VLAN nativa 10, você não deverá criar uma VLAN e0b-10 nessa interface.
+
+
+.Passos
+. No Gerenciador do Sistema, selecione *Rede* e depois *Portas Ethernet*.
+. Selecioneimage:icon_vlan.png["um sinal de mais azul seguido pela palavra vlan"] .
+. Forneça os detalhes de configuração, incluindo o ID, o domínio de transmissão e as portas nos nós desejados.
++
+A VLAN não pode ser anexada a uma porta que hospeda um LIF de cluster ou a portas atribuídas ao IPspace do cluster.
+
+. Selecione *Salvar*.
+
+
+.Resultado
+Você criou uma VLAN para aumentar a segurança, isolar problemas e limitar os caminhos disponíveis na sua infraestrutura de rede IP.
+
+
+
+== Criar um LAG
+
+Um grupo de agregados de links (LAG) é uma técnica que combina várias conexões de rede física em uma única conexão lógica.  Você pode usá-lo para aumentar a largura de banda e fornecer redundância entre nós.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Rede* e depois *Portas Ethernet*.
+. Selecione *Vincular grupo agregado*.
+. Forneça os detalhes da configuração, incluindo o nó, o domínio de transmissão, as portas, o modo e a distribuição de carga.
+. Selecione *Salvar*.
+
+
+
+
+== Informações relacionadas
+
+* link:../administer/manage-cluster-networking.html["Gerenciar rede de cluster AFX"]
+* https://docs.netapp.com/us-en/ontap/networking/configure_network_ports_cluster_administrators_only_overview.html["Saiba mais sobre a configuração da porta de rede ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["Combine portas físicas para criar grupos de interface ONTAP"^]
+

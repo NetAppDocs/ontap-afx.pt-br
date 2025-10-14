@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: learn-more/additional-resources.html 
+keywords: afx, afx system, learn more, additional resources 
+summary: Há recursos adicionais que você pode acessar para ajudar a administrar e dar suporte ao AFX, bem como aprender mais sobre o ONTAP e os produtos e serviços relacionados da NetApp . 
+---
+= Recursos adicionais para sistemas de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Há recursos adicionais que você pode acessar para ajudar a administrar e dar suporte ao AFX, bem como aprender mais sobre o ONTAP e os produtos e serviços relacionados da NetApp .
+
+
+
+== Documentação do ONTAP
+
+* https://docs.netapp.com/us-en/ontap/["ONTAP unificado"^]
+* https://docs.netapp.com/us-en/asa-r2/["ASA r2"^]
+* https://docs.netapp.com/us-en/ontap-automation/["Automação ONTAP"^]
+* https://docs.netapp.com/us-en/ontap-family["Família ONTAP"^]
+
+
+
+
+== Suporte NetApp
+
+* https://mysupport.netapp.com/["Site de suporte da NetApp"^]
+* https://kb.netapp.com/["Base de conhecimento da NetApp"]
+

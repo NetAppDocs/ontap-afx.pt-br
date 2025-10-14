@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: administer/submit-view-case.html 
+keywords: afx, afx system, support, support case 
+summary: Se você tiver um problema que exija assistência, você pode usar o ONTAP System Manager para enviar um caso ao suporte técnico.  Você também pode usar o ONTAP System Manager para visualizar casos em andamento ou encerrados. 
+---
+= Enviar e visualizar casos de suporte para um sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você tiver um problema que exija assistência, você pode usar o ONTAP System Manager para enviar um caso ao suporte técnico.  Você também pode usar o ONTAP System Manager para visualizar casos em andamento ou encerrados.
+
+.Antes de começar
+Você precisa serlink:https://activeiq-link.netapp.com/["registrado no Active IQ"] para visualizar casos de suporte para seu sistema de armazenamento AFX.
+
+.Passos
+. Para criar e enviar um novo caso de suporte, no Gerenciador do Sistema, selecione:
++
+.. *Cluster* e depois *Suporte*
+.. *Acesse o Suporte da NetApp *
+
+
+. Para visualizar um caso enviado anteriormente, no Gerenciador do Sistema, selecione:
++
+.. *Cluster* e depois *Suporte*
+.. *Veja meus casos*
+
+
+
+
+.Informações relacionadas
+* https://docs.netapp.com/us-en/ontap/task_admin_view_submit_support_cases.html["Visualize e envie casos de suporte com o ONTAP System Manager"^]
+

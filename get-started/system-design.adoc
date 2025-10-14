@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: get-started/system-design.html 
+keywords: afx, afx system, characteristics, design 
+summary: O sistema de armazenamento NetApp AFX tem diversas características que permitem que ele opere como uma plataforma NAS de alto desempenho. 
+---
+= Características do sistema de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O sistema de armazenamento NetApp AFX tem diversas características que permitem que ele opere como uma plataforma NAS de alto desempenho.
+
+Desvincule os recursos de armazenamento e computação:: Ao contrário dos sistemas de armazenamento AFF e FAS , os elementos de armazenamento e computação AFX do cluster são desacoplados.  Os controladores AFX não estão restritos a acessar um conjunto limitado de discos locais.
+Remoção de gerenciamento de agregados e RAID:: O administrador de armazenamento não precisa mais gerenciar os agregados e grupos RAID.  A AFX lida com essas tarefas, o que simplifica a administração e oferece uma oportunidade para que não especialistas gerenciem seus dados.
+Pool de armazenamento único para o cluster:: A dissociação da computação e do armazenamento do AFX, juntamente com o gerenciamento simplificado do armazenamento, resulta em um único pool de armazenamento.  Esta Zona de Disponibilidade de Armazenamento (SAZ) está disponível para todos os nós controladores em um cluster AFX. Verlink:../faq-ontap-afx.html["Perguntas frequentes sobre sistemas de armazenamento AFX"] para mais detalhes.
+Alto desempenho:: O AFX foi criado para o alto desempenho necessário para aplicativos especializados de IA/ML.  Ele pode fazer uso mais eficiente de hardware moderno para fornecer largura de banda alta e sustentada com latência ultrabaixa.
+Simplicidade operacional:: O pool de armazenamento único, juntamente com outros recursos, incluindo gerenciamento automático de armazenamento, fornece um modelo administrativo e operacional muito mais simples.
+Escalabilidade:: O conjunto de nós controladores e prateleiras de armazenamento em um cluster pode ser expandido de forma independente com base nas necessidades da aplicação.  Há requisitos administrativos limitados e interrupções ao adicionar controladores ou prateleiras.
+Melhor mobilidade de dados:: Os volumes podem ser movidos entre os nós do controlador de cluster sem interrupções, sem realmente copiar dados.  Em vez disso, os ponteiros de diretório e índice de metadados são atualizados.  Isso melhora drasticamente o desempenho durante procedimentos administrativos típicos, bem como a recuperação em cenários de falha.
+

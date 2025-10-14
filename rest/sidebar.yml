@@ -1,0 +1,10 @@
+---
+section: rest
+title: Use a API REST
+entries:
+- title: Saiba mais sobre a API REST
+  url: "/rest/learn-rest-api.html"
+- title: Sua primeira chamada de API REST
+  url: "/rest/first-call.html"
+- title: Referência da API REST
+  url: "/rest/api-reference.html"

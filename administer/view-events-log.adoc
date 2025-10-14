@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: administer/view-events-log.html 
+keywords: afx, afx system, events, audit log 
+summary: Você pode revisar os eventos e mensagens de log de auditoria gerados pelo AFX para rastrear o processamento interno e diagnosticar possíveis problemas.  O sistema AFX pode ser configurado para encaminhar essas informações, juntamente com outros dados relacionados, para processamento e arquivamento adicionais. 
+---
+= Visualizar eventos do sistema de armazenamento AFX e log de auditoria
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode revisar os eventos e mensagens de log de auditoria gerados pelo AFX para rastrear o processamento interno e diagnosticar possíveis problemas.  O sistema AFX pode ser configurado para encaminhar essas informações, juntamente com outros dados relacionados, para processamento e arquivamento adicionais.
+
+
+
+== Eventos
+
+As mensagens de eventos fornecem um registro valioso da atividade do sistema.  Cada evento inclui uma descrição e um identificador exclusivo, juntamente com uma ação recomendada.
+
+. No Gerenciador do Sistema, selecione *Eventos e trabalhos* e depois *Eventos*.
+. Revise e responda às ações recomendadas no topo da página, como habilitar a atualização automática.
+. Selecione a aba *Registro de eventos* para exibir uma lista de mensagens.
+. Selecione uma mensagem de evento para examiná-la com mais detalhes, incluindo o número de sequência, a descrição, o evento e a ação recomendada.
+. Opcionalmente, selecione a aba * Sugestões do Active IQ * e registre-se no Active IQ para obter informações detalhadas sobre riscos para o cluster.
+
+
+
+
+== Registro de auditoria
+
+O log de auditoria inclui um registro da atividade do sistema com base no uso de protocolos de acesso, como HTTP.
+
+. No Gerenciador do Sistema, selecione *Eventos e trabalhos* e depois *Registros de auditoria*.
+. Selecione *Configurações* para habilitar ou desabilitar as operações que são rastreadas.
+. Opcionalmente, selecione *Gerenciar destinos de auditoria*; revisar<<Gerenciar notificações>> para mais informações.
+
+
+
+
+== Gerenciar notificações
+
+Há vários tipos de notificações suportadas pelo AFX que você pode encaminhar.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Cluster* e depois *Configurações*.
+. Navegue até *Gerenciamento de notificações* e selecioneimage:icon_kabob.gif["três pontos azuis verticais"] .
+. Selecione a ação apropriada para visualizar ou configurar os destinos usados pelo AFX.  Por exemplo, para configurar:
++
+.. _Destinos do evento:_ selecione *Ver destinos do evento*
+.. _Destinos do log de auditoria:_ selecione *Exibir destinos de auditoria*
+
+
+. Selecioneimage:icon_add_blue_bg.png["retângulo azul contendo um sinal de mais seguido pela palavra adicionar em letras brancas"] conforme apropriado e forneça as informações de destino.
+. Selecione *Salvar*.
+
+
+.Informações relacionadas
+* https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoramento de eventos, desempenho e saúde do ONTAP"^]
+
