@@ -14,7 +14,7 @@ summary: Antes de proteger seus dados AFX, você deve estar familiarizado com al
 Antes de proteger seus dados da AFX, você deve estar familiarizado com alguns dos principais conceitos e recursos.
 
 
-TIP: Como muitos dos conceitos e procedimentos de administração disponíveis nos sistemas AFF e FAS são os mesmos dos sistemas de armazenamento AFX, pode ser útil revisar a documentação do Unified ONTAP .
+TIP: Como muitos dos conceitos e procedimentos de administração disponíveis nos sistemas AFF e FAS são os mesmos dos sistemas de armazenamento AFX, é necessário revisar a documentação do Unified ONTAP para https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["Proteção de dados e recuperação de desastres"^] pode ser útil.
 
 
 
@@ -27,6 +27,15 @@ Grupo de consistência:: Um grupo de consistência é uma coleção de volumes q
 Grupo de consistência hierárquica:: Grupos de consistência hierárquicos foram introduzidos com o ONTAP 9.16.1 e estão disponíveis com o AFX.  Com uma estrutura hierárquica, um ou mais grupos de consistência podem ser configurados como filhos de um pai.  Esses grupos hierárquicos permitem que você aplique políticas de snapshot individuais a grupos de consistência filhos e replique os snapshots de todos os filhos em um cluster remoto como uma única unidade, replicando o pai.
 SnapLock:: SnapLock é um recurso ONTAP que permite proteger seus arquivos movendo-os para um estado WORM (gravação única, leitura múltipla).  Isso impede modificação ou exclusão por um período de retenção especificado.  Os volumes SnapLock criados não podem ser convertidos de volumes não SnapLock após a criação com base na retenção.
 
+
+
+
+== Limitações de proteção de dados da AFX
+
+Você deve estar ciente dos limites e restrições de proteção de dados ONTAP impostos pelo sistema de armazenamento AFX.
+
+.SnapMirror síncrono (SM-S)
+Há uma limitação de escala ao usar o SM-S. Você pode ter no máximo 400 relacionamentos em um único cluster do sistema AFX.
 
 
 

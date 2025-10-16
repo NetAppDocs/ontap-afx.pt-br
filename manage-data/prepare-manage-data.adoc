@@ -29,6 +29,13 @@ Balde S3:: Um bucket S3 é um contêiner de armazenamento que contém objetos ou
 Recipiente de dados:: No contexto de um sistema AFX, um contêiner de dados é um termo genérico e pode ser um volume ou um bucket S3.
 Qtree:: Uma qtree é uma subdivisão lógica dentro de um volume que você pode criar para gerenciar e organizar dados.  Ele permite que você especifique suas propriedades e estilo de segurança (NTFS ou UNIX) e pode herdar políticas de exportação de seu volume pai ou ter suas próprias.  Qtrees podem conter arquivos e diretórios e geralmente são usados para gerenciar permissões e cotas de forma mais granular dentro de um volume.
 Contingente:: Uma cota no ONTAP é um limite definido na quantidade de espaço de armazenamento ou número de arquivos que podem ser usados ​​por um usuário, grupo ou qtree.  Cotas são usadas para gerenciar e controlar o uso de recursos em um sistema de armazenamento, garantindo que nenhum usuário ou aplicativo possa consumir uma quantidade excessiva de recursos.
+Tronco NFS:: O trunking NFS é uma tecnologia que permite que clientes NFS v4.1 abram várias conexões com diferentes LIFs no servidor NFS. Isso aumenta a velocidade de transferência de dados e fornece resiliência por meio de vários caminhos ao exportar volumes FlexVol para clientes com capacidade de entroncamento.
++
+--
+Para habilitar o trunking, você precisa ter um SVM configurado para NFS e o NFSv4.1 deve estar habilitado. Também requer a remontagem de todos os clientes NFSv4.x após uma alteração de configuração, o que pode ser prejudicial. Os procedimentos de suporte e configuração para entroncamento NFS são os mesmos para todos os sistemas ONTAP . Saiba mais sobre https://docs.netapp.com/us-en/ontap/nfs-trunking/index.html["Tronco NFS"^]
+
+--
+Análise do sistema de arquivos:: O File System Analytics (FSA) é um recurso do ONTAP que fornece visibilidade em tempo real sobre o uso de arquivos e tendências de capacidade de armazenamento em volumes FlexGroup ou FlexVol . Ele elimina a necessidade de ferramentas externas, oferecendo insights sobre utilização de armazenamento e oportunidades de otimização. O FSA fornece visualizações detalhadas em vários níveis da hierarquia do sistema de arquivos de um volume, incluindo os níveis de SVM, volume, diretório e arquivo.
 
 
 
@@ -39,44 +46,28 @@ Existem várias opções de migração de dados.  O foco está na migração de 
 
 
 
-=== Migrando dados do Unified ONTAP
+=== Migração de dados de sistemas AFF ou FAS
 
-Um caminho de migração totalmente integrado do Unified ONTAP para o AFX está disponível usando as seguintes tecnologias:
+Um caminho de migração totalmente integrado dos sistemas AFF ou FAS (que executam a personalidade Unified ONTAP ) para o AFX está disponível usando as seguintes tecnologias:
 
 * SnapMirror
 * Migração SVM
 * SVM DR
 
 
-Além disso, os volumes FlexCache podem ser anexados entre o AFX e o Unified ONTAP em qualquer direção.
+Além disso, os volumes FlexCache podem ser anexados entre sistemas AFX e AFF ou FAS em qualquer direção.
 
 
 
 === Migrando dados de uma fonte não ONTAP
 
-A migração de dados de sistemas não ONTAP pode ser realizada usando operações de cópia em nível de arquivo.  Utilitários de cópia rápida, como XCP ou CloudSync, podem ser usados, bem como utilitários padrão, como RoboCopy (para SMB) e rsync (para NFS), bem como ferramentas de terceiros, como DataDobi.
+A migração de dados de sistemas não ONTAP pode ser realizada usando operações de cópia em nível de arquivo. Utilitários de cópia rápida, como https://docs.netapp.com/us-en/xcp/["XCP"^] pode ser usado tanto como utilitários padrão como RoboCopy (para SMB) e rsync (para NFS), quanto ferramentas de terceiros como DataDobi.
 
 
 
 === Limitações de migração
 
-Os sistemas Unified ONTAP existentes podem ser replicados para o AFX se o volume de dados não contiver LUNs ou namespaces NVMe.  Ao replicar para um sistema Unified ONTAP , a versão mínima suportada para o sistema Unified ONTAP é 9.16.1.  Esta é a primeira versão do Unified ONTAP que oferece suporte ao Balanceamento de Capacidade Avançado.
-
-
-
-== Suporte AFX para entroncamento NFS
-
-O trunking NFS é uma tecnologia que permite que clientes NFS v4.1 abram várias conexões com diferentes LIFs no servidor NFS.  Isso aumenta a velocidade de transferência de dados e fornece resiliência por meio de múltiplos caminhos.  O trunking é benéfico para exportar volumes FlexVol para clientes com capacidade de trunking.
-
-Para habilitar o trunking, você precisa ter um SVM configurado para NFS e o NFSv4.1 deve estar habilitado.  Também requer a remontagem de todos os clientes NFSv4.x após uma alteração de configuração, o que pode ser prejudicial.
-
-
-
-== Análise do sistema de arquivos
-
-O File System Analytics (FSA) é um recurso do ONTAP que fornece visibilidade em tempo real sobre o uso de arquivos e tendências de capacidade de armazenamento em volumes FlexGroup ou FlexVol .
-
-O FSA elimina a necessidade de ferramentas externas ao oferecer insights sobre utilização de armazenamento e oportunidades de otimização.  O FSA fornece visualizações detalhadas em vários níveis da hierarquia do sistema de arquivos de um volume, incluindo os níveis de SVM, volume, diretório e arquivo.
+Você pode replicar dados de sistemas AFF ou FAS para AFX se o volume de dados de origem não contiver LUNs ou namespaces NVMe. Ao replicar de sistemas AFX para AFF ou FAS , a versão mínima suportada do ONTAP para o sistema AFF ou FAS é 9.16.1. Esta é a primeira versão do ONTAP que oferece suporte ao Balanceamento de Capacidade Avançado.
 
 
 
