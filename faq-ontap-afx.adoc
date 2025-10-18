@@ -38,6 +38,9 @@ Não. A personalidade do seu sistema de armazenamento ONTAP é imutável e não 
 .As interfaces do System Manager para as diferentes personalidades do ONTAP parecem muito semelhantes.  Como posso determinar a personalidade de um sistema específico?
 No Gerenciador do Sistema, selecione *Cluster* no painel de navegação esquerdo e depois *Visão geral*.  Você verá a personalidade exibida na página.  Como alternativa, você pode emitir o comando "system node show" na CLI.  Você também pode determinar a personalidade de um cluster ONTAP usando a API REST; consultelink:./rest/first-call.html["Sua primeira chamada de API REST do sistema AFX"] para mais detalhes.
 
+.Quando os sistemas de armazenamento AFX ficaram disponíveis? Qual é a versão mais antiga do ONTAP suportada pelo AFX?
+O sistema de armazenamento AFX foi anunciado na conferência NetApp Insight em outubro de 2025. O AFX oferece suporte ao ONTAP 9.17.1 e versões posteriores. Entre em contato com seu representante de vendas da NetApp para obter mais detalhes.
+
 .O que significa "desagregado" no contexto dos sistemas de armazenamento AFX?
 O termo "desagregado" pode ter dois significados diferentes, embora relacionados, com AFX, dependendo do contexto.
 
@@ -52,7 +55,10 @@ O segundo conceito relacionado ao armazenamento desagregado é que os agregados 
 .Posso misturar nós do sistema AFX com nós do sistema AFF, ASA ou FAS no mesmo cluster ONTAP ?
 Não. Você não pode misturar nós do sistema que executam diferentes personalidades ONTAP no mesmo cluster. Por exemplo, você não pode misturar nós AFX (que executam a personalidade AFX ONTAP ) com nós AFF ou FAS (que executam a personalidade Unified ONTAP ) no mesmo cluster.
 
-.Se eu quiser usar sistemas que executam o Unified ONTAP (FAS, AFF, ASA) com sistemas AFX para SnapMirror ou FlexCache, qual versão do ONTAP eu preciso?
+.Posso usar o FlexCache com um cluster de sistema AFX?
+Sim. Os sistemas de armazenamento AFX oferecem suporte ao FlexCache tanto para um sistema AFF ou FAS executando a personalidade Unified ONTAP . A única restrição é que o FlexCache com modo write-back não é suportado pelo AFX.
+
+.Se eu quiser usar um sistema AFF ou FAS (executando a personalidade Unified ONTAP ) com um sistema AFX para SnapMirror ou FlexCache, qual versão do ONTAP eu preciso?
 As regras de versão do SnapMirror para AFX são idênticas às do Unified ONTAP.  Isso significa que para replicar do Unified ONTAP, o sistema de origem deve estar dentro do intervalo de versões suportado.  Para replicar do AFX, o sistema Unified ONTAP deve estar no ONTAP 9.16.1 ou posterior (a versão mais antiga suporta o recurso Advanced Capacity Balancing).  Para FlexCache, as mesmas regras se aplicam aos sistemas de origem e destino, conforme descrito em https://www.netapp.com/pdf.html?item=/media/7336-tr4743.pdf["TR-4743"^] .
 
 Existem algumas diferenças no suporte para volumes FlexGroup .  Um volume FlexGroup no AFX não pode ser um volume de origem para um volume FlexCache usando o modo Writeback.
