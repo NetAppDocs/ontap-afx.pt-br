@@ -19,13 +19,11 @@ Antes de implantar o AFX em um ambiente de produção, é essencial entender a e
 
 Uma máquina virtual de armazenamento (SVM) é um servidor isolado ou ambiente de locatário dentro de um cluster ONTAP .  Você pode configurar um SVM para fornecer dados aos clientes conectados.  Você deve estar familiarizado com os recursos e características dos SVMs da AFX.
 
-
-NOTE: Um SVM de dados é criado quando você configura e implanta inicialmente um cluster AFX.  Você pode criar SVMs de dados adicionais, se necessário.
-
-Controle administrativo:: Os SVMs de dados podem ser usados para estabelecer e impor o isolamento de seus dados e aplicativos.  Isso pode ser útil quando há muitos grupos diferentes com uma organização maior.  O controle administrativo pode ser delegado às SVMs para estabelecer políticas relacionadas ao acesso, segurança e proteção de dados.
+Tipos de SVMs:: Um cluster de sistema AFX hospeda vários tipos diferentes de SVMs.  Um *SVM de dados* é usado para fornecer dados aos clientes e é o único tipo que um administrador AFX pode acessar e configurar diretamente.  Há um SVM de dados criado por padrão quando você configura e implanta inicialmente um cluster AFX, mas você pode criar SVMs de dados adicionais, se necessário.  Ao se referir a uma SVM nesta documentação, uma SVM de dados é implícita, a menos que indicado de outra forma.
+Controle administrativo:: SVMs podem ser usadas para estabelecer e impor o isolamento de seus dados e aplicativos. Isso pode ser útil quando há muitos grupos diferentes com uma organização maior. O controle administrativo pode ser delegado às SVMs para estabelecer políticas relacionadas ao acesso, segurança e proteção de dados.
 Contas e funções RBAC:: Existem dois níveis de autenticação e autorização com o AFX: nível de cluster e nível de SVM.  Além das contas de cluster, cada SVM tem seu próprio conjunto distinto de usuários e funções.  Na maioria das situações, usar contas em nível de cluster é adequado.  Mas, dependendo do seu ambiente, talvez você precise configurar e usar também contas e funções SVM mais restritivas. Ver link:../administer/additional-ontap-svm.html["Administração adicional do AFX SVM"] para maiores informações.
 Recursos com escopo SVM:: Os recursos do AFX e as entidades configuráveis são associados ao cluster ou a uma SVM específica.  Há muitos recursos com um escopo SVM, incluindo volumes e buckets, bem como contas de usuário SVM e funções RBAC.
-Interfaces de rede dedicadas:: Cada SVM tem seu próprio conjunto dedicado de interfaces de rede.  Por exemplo, LIFs separados são alocados a uma SVM para gerenciamento e acesso a dados do cliente.
+Interfaces de rede dedicadas:: Cada SVM tem seu próprio conjunto dedicado de interfaces de rede. Por exemplo, LIFs separados são alocados a uma SVM para gerenciamento e acesso de clientes.
 
 
 
@@ -36,8 +34,8 @@ As tarefas administrativas do ONTAP que você executa com a AFX geralmente se en
 
 É importante observar que esses níveis descrevem como as tarefas administrativas são organizadas e atribuídas, e não necessariamente como a segurança associada é configurada.  Por exemplo, embora uma conta de administrador de cluster seja necessária para executar a administração no nível do cluster, ela também pode ser usada para administração de SVM.
 
-Administrador de cluster:: O administrador do cluster tem controle total do cluster AFX, incluindo todos os SVMs de dados.  O nível administrativo do cluster AFX inclui apenas as tarefas que um administrador de cluster pode executar e nenhuma das tarefas de administração específicas do SVM. Ver link:../administer/view-dashboard.html["Administre seu cluster"] para maiores informações.
-Administrador SVM:: Uma função de administrador de SVM tem controle de um SVM de dados específico e, portanto, é mais restrita em comparação ao administrador de cluster.  A administração do SVM envolve a execução de tarefas com objetos e recursos que têm um escopo SVM, como a criação de um volume. Ver link:../manage-data/prepare-manage-data.html["Administre suas VMs de armazenamento e dados"] para maiores informações.
+Administrador de cluster:: O administrador do cluster tem controle total do cluster AFX, incluindo todas as SVMs. O nível administrativo do cluster AFX inclui apenas as tarefas que um administrador de cluster pode executar e nenhuma das tarefas de administração específicas do SVM. Verlink:../administer/view-dashboard.html["Administre seu cluster"] para mais informações.
+Administrador SVM:: Uma função de administrador de SVM tem controle de uma SVM específica e, portanto, é mais restrita em comparação ao administrador de cluster. A administração do SVM envolve a execução de tarefas com objetos e recursos que têm um escopo SVM, como a criação de um volume. Verlink:../manage-data/prepare-manage-data.html["Administre suas VMs de armazenamento e dados"] para mais informações.
 
 
 
@@ -119,7 +117,7 @@ Nós controladores por cluster:: Cada cluster AFX deve ter pelo menos quatro nó
 Capacidade de armazenamento:: Esta é a capacidade total em todos os discos SSD na Zona de Disponibilidade de Armazenamento (SAZ) do cluster. A capacidade máxima de armazenamento varia de acordo com a versão do ONTAP .
 
 
-Você deve revisar as informações disponíveis na NetApp Hardware Universe and Interoperability Matrix Tool para determinar os recursos do seu cluster.
+Você deve revisar as informações disponíveis na NetApp Hardware Universe and Interoperability Matrix Tool para determinar os recursos do seu cluster AFX.
 
 
 
@@ -165,15 +163,15 @@ link:../administer/view-insights.html["Use o Insights para otimizar o desempenho
 
 
 
-== Início rápido para criar e usar um SVM de dados
+== Início rápido para criar e usar um SVM
 
 Depois de instalar e configurar o cluster AFX, você pode começar a executar as tarefas de administração típicas da maioria das implantações do AFX.  Aqui estão as etapas de alto nível necessárias para começar a compartilhar dados com os clientes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"]Exibir os SVMs de dados disponíveis
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"]Exibir os SVMs disponíveis
 [role="quick-margin-para"]
-link:../administer/display-svms.html["Mostrar"]a lista de SVMs de dados e determine se há um que você pode usar.
+link:../administer/display-svms.html["Mostrar"]a lista de SVMs e determine se há alguma que você pode usar.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"]Opcionalmente, crie um SVM de dados
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"]Opcionalmente, crie um SVM
 [role="quick-margin-para"]
 link:../administer/create-svm.html["Criar"]uma SVM para isolar e proteger as cargas de trabalho e os dados do seu aplicativo caso uma SVM existente não esteja disponível.
 
@@ -192,6 +190,7 @@ link:../manage-data/prepare-manage-data.html["Preparar"]para alocar e gerenciar 
 * https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html["Interfaces de usuário ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/set-privilege-level-task.html["Defina o nível de privilégio no ONTAP CLI"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/index.html["Aprenda sobre administração de cluster com o ONTAP CLI"^]
+* https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["Tipos de SVMs em um cluster ONTAP"^]
 * https://hwu.netapp.com/["Hardware Universe da NetApp"^]
 * https://imt.netapp.com/["Ferramenta de Matriz de Interoperabilidade da NetApp"^]
 * https://docs.netapp.com/us-en/interoperability-matrix-tool/["Visão geral da ferramenta Matriz de Interoperabilidade"^]

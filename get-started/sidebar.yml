@@ -6,8 +6,6 @@ entries:
   entries:
   - title: Saiba mais sobre o NetApp AFX
     url: "/get-started/ontap-afx-storage.html"
-  - title: Características do sistema
-    url: "/get-started/system-design.html"
   - title: Detalhes da arquitetura
     url: "/get-started/software-architecture.html"
   - title: Compare AFX com AFF e FAS

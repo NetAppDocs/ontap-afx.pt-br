@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/create-configure-volume.html 
 keywords: afx, afx system, create volume, volume 
-summary: Você pode criar um volume e anexá-lo a um SVM de dados.  Cada volume pode ser exposto aos clientes usando um dos protocolos de acesso suportados pelo AFX. 
+summary: Você pode criar um volume e anexá-lo a um SVM. Cada volume pode ser exposto aos clientes usando um dos protocolos de acesso suportados pelo AFX. 
 ---
 = Criar e configurar um volume em um sistema de armazenamento AFX
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: Você pode criar um volume e anexá-lo a um SVM de dados.  Cada volume 
 
 
 [role="lead"]
-Você pode criar um volume e anexá-lo a um SVM de dados.  Cada volume pode ser exposto aos clientes usando um dos protocolos de acesso suportados pelo AFX.
+Você pode criar um volume e anexá-lo a um SVM. Cada volume pode ser exposto aos clientes usando um dos protocolos de acesso suportados pelo AFX.
 
 .Sobre esta tarefa
-Ao criar um volume, você precisa fornecer uma quantidade mínima de detalhes de configuração.  Detalhes adicionais podem ser fornecidos durante a criação ou posteriormente editando o volume.  Você precisa selecionar o SVM para o volume se tiver criado SVMs de dados adicionais.
+Ao criar um volume, você precisa fornecer uma quantidade mínima de detalhes de configuração. Detalhes adicionais podem ser fornecidos durante a criação ou posteriormente editando o volume. Você precisa selecionar o SVM para o volume se tiver criado SVMs adicionais.
 
 .Passos
 . No Gerenciador do Sistema, selecione *Armazenamento* e depois *Volumes*.

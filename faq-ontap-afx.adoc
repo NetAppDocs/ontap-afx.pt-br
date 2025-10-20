@@ -85,7 +85,7 @@ Não. Os protocolos de dados no AFX operam da mesma maneira que nos sistemas AFF
 .O Particionamento Avançado de Disco (ADP) é usado no AFX?
 Não. O ADP não é usado com o AFX.  Como não há agregados raiz com o AFX, o recurso ADP não é necessário para maximizar a eficiência do espaço em disco.
 
-.Posso usar qualquer tipo de switch na rede do cluster de backend do meu sistema AFX?
+.Posso usar qualquer tipo de switch na rede de cluster de backend para meu sistema de armazenamento AFX?
 Não. Somente switches especificamente aprovados e fornecidos com a plataforma de armazenamento AFX são suportados pela rede de cluster. Além disso, esses switches de backend são dedicados às operações do cluster AFX. As operações de acesso do cliente (usando NFS, SMB e S3) devem ser executadas somente pela rede de dados do cliente front-end.
 
 .Como os switches do cluster são configurados?

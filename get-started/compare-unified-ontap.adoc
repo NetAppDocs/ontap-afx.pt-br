@@ -14,7 +14,7 @@ summary: 'Os sistemas NetApp AFX executam uma personalidade personalizada do ONT
 Os sistemas NetApp AFX executam uma personalidade personalizada do ONTAP que difere da personalidade do ONTAP (chamada de Unified ONTAP) que é executada no armazenamento AFF e FAS .  Você deve estar ciente de como os sistemas AFX são semelhantes e diferentes dos sistemas FAS e AFF .  Isso fornece uma perspectiva valiosa e pode ser útil ao implantar o AFX em seu ambiente.
 
 
-TIP: Esta documentação do AFX inclui links para vários tópicos no site de documentação do Unified ONTAP .  O conteúdo adicional fornece mais profundidade e uma perspectiva diferente que pode ser útil ao administrar seu sistema de armazenamento AFX.
+TIP: A documentação do AFX inclui links para vários tópicos no site de documentação do Unified ONTAP para obter detalhes sobre recursos que se comportam da mesma maneira, independentemente da personalidade do ONTAP .  O conteúdo adicional fornece mais profundidade, o que pode ser útil ao administrar seu sistema de armazenamento AFX.
 
 
 
@@ -22,7 +22,7 @@ TIP: Esta documentação do AFX inclui links para vários tópicos no site de do
 
 Existem algumas áreas em que a configuração do AFX difere dos sistemas AFF e FAS .
 
-Balanceamento de Capacidade Avançado:: O recurso de balanceamento de capacidade avançado, controlado usando o `-gdd` O parâmetro CLI é habilitado por padrão para todos os volumes FlexGroup .
+Balanceamento de Capacidade Avançado:: O recurso avançado de balanceamento de capacidade, controlado usando o `-gdd` O parâmetro CLI é habilitado por padrão para todos os volumes FlexGroup .
 
 
 
@@ -69,7 +69,7 @@ Os seguintes recursos agregados não estão disponíveis nos sistemas AFX:
 === Replicação de dados
 
 * Nenhuma replicação de um volume de um sistema AFF ou FAS que contém um LUN
-* Os volumes AFX FlexGroup só podem ser replicados para o Unified ONTAP 9.16.1 ou posterior
+* Os volumes FlexGroup só podem ser replicados para o Unified ONTAP 9.16.1 ou posterior
 
 
 
