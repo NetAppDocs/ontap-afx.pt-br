@@ -96,12 +96,18 @@ Todos os discos e prateleiras de armazenamento conectados a um cluster AFX fazem
 
 Cada nó tem visibilidade de todo o armazenamento na SAZ.  Quando prateleiras de armazenamento são adicionadas a um cluster, o ONTAP adiciona automaticamente os discos.
 
-.Como as operações de movimentação de volume funcionam de forma diferente com o AFX em comparação aos sistemas AFF ou FAS ?
-Com os sistemas AFF e FAS , que executam a personalidade Unified ONTAP , é possível realocar um volume sem interrupções de um nó ou agregado para outro no cluster. Isso é realizado usando uma operação de cópia em segundo plano com a tecnologia SnapMirror , onde um novo volume de destino é criado no novo local. Dependendo do tamanho do volume e da utilização dos recursos do cluster, o tempo que leva para uma movimentação de volume ser concluída pode variar.
+.Como os dados são alocados em um cluster AFX?
+Quando os dados são alocados, eles podem ser colocados em qualquer disco na SAZ.  Uma vez que os dados são inseridos, não há necessidade de movê-los.  Um volume é criado com base nos dados subjacentes e atribuído a um nó específico.  Os volumes podem ser alterados pelo AFX, normalmente como parte de um processo de balanceamento.  Isso afeta qual NVRAM do nó confirma as operações de gravação no disco.  Uma movimentação de volume altera o nó proprietário do volume, mas os dados em si podem permanecer no mesmo local.
 
-Com a AFX, não há agregados.  Todo o armazenamento está contido em uma única Zona de Disponibilidade de Armazenamento que pode ser acessada por todos os nós do cluster.  Como resultado, as movimentações de volume nunca precisam realmente copiar os dados.  Em vez disso, todas as movimentações de volume são realizadas com atualizações de ponteiros entre os nós.  Isso é chamado de Zero Copy Volume Move (ZCVM) e acontece instantaneamente porque nenhum dado é realmente copiado ou movido.  Este é essencialmente o mesmo processo de movimentação de volume usado com o Unified ONTAP sem a cópia do SnapMirror .
-
-Na versão inicial do AFX, os volumes serão movidos apenas em cenários de failover de armazenamento e quando nós forem adicionados ou removidos do cluster. Esses movimentos são controlados somente pelo ONTAP.
-
-.Como o AFX determina onde colocar os dados na SAZ?
+.Como a AFX gerencia os volumes em toda a SAZ?
 O AFX inclui um recurso conhecido como Gerenciamento Automatizado de Topologia (ATM), que responde a desequilíbrios de objetos do sistema e do usuário.  O objetivo principal do ATM é equilibrar volumes em todo o cluster AFX.  Quando um desequilíbrio é detectado, uma tarefa interna é acionada para distribuir uniformemente os dados entre os nós ativos.  Os dados são realocados usando o ZCVM, que só precisa copiar e atualizar os metadados do objeto.
+
+.Como os volumes são alocados nos nós de um cluster AFX?
+O NetApp AFX equilibra automaticamente a distribuição de volumes entre todos os nós de um cluster.  A partir da versão 9.18.1 do ONTAP , o algoritmo de posicionamento foi aprimorado para levar em consideração o desempenho dos nós ao posicionar ou mover volumes.  Isso resulta em um melhor balanceamento de desempenho entre os nós do cluster AFX e torna muito menos provável que qualquer nó individual fique sobrecarregado.  As versões anteriores do AFX baseavam o posicionamento no número total de volumes no cluster.  A cada nó é atribuído o mesmo número de volumes, independentemente da atividade.
+
+.Como as operações de movimentação de volume funcionam de forma diferente com o AFX em comparação aos sistemas AFF ou FAS ?
+Com os sistemas AFF e FAS , que executam a personalidade Unified ONTAP , é possível realocar um volume sem interrupções de um nó ou agregado para outro no cluster. Isso é realizado por meio de uma operação de cópia em segundo plano com a tecnologia SnapMirror .  Um novo volume de destino é criado no destino alvo.  Dependendo do tamanho do volume e da utilização dos recursos do cluster, o tempo necessário para concluir uma operação de movimentação de volume pode variar.
+
+Com a AFX, não há agregados. Todo o armazenamento está contido em uma única Zona de Disponibilidade de Armazenamento (SAZ, na sigla em inglês), que é acessível por todos os nós do cluster. Como resultado, as movimentações de volume nunca precisam realmente copiar os dados.  Em vez disso, todas as movimentações de volume são realizadas com atualizações de ponteiros entre os nós. Isso é chamado de Zero Copy Volume Move (ZCVM) e acontece instantaneamente porque nenhum dado é realmente copiado ou movido. Este é essencialmente o mesmo processo de movimentação de volume usado com o Unified ONTAP sem a cópia do SnapMirror .
+
+Na versão inicial 9.17.1 do AFX, os volumes serão movidos apenas em cenários de recuperação de failover de armazenamento e quando nós forem adicionados ou removidos do cluster. Esses movimentos são controlados somente pelo ONTAP.

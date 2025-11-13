@@ -29,7 +29,7 @@ Balde S3:: Um bucket S3 é um contêiner de armazenamento que contém objetos ou
 Recipiente de dados:: No contexto de um sistema AFX, um contêiner de dados é um termo genérico e pode ser um volume ou um bucket S3.
 Qtree:: Uma qtree é uma subdivisão lógica dentro de um volume que você pode criar para gerenciar e organizar dados.  Ele permite que você especifique suas propriedades e estilo de segurança (NTFS ou UNIX) e pode herdar políticas de exportação de seu volume pai ou ter suas próprias.  Qtrees podem conter arquivos e diretórios e geralmente são usados para gerenciar permissões e cotas de forma mais granular dentro de um volume.
 Contingente:: Uma cota no ONTAP é um limite definido na quantidade de espaço de armazenamento ou número de arquivos que podem ser usados ​​por um usuário, grupo ou qtree.  Cotas são usadas para gerenciar e controlar o uso de recursos em um sistema de armazenamento, garantindo que nenhum usuário ou aplicativo possa consumir uma quantidade excessiva de recursos.
-Tronco NFS:: O trunking NFS é uma tecnologia que permite que clientes NFS v4.1 abram várias conexões com diferentes LIFs no servidor NFS. Isso aumenta a velocidade de transferência de dados e fornece resiliência por meio de vários caminhos ao exportar volumes FlexVol para clientes com capacidade de entroncamento.
+Tronco de sessão NFS:: O trunking NFS é uma tecnologia que permite que clientes NFS v4.1 abram várias conexões com diferentes LIFs no servidor NFS. Isso aumenta a velocidade de transferência de dados e proporciona resiliência por meio de múltiplos caminhos ao exportar volumes para clientes com capacidade de trunking.  Os LIFs devem estar no mesmo nó para participarem do tronco.
 +
 --
 Para habilitar o trunking, você precisa ter um SVM configurado para NFS e o NFSv4.1 deve estar habilitado. Também requer a remontagem de todos os clientes NFSv4.x após uma alteração de configuração, o que pode ser prejudicial. Os procedimentos de suporte e configuração para entroncamento NFS são os mesmos para todos os sistemas ONTAP . Saiba mais sobre https://docs.netapp.com/us-en/ontap/nfs-trunking/index.html["Tronco NFS"^]
@@ -61,7 +61,7 @@ Além disso, os volumes FlexCache podem ser anexados entre sistemas AFX e AFF ou
 
 === Migrando dados de uma fonte não ONTAP
 
-A migração de dados de sistemas não ONTAP pode ser realizada usando operações de cópia em nível de arquivo. Utilitários de cópia rápida, como https://docs.netapp.com/us-en/xcp/["XCP"^] pode ser usado tanto como utilitários padrão como RoboCopy (para SMB) e rsync (para NFS), quanto ferramentas de terceiros como DataDobi.
+A migração de dados de sistemas não ONTAP pode ser realizada usando operações de cópia em nível de arquivo. Utilitários de cópia rápida, como https://docs.netapp.com/us-en/xcp/["XCP"^] ou https://docs.netapp.com/us-en/data-services-copy-sync/["Copiar e sincronizar"^] Pode ser usado tanto com utilitários padrão como RoboCopy (para SMB) e rsync (para NFS), quanto com ferramentas de terceiros como DataDobi.
 
 
 

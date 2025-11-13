@@ -59,13 +59,13 @@ Há vários componentes lógicos incluídos no AFX.  Eles são implementados em 
 
 === Pool de armazenamento comum
 
-A Zona de Disponibilidade de Armazenamento (SAZ) é um pool comum de armazenamento para todo o cluster.  É uma coleção de discos nas prateleiras de armazenamento que fornece um único namespace unificado para todos os nós do controlador.  O SAZ oferece um modelo de provisionamento sem restrições fixas sobre quais prateleiras de armazenamento são usadas pelos nós.  Os clientes podem visualizar o espaço livre e o uso de armazenamento como propriedades de todo o cluster AFX.
+A Zona de Disponibilidade de Armazenamento (SAZ) é um pool comum de armazenamento para todo o cluster. Trata-se de um conjunto de discos nos racks de armazenamento aos quais todos os nós controladores têm acesso de leitura e gravação.  O SAZ oferece um modelo de provisionamento sem restrições fixas quanto aos racks de armazenamento que podem ser usados ​​pelos nós; o posicionamento dos volumes entre os nós é gerenciado automaticamente pelo ONTAP. Os clientes podem visualizar o espaço livre e o uso de armazenamento como propriedades de todo o cluster AFX.
 
 
 
 === FlexVolumes, FlexGroups e buckets
 
-FlexVolumes, FlexGroups e buckets S3 são os _contêineres de dados_ expostos aos administradores do AFX com base nos protocolos de acesso do cliente.  Esses contêineres escaláveis são projetados para abstrair muitos dos detalhes complexos de armazenamento interno.
+FlexVolumes, FlexGroups e buckets S3 são os _contêineres de dados_ expostos aos administradores do AFX com base nos protocolos de acesso do cliente. Eles operam de forma idêntica ao Unified ONTAP.  Esses contêineres escaláveis ​​são projetados para abstrair muitos dos detalhes complexos do armazenamento interno, como o posicionamento de dados e o balanceamento de capacidade.
 
 
 
@@ -77,12 +77,12 @@ O layout e o acesso aos dados são ajustados para acesso contínuo e utilizaçã
 
 === SVMs e multilocação
 
-A AFX fornece um modelo de locatário que se baseia no modelo SVM disponível nos sistemas AFF e FAS .  O modelo de locatário da AFX foi simplificado para simplificar a administração.
+A AFX fornece um modelo de locatário que se baseia no modelo SVM disponível nos sistemas AFF e FAS . O modelo de locatário do AFX é o mesmo do Unified ONTAP , mas foi simplificado para facilitar a administração em um ambiente NAS e de objetos S3.  Por exemplo, as opções de configuração para SAN, bem como para agregados e grupos RAID, foram removidas.
 
 
 
 == Implantação de cluster AFX
 
-A figura a seguir ilustra uma implantação típica de cluster AFX.  Os nós do controlador são desacoplados das prateleiras de armazenamento e conectados por meio de uma rede compartilhada.
+A figura a seguir ilustra uma implantação típica de cluster AFX. O cluster AFX inclui nós controladores que são desacoplados dos gabinetes de armazenamento e conectados por meio de uma rede interna compartilhada.  Fora dos limites do cluster AFX, os clientes acessam o cluster por meio de uma rede de clientes separada.
 
 image:afx-cluster.png["Arquitetura de cluster AFX"]
