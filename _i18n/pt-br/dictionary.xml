@@ -1742,4 +1742,7 @@
   <block id="5fc4cd787cd9359f05ffec407ae5a910" category="list-text">e7a (Cluster)</block>
   <block id="86b2625bfd2ba28e4a629382f2ebe2cf" category="list-text">e1b (HA)</block>
   <block id="245f02c7386817b111d049fbb0a850bf" category="list-text">e7b (Cluster)</block>
+  <block id="e32cffee371df018e91cf4e0e060f3d8" category="admonition">Como muitos dos conceitos e procedimentos de administração disponíveis nos sistemas AFF e FAS são os mesmos dos sistemas de armazenamento AFX, pode ser útil revisar a documentação do Unified ONTAP . Consulte os links em <block ref="c31eb1064832aa01316b6b2a27c0e82b" category="inline-xref-macro-rx"></block> Para obter mais informações.</block>
+  <block id="2b9e4f1d12477d7c60c4bdda5204b441" category="inline-link">Saiba mais sobre a análise do sistema de arquivos ONTAP.</block>
+  <block id="9f1fbf578c51e2bec88398ab0ce2b672" category="list-text"><block ref="9f1fbf578c51e2bec88398ab0ce2b672" category="inline-link-rx"></block></block>
 </blocks>
