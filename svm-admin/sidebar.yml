@@ -40,5 +40,7 @@ entries:
     url: "/secure-data/prepare-secure-data.html"
   - title: Criptografar dados em repouso
     url: "/secure-data/encrypt-data-at-rest.html"
+  - title: Conexões IP seguras
+    url: "/secure-data/secure-ip-connections.html"
 - title: Administração adicional
   url: "/administer/additional-ontap-svm.html"

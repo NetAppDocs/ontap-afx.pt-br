@@ -14,17 +14,15 @@ summary: Antes de gerenciar seus dados AFX, você deve estar familiarizado com o
 Antes de gerenciar seus dados AFX, você deve estar familiarizado com os principais conceitos e recursos.
 
 
-TIP: Como muitos dos conceitos e procedimentos de administração disponíveis nos sistemas AFF e FAS são os mesmos dos sistemas de armazenamento AFX, pode ser útil revisar a documentação do Unified ONTAP .
-
-
 
 == Terminologia e opções
 
 Há vários termos relacionados à segurança de dados da AFX com os quais você deve estar familiarizado.
 
-Ransomware:: Ransomware é um software malicioso que criptografa arquivos, tornando-os inacessíveis ao usuário.  Geralmente, é exigido algum tipo de pagamento para descriptografar os dados.  O NetApp ONTAP fornece soluções para proteção contra ransomware por meio de recursos como a Proteção Autônoma contra Ransomware (ARP).
-Criptografia:: Criptografia é o processo de conversão de dados em um formato seguro que não pode ser lido facilmente sem a devida autorização.  A ONTAP oferece tecnologias de criptografia baseadas em software e hardware para proteger dados em repouso.  Isso garante que ele não possa ser lido se o meio de armazenamento for reutilizado, devolvido, extraviado ou roubado.  Essas soluções de criptografia podem ser gerenciadas usando um servidor de gerenciamento de chaves externo ou o Onboard Key Manager fornecido pelo ONTAP.
-Certificados digitais e PKI:: Um certificado digital é um documento eletrônico usado para comprovar a propriedade de uma chave pública.  A chave pública e a chave privada associada podem ser usadas de várias maneiras, inclusive para estabelecer identidade, normalmente como parte de uma estrutura de segurança maior, como TLS e IPsec.  Essas chaves, bem como os protocolos de suporte e padrões de formatação, formam a base da infraestrutura de chave pública (PKI).
+Ransomware:: Ransomware é um software malicioso que criptografa arquivos, tornando-os inacessíveis ao usuário. Normalmente, é exigido algum tipo de pagamento para descriptografar os dados.  O ONTAP oferece soluções para proteção contra ransomware por meio de recursos como a Proteção Autônoma contra Ransomware (ARP).
+Criptografia:: Criptografia é o processo de conversão de dados em um formato seguro que não pode ser lido facilmente sem a devida autorização. A ONTAP oferece tecnologias de criptografia baseadas em software e hardware para proteger dados em repouso. Isso garante que ele não possa ser lido se o meio de armazenamento for reutilizado, devolvido, extraviado ou roubado. Essas soluções de criptografia podem ser gerenciadas usando um servidor de gerenciamento de chaves externo ou o Onboard Key Manager fornecido pelo ONTAP. Consultelink:../secure-data/encrypt-data-at-rest.html["Criptografar dados em repouso em um sistema de armazenamento AFX"] para mais informações.
+Certificados digitais e PKI:: Um certificado digital é um documento eletrônico usado para comprovar a propriedade de uma chave pública. A chave pública e a chave privada associada podem ser usadas de várias maneiras, inclusive para estabelecer identidade, normalmente como parte de uma estrutura de segurança maior, como TLS e IPsec. Essas chaves, bem como os protocolos de suporte e padrões de formatação, formam a base da infraestrutura de chave pública (PKI). Consultelink:../administer/manage-certificates.html#generate-a-certificate-signing-request["Gerenciar certificados em um sistema de armazenamento AFX"] para mais informações.
+Segurança do Protocolo da Internet:: IPsec é um padrão da Internet que fornece criptografia, integridade e autenticação de dados em trânsito para o tráfego que flui entre pontos de extremidade de rede no nível IP.  Ele protege todo o tráfego IP entre o ONTAP e os clientes, incluindo protocolos de nível superior como NFS e SMB.  O IPsec oferece proteção contra ataques maliciosos de repetição e ataques do tipo "homem no meio" aos seus dados. Consultelink:../secure-data/secure-ip-connections.html["Conexões IP seguras em seus sistemas de armazenamento AFX"] para mais informações.
 
 
 

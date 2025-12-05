@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: secure-data/secure-ip-connections.html 
+keywords: netapp afx, afx, ip security, ipsec, secure data, data security, encryption, data-in-flight, secure connections, hardware offload 
+summary: 'A segurança IP (IPsec) é um padrão de protocolo da Internet que fornece criptografia de dados, integridade e autenticação para o tráfego que flui entre pontos de extremidade da rede no nível IP.  Você pode usar o IPsec para aprimorar a segurança da rede de front-end entre um cluster AFX e os clientes.' 
+---
+= Conexões IP seguras em seus sistemas de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A segurança IP (IPsec) é um padrão de protocolo da Internet que fornece criptografia de dados, integridade e autenticação para o tráfego que flui entre pontos de extremidade da rede no nível IP.  Você pode usar o IPsec para aprimorar a segurança da rede de front-end entre um cluster AFX e os clientes.
+
+
+
+== Configurando IPsec em um sistema AFX
+
+Os procedimentos de configuração IPsec para sistemas de armazenamento AFX são os mesmos que para sistemas AFF e FAS , com exceção das placas controladoras de interface de rede (NIC) suportadas usadas com o recurso de descarregamento de hardware. Consulte https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepare-se para configurar a segurança IP para a rede ONTAP."^] para mais informações.
+
+
+
+== Recurso de descarregamento de hardware
+
+Diversas operações criptográficas do IPsec, como criptografia e verificação de integridade, podem ser transferidas para uma placa de rede compatível em seu sistema AFX.  Isso pode melhorar significativamente o desempenho e a taxa de transferência do tráfego de rede protegido pelo IPsec.
+
+
+NOTE: A partir da versão 9.18.1 do ONTAP , o recurso de descarregamento de hardware IPsec foi estendido para suportar tráfego IPv6.
+
+As seguintes placas de rede são compatíveis com o recurso de descarregamento de hardware IPsec em sistemas de armazenamento AFX a partir do ONTAP 9.17.1:
+
+* X50130B (2 controladores Ethernet 40G/100G)
+* X50131B (2 controladores Ethernet de 40G/100G/200G/400G)
+
+
+Consulte o https://hwu.netapp.com/["Hardware Universe da NetApp"^] Para obter mais informações sobre as placas suportadas para a versão do ONTAP em execução no seu sistema AFX.
+
+
+
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepare-se para configurar a segurança IP para a rede ONTAP."^]
+* https://hwu.netapp.com/["Hardware Universe da NetApp"^]
+

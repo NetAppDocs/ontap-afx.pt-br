@@ -46,3 +46,7 @@ Use o gerenciador de chaves integrado do AFX ou um gerenciador de chaves externo
 . Selecione *Criptografia de camada dupla* para habilitar a criptografia de software.
 . Selecione *Salvar*.
 
+
+.Informações relacionadas
+* https://docs.netapp.com/us-en/ontap/concepts/encryption-concept.html["Criptografia"^]
+

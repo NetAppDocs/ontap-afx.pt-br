@@ -132,5 +132,6 @@ Você renovou ou excluiu um certificado cliente/servidor existente ou uma autori
 
 == Informações relacionadas
 
+* https://docs.netapp.com/us-en/ontap/authentication/install-server-certificate-cluster-svm-ssl-server-task.html["Gere e instale um certificado de servidor assinado por uma CA no ONTAP."^]
 * https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["Gerenciar certificados ONTAP com o System Manager"^]
 
