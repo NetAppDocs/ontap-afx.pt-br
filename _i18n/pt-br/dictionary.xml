@@ -1766,4 +1766,10 @@
   <block id="9b3ab302175091da61fb00078bbdf676" category="paragraph">Consulte o<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Para obter mais informações sobre as placas suportadas para a versão do ONTAP em execução no seu sistema AFX.</block>
   <block id="d41e75fa1b06d9a7c925a3f985c520e5" category="list-text"><block ref="d41e75fa1b06d9a7c925a3f985c520e5" category="inline-link-rx"></block></block>
   <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">Conexões IP seguras</block>
+  <block id="70aaaf8a9f143b7a315bba12766865d7" category="summary">Reverter um cluster ONTAP é o processo de migrar todos os nós para a versão principal anterior do ONTAP .</block>
+  <block id="ae002bc4aaa91da5f0456bd41f4ec74f" category="doc">A reversão do ONTAP não é suportada em sistemas de armazenamento AFX.</block>
+  <block id="25a89c0d2271ffea21d078f4e6d93fd2" category="paragraph">Os sistemas de armazenamento NetApp AFX não suportam a reversão do ONTAP . Tentar uma operação de reversão com o AFX pode resultar em instabilidade do cluster e perda de dados. Não tente realizar uma operação de reversão em um sistema AFX.</block>
+  <block id="b34a4582eb04bf97b29749b7a8e1ee38" category="inline-link-macro">Reverter ONTAP</block>
+  <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">Os sistemas de armazenamento AFX não são compatíveis. <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> operações.</block>
+  <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Limitação de reversão</block>
 </blocks>
