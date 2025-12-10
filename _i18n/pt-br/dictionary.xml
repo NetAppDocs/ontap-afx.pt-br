@@ -444,7 +444,6 @@
   <block id="c06b2149bbe3e94f6eac8a64039cc025" category="list-text">Leia o CLUF.</block>
   <block id="d6aeb9cf91111f522e0f1901518a3836" category="list-text">Aceite os padrões para *Mostrar notificação* de atualizações recomendadas.  Opcionalmente, selecione *Atualizar automaticamente* ou *Descartar automaticamente* as atualizações recomendadas.</block>
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Selecione para confirmar que suas modificações de atualização serão aplicadas a todas as atualizações atuais e futuras.</block>
-  <block id="09190524572cf4f2b42ddf32f3f54ce7" category="paragraph">As atualizações recomendadas são baixadas e instaladas automaticamente no seu sistema OTAP AFX com base nas suas seleções de atualização.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Desativar atualizações automáticas</block>
   <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Desative as atualizações automáticas se quiser ter a flexibilidade de visualizar as atualizações recomendadas antes que elas sejam instaladas.  Se você desabilitar as atualizações automáticas, precisará executar atualizações de firmware e arquivos de sistema manualmente.</block>
   <block id="9c2cdad0235d8d361f21c8343ef95363" category="list-text">No Gerenciador do Sistema, selecione *Cluster &gt; Configurações*.</block>
@@ -1409,8 +1408,6 @@
   <block id="ce587252d09bb3dfb2d53f154ba81d93" category="section-title">Etapa 3: Criar um relacionamento de replicação</block>
   <block id="c8733c85583475859780bc7c89c97d92" category="paragraph">Um relacionamento de replicação de instantâneo estabelece uma conexão entre seu sistema AFX e um local remoto para que você possa replicar grupos de consistência em um cluster remoto.  Grupos de consistência replicados podem ser usados para recuperação de desastres ou para migração de dados.</block>
   <block id="c5d439ea8d2444de271a6842180ae515" category="paragraph">Para proteção contra ataques de ransomware, ao configurar seu relacionamento de replicação, você pode optar por bloquear os snapshots de destino.  Snapshots bloqueados não podem ser excluídos acidentalmente ou maliciosamente.  Você pode usar snapshots bloqueados para recuperar dados se um volume for comprometido por um ataque de ransomware.</block>
-  <block id="bf5d4ab274f571d57107a348e35cb081" category="inline-link-macro">inicializar o relógio de conformidade do Snapshot</block>
-  <block id="a2070fe1416691eeb91c53762fd2a74c" category="paragraph">Se você deseja bloquear seus instantâneos de destino, você deve<block ref="27d9d0ff36409c51abdcd0a6f30da304" category="inline-link-macro-rx"></block> antes de criar o relacionamento de replicação.</block>
   <block id="f07148b3f2fd0f0a23b807626916df29" category="paragraph">Crie um relacionamento de replicação com ou sem snapshots de destino bloqueados.</block>
   <block id="b581751404702669bf568b5f9581e76c" category="open-title">Com instantâneos bloqueados</block>
   <block id="82fd6aa34bfb21de39dd81c963a0a2e8" category="list-text">No Gerenciador do Sistema, selecione *Proteção &gt; Grupos de consistência*.</block>
@@ -1772,4 +1769,5 @@
   <block id="b34a4582eb04bf97b29749b7a8e1ee38" category="inline-link-macro">Reverter ONTAP</block>
   <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">Os sistemas de armazenamento AFX não são compatíveis. <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> operações.</block>
   <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Limitação de reversão</block>
+  <block id="c29e3429d133a5255487ffdb4b3cd5b3" category="paragraph">As atualizações recomendadas são baixadas e instaladas automaticamente no seu sistema ONTAP AFX com base nas suas seleções de atualização.</block>
 </blocks>

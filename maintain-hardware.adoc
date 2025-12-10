@@ -7,7 +7,7 @@ summary: Navegue até a documentação de manutenção do AFX para saber como ex
 = Manter o hardware do sistema de armazenamento AFX
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

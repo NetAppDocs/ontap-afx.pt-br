@@ -86,8 +86,6 @@ Um relacionamento de replicação de instantâneo estabelece uma conexão entre 
 Para proteção contra ataques de ransomware, ao configurar seu relacionamento de replicação, você pode optar por bloquear os snapshots de destino.  Snapshots bloqueados não podem ser excluídos acidentalmente ou maliciosamente.  Você pode usar snapshots bloqueados para recuperar dados se um volume for comprometido por um ataque de ransomware.
 
 .Antes de começar
-Se você deseja bloquear seus instantâneos de destino, você develink:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["inicializar o relógio de conformidade do Snapshot"] antes de criar o relacionamento de replicação.
-
 Crie um relacionamento de replicação com ou sem snapshots de destino bloqueados.
 
 [role="tabbed-block"]

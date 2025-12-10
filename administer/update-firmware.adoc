@@ -29,7 +29,7 @@ Quando você habilita atualizações automáticas para seu cluster AFX, as atual
 
 
 .Resultado
-As atualizações recomendadas são baixadas e instaladas automaticamente no seu sistema OTAP AFX com base nas suas seleções de atualização.
+As atualizações recomendadas são baixadas e instaladas automaticamente no seu sistema ONTAP AFX com base nas suas seleções de atualização.
 
 
 

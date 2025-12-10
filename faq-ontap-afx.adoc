@@ -10,7 +10,7 @@ summary: Esta lista de perguntas frequentes fornece respostas às perguntas que 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
