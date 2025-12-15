@@ -1770,4 +1770,6 @@
   <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">Os sistemas de armazenamento AFX não são compatíveis. <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> operações.</block>
   <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Limitação de reversão</block>
   <block id="c29e3429d133a5255487ffdb4b3cd5b3" category="paragraph">As atualizações recomendadas são baixadas e instaladas automaticamente no seu sistema ONTAP AFX com base nas suas seleções de atualização.</block>
+  <block id="f6ea197b186340b340ddfd0eb0da559f" category="inline-link-macro">Crie um cluster ONTAP e junte os nós.</block>
+  <block id="46111b54a1fe09b4b0f338f84ed73d0f" category="admonition">Para obter informações sobre como criar um cluster para um ambiente que não seja Windows, consulte <block ref="084582f867948d8226893522df8bc4b0" category="inline-link-macro-rx"></block>.</block>
 </blocks>

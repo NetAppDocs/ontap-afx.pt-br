@@ -136,7 +136,7 @@ Consulte a ajuda on-line do seu laptop para obter instruções sobre como config
 .. Conecte o cabo do console ao laptop e conecte a porta serial do console no controlador usando o cabo do console que veio com seu sistema de armazenamento.
 .. Conecte o laptop ao switch na sub-rede de gerenciamento.
 +
-image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Conexões do console]
+image::../media/drw_afx_1k_console_connection_ieops-2708.svg[Conexões do console]
 
 
 
