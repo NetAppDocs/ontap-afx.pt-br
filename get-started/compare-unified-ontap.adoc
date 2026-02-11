@@ -29,7 +29,7 @@ Balanceamento de Capacidade Avançado:: O recurso avançado de balanceamento de 
 
 == Recursos do Unified ONTAP não suportados ou restritos
 
-O NetApp AFX é otimizado para cargas de trabalho de NAS e objetos de alto desempenho.  Por conta disso, existem diferenças em relação ao AFF e ao FAS , assim como em relação aos outros sistemas de armazenamento Unified ONTAP .  Os seguintes recursos não estão disponíveis no NetApp AFX; a lista está organizada por recurso principal ou área funcional.  Você também deve revisar as atualizações e alterações do AFX emlink:../release-notes/whats-new-9171.html["O que há de novo"] com base na sua versão.
+NetApp AFX é otimizado para cargas de trabalho NAS e de objetos de alto desempenho. Por isso, existem diferenças em relação aos sistemas de armazenamento AFF e FAS. Os seguintes recursos não estão disponíveis no NetApp AFX; a lista está organizada por recurso principal ou área funcional. Você também deve revisar as atualizações e alterações do AFX em link:../release-notes/whats-new-9171.html["O que há de novo"] com base na sua versão do ONTAP.
 
 
 
@@ -51,6 +51,7 @@ O NetApp AFX é otimizado para cargas de trabalho de NAS e objetos de alto desem
 * Desduplicação em nível de agregação
 * SyncMirror (espelhamento agregado)
 * Hierarquização do FabricPool
+* Espelhos de compartilhamento de carga
 
 
 
