@@ -139,12 +139,14 @@ image::../media/drw_afx_network_cabling_b_ieops-2351.svg[Cabo para rede Ethernet
 
 
 
-== Etapa 3: Conecte os cabos do cluster e das conexões de HA
+== Etapa 3: conecte os cabos do cluster, da interconexão HA e das conexões de armazenamento ao switch de rede A
 
-Use o cabo de interconexão de cluster e HA para conectar as portas e1a e e7a ao switch A e e1b e e7b ao switch B. As portas e1a/e1b são usadas para as conexões de HA, e as portas e7a/e7b são usadas para as conexões de cluster.
+Utilize o cabo breakout 4x100GbE para conectar as portas de cluster, interconexão HA e armazenamento dos controladores ao switch de rede A. Utilize o cabo de interconexão de cluster e HA para conectar as portas e1a e e7a ao switch A. As portas e1a são utilizadas para as conexões de HA e as portas e7a são utilizadas para as conexões de cluster. Para as conexões de armazenamento, conecte as portas e10a e e11a ao switch A.
+
+Certifique-se de que possui os cabos e conectores corretos para seus switches. Veja  https://hwu.netapp.com["Hardware Universe"^] para mais informações.
 
 .Passos
-. Conecte as seguintes portas do controlador a qualquer porta não ISL no switch de rede do cluster A.
+. Conecte as seguintes portas do controlador a qualquer porta que não seja ISL no switch de rede A.
 +
 ** Controlador A
 +
@@ -160,47 +162,11 @@ Use o cabo de interconexão de cluster e HA para conectar as portas e1a e e7a ao
 *Cabos 100GbE*
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cabo HA de cluster]
-
-+
-image::../media/drw_afx_switched_cluster_cabling_a_ieops-2352.svg[Conexões de cluster de cabos à rede de cluster]
+image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
 
 
 
 
-
-. Conecte as seguintes portas do controlador a qualquer porta não ISL no switch de rede do cluster B.
-+
-** Controlador A
-+
-*** e1b (HA)
-*** e7b (Cluster)
-
-
-** Controlador B
-+
-*** e1b (HA)
-*** e7b (Cluster)
-+
-*Cabos 100GbE*
-
-+
-image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cabo HA de cluster]
-
-+
-image::../media/drw_afx_switched_cluster_cabling_b_ieops-2353.svg[Conexões de cluster de cabos à rede de cluster]
-
-
-
-
-
-
-
-
-
-== Etapa 4: Conecte os cabos das conexões de armazenamento do controlador ao switch
-
-Conecte as portas de armazenamento do controlador aos switches.  Certifique-se de ter os cabos e conectores corretos para seus switches. Ver https://hwu.netapp.com["Hardware Universe"^] para maiores informações.
 
 . Conecte as seguintes portas de armazenamento a qualquer porta não ISL no switch A.
 +
@@ -221,7 +187,39 @@ Conecte as portas de armazenamento do controlador aos switches.  Certifique-se d
 image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
 
 +
-image::../media/drw_afx_controller_storage_cable_a_ieops-2354.svg[Armazenamento do controlador de cabo para alternar A]
+image::../media/drw_afx_ha_cluster_storage_a_ieops-2779.svg[Cluster de controladores com cabos,HA,and storage to switch A]
+
+
+
+
+
+
+
+
+
+== Etapa 4: conecte os cabos do cluster, da interconexão HA e das conexões de armazenamento ao Switch B
+
+Utilize o cabo breakout 4x100GbE para conectar as portas de cluster, interconexão HA e armazenamento dos controladores ao switch de rede B. Use o cabo de interconexão de cluster e HA para conectar as portas e1b e e7b ao switch B. As portas e1b são utilizadas para as conexões de HA e as portas e7b são utilizadas para as conexões de cluster. Para as conexões de armazenamento, conecte as portas e10b e e11b ao switch B.
+
+Certifique-se de que possui os cabos e conectores corretos para seus switches. Veja  https://hwu.netapp.com["Hardware Universe"^] para mais informações.
+
+. Conecte as seguintes portas do controlador a qualquer porta que não seja ISL no switch de rede B.
++
+** Controlador A
++
+*** e1b (HA)
+*** e7b (Cluster)
+
+
+** Controlador B
++
+*** e1b (HA)
+*** e7b (Cluster)
++
+*Cabos 100GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
 
 
 
@@ -246,7 +244,7 @@ image::../media/drw_afx_controller_storage_cable_a_ieops-2354.svg[Armazenamento 
 image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
 
 +
-image::../media/drw_afx_controller_storage_cable_b_ieops-2355.svg[Armazenamento do controlador de cabo para alternar B]
+image::../media/drw_afx_ha_cluster_storage_b_ieops-2780.svg[Cluster de controladores com cabos,HA,and storage to switch B]
 
 
 
