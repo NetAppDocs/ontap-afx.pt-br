@@ -1078,8 +1078,6 @@
   <block id="eccb4d5293fe0dd408e74aab9093fb9b" category="list-text">Os LEDs piscam e os ventiladores ligam, indicando que os controladores estão ligando.</block>
   <block id="2a15831b428ec92914dd2d9b9c14a463" category="list-text">Os ventiladores podem fazer barulho na inicialização, o que é normal.</block>
   <block id="d420064a5f4919f9be16d853c6d1997c" category="list-text">Prenda os cabos de alimentação usando o dispositivo de fixação em cada fonte de alimentação.</block>
-  <block id="d86c8f4fff3fb2feed3ee9c6ab6626ed" category="inline-link-macro">configurar um cluster AFX</block>
-  <block id="4eb20ef06f12f582d4ebd27eaee89115" category="paragraph">Depois de ligar seu sistema de armazenamento AFX 1K, você<block ref="a4e3e0c950d1563a6f1d32259f274df6" category="inline-link-macro-rx"></block> .</block>
   <block id="4037f9dba9d587023878b63255863f7d" category="summary">Prepare-se para instalar o sistema de armazenamento AFX 1K no seu ambiente ONTAP e registre o hardware para acessar os benefícios de suporte.</block>
   <block id="b81fa34f137f3d44fa104594a5caaef5" category="paragraph">Prepare-se para instalar seu sistema de armazenamento AFX 1K preparando o local, desembalando as caixas e comparando o conteúdo das caixas com a nota fiscal e registrando o sistema para acessar os benefícios de suporte.</block>
   <block id="92c8397408f55d9526d554c55cde3d22" category="section-title">Etapa 1: Prepare o local</block>
@@ -1774,4 +1772,11 @@
   <block id="c42589aeb6cdc4aab7c9ee5517ef1f84" category="section-title">Etapa 4: conecte os cabos do cluster, da interconexão HA e das conexões de armazenamento ao Switch B</block>
   <block id="14aa705a8a71a02fb1b277002e0c52ed" category="paragraph">Utilize o cabo breakout 4x100GbE para conectar as portas de cluster, interconexão HA e armazenamento dos controladores ao switch de rede B. Use o cabo de interconexão de cluster e HA para conectar as portas e1b e e7b ao switch B. As portas e1b são utilizadas para as conexões de HA e as portas e7b são utilizadas para as conexões de cluster. Para as conexões de armazenamento, conecte as portas e10b e e11b ao switch B.</block>
   <block id="8cff5fa6944271f10e636cadf3153077" category="list-text">Conecte as seguintes portas do controlador a qualquer porta que não seja ISL no switch de rede B.</block>
+  <block id="3e43f7eeca64d5c830b0064870a6156b" category="admonition">Use sempre uma pulseira antiestática aterrada, conectada a um ponto de aterramento verificado durante a instalação e os procedimentos de manutenção. A não observância das precauções adequadas contra ESD pode causar danos permanentes aos nós controladores, prateleiras de armazenamento e switches de rede.</block>
+  <block id="1e64a8c98278cbf94fdc5e55cf23d748" category="inline-link-macro">Instalar nós de computação de dados AIDE</block>
+  <block id="5d16f9931acd5c0aea8659ad61ec6628" category="admonition">Se você estiver implementando o AFX 1K com o AI Data Engine (AIDE), instale os nós de computação de dados do AIDE após ligar o sistema AFX. Consulte <block ref="770e46e4a0d2400ce8dd3c354b4e69c6" category="inline-link-macro-rx"></block> para mais informações.</block>
+  <block id="d9af9d0a822fab56f67da32f96760bcd" category="paragraph">Após ligar o seu sistema de storage AFX 1K, conclua a configuração de acordo com a opção de implementação:</block>
+  <block id="9f17a32279457eb3f0ec945352a82e96" category="inline-link-macro">Configurar um cluster AFX</block>
+  <block id="65baec5e9f4a78defefb1154f095ae89" category="list-text">Para implantações dedicadas do sistema de storage AFX 1K, acesse <block ref="b434a61d8681e909828695f9b932fe31" category="inline-link-macro-rx"></block>.</block>
+  <block id="2958d97f86a68931454e4d5cb0f3fa2a" category="list-text">Para implantações do AFX 1K com AI Data Engine (AIDE), acesse o <block ref="770e46e4a0d2400ce8dd3c354b4e69c6" category="inline-link-macro-rx"></block>.</block>
 </blocks>

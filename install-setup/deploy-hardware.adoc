@@ -19,6 +19,9 @@ Depois de instalar os switches, você deve instalar o hardware do seu sistema de
 * Entenda que o fluxo de ar através do sistema de armazenamento entra pela frente, onde a moldura ou as tampas das extremidades estão instaladas, e sai pela parte traseira, onde as portas estão localizadas.
 
 
+
+CAUTION: Use sempre uma pulseira antiestática aterrada, conectada a um ponto de aterramento verificado durante a instalação e os procedimentos de manutenção. A não observância das precauções adequadas contra ESD pode causar danos permanentes aos nós controladores, prateleiras de armazenamento e switches de rede.
+
 .Passos
 . Instale os kits de trilhos para seu sistema de armazenamento e prateleiras de armazenamento, conforme necessário, usando as instruções incluídas nos kits.
 . Instale e fixe seu controlador no gabinete ou no rack da empresa de telecomunicações:

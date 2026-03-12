@@ -40,3 +40,6 @@ Conecte o hardware, ligue e configure os switches para seu sistema de armazename
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sete"]link:power-on-hardware.html["Ligue seu sistema de armazenamento AFX 1K"]
 [role="quick-margin-para"]
 Ligue cada prateleira de armazenamento e atribua uma ID de prateleira exclusiva antes de ligar os nós do controlador para identificar claramente cada prateleira na configuração.
+
+
+NOTE: Se você estiver implementando o AFX 1K com o AI Data Engine (AIDE), instale os nós de computação de dados do AIDE após ligar o sistema AFX. Consulte link:https://docs.netapp.com/us-en/ai-data-engine/install-setup/aide-hardware-requirements.html["Instalar nós de computação de dados AIDE"] para mais informações.
