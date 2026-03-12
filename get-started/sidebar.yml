@@ -10,6 +10,8 @@ entries:
     url: "/get-started/software-architecture.html"
   - title: Compare AFX com AFF e FAS
     url: "/get-started/compare-unified-ontap.html"
+  - title: Saiba mais sobre AIDE
+    url: "/get-started/learn-about-aide.html"
 - title: Início rápido
   url: "/get-started/quick-start.html"
 - title: Instale seu sistema AFX

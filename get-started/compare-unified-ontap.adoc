@@ -73,8 +73,7 @@ NOTE: A replicação de dados é suportada em ambas as direções entre o Unifie
 * APIs REST para funcionalidades não suportadas (como MetroCluster)
 * Algumas limitações iniciais nas APIs REST para estatísticas de desempenho
 * Suporte do AIQ Unified Manager
-* Grafana Harvest versão 25.08.1 e posterior
-* NetApp Trident versão 25.10 e posterior
+* Versões do Grafana Harvest anteriores a 25.08.1
 
 
 
