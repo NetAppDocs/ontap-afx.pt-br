@@ -58,9 +58,7 @@ NOTE: As configurações de switch Cisco Nexus 9332D-GX2B e 9364D-GX2A para o si
 
 == Etapa 1: Conecte os controladores à rede de gerenciamento
 
-Conecte a porta de gerenciamento em cada switch a qualquer um dos switches de gerenciamento (se solicitado) ou conecte-os diretamente à sua rede de gerenciamento.
-
-A porta de gerenciamento é a porta superior direita localizada no lado da PSU do switch.  O cabo CAT6 para cada switch precisa ser roteado através do painel de passagem depois que os switches forem instalados para se conectar aos switches de gerenciamento ou à rede de gerenciamento.
+Conecte a porta de gerenciamento (chave inglesa) em cada controlador a um dos switches de gerenciamento ou conecte-os diretamente à sua rede de gerenciamento.
 
 Use os cabos 1000BASE-T RJ-45 para conectar as portas de gerenciamento (chave inglesa) em cada controlador aos switches de rede de gerenciamento.
 
@@ -68,7 +66,7 @@ image::../media/oie_cable_rj45.png[Cabos RJ-45]
 
 *Cabos RJ-45 1000BASE-T*
 
-image::../media/drw_afx_management_connection_ieops-2349.svg[Conecte-se à sua rede de gerenciamento]
+image::../media/drw_afx_management_connection_ieops-2815.svg[Conecte-se à sua rede de gerenciamento]
 
 
 IMPORTANT: Não conecte os cabos de alimentação ainda.
@@ -87,13 +85,7 @@ Este procedimento pode ser diferente dependendo da configuração do seu módulo
 .Passos
 . Conecte as seguintes portas ao seu switch de rede de dados Ethernet A.
 +
-** Controlador A (Exemplo)
-+
-*** e2a
-*** e3a
-
-
-** Controlador B (Exemplo)
+** Controlador (Exemplo)
 +
 *** e2a
 *** e3a
@@ -104,7 +96,7 @@ Este procedimento pode ser diferente dependendo da configuração do seu módulo
 image::../media/oie_cable100_gbe_qsfp28.png[Cabo Ethernet de 100 Gb]
 
 +
-image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Cabo para rede Ethernet]
+image::../media/drw_afx_network_cabling_a_ieops-2813.svg[Cabo para rede Ethernet]
 
 
 
@@ -112,13 +104,7 @@ image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Cabo para rede Ethernet
 
 . Conecte as seguintes portas ao seu switch de rede de dados Ethernet B.
 +
-** Controlador A (Exemplo)
-+
-*** e2b
-*** e3b
-
-
-** Controlador B (Exemplo)
+** Controlador (Exemplo)
 +
 *** e2b
 *** e3b
@@ -129,7 +115,7 @@ image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Cabo para rede Ethernet
 image::../media/oie_cable100_gbe_qsfp28.png[Cabo Ethernet de 100 Gb]
 
 +
-image::../media/drw_afx_network_cabling_b_ieops-2351.svg[Cabo para rede Ethernet]
+image::../media/drw_afx_network_cabling_b_ieops-2814.svg[Cabo para rede Ethernet]
 
 
 
@@ -148,38 +134,12 @@ Certifique-se de que possui os cabos e conectores corretos para seus switches. V
 .Passos
 . Conecte as seguintes portas do controlador a qualquer porta que não seja ISL no switch de rede A.
 +
-** Controlador A
+** Controlador
 +
 *** e1a (HA)
 *** e7a (Cluster)
-
-
-** Controlador B
-+
-*** e1a (HA)
-*** e7a (Cluster)
-+
-*Cabos 100GbE*
-
-+
-image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
-
-
-
-
-
-. Conecte as seguintes portas de armazenamento a qualquer porta não ISL no switch A.
-+
-** Controlador A
-+
-*** e10a
-*** e11a
-
-
-** Controlador B
-+
-*** e10a
-*** e11a
+*** e10a (Armazenamento)
+*** e11a (Armazenamento)
 +
 *Cabos 100GbE*
 
@@ -205,38 +165,12 @@ Certifique-se de que possui os cabos e conectores corretos para seus switches. V
 
 . Conecte as seguintes portas do controlador a qualquer porta que não seja ISL no switch de rede B.
 +
-** Controlador A
+** Controlador
 +
 *** e1b (HA)
 *** e7b (Cluster)
-
-
-** Controlador B
-+
-*** e1b (HA)
-*** e7b (Cluster)
-+
-*Cabos 100GbE*
-
-+
-image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
-
-
-
-
-
-. Conecte as seguintes portas de armazenamento a qualquer porta não ISL no switch B.
-+
-** Controlador A
-+
-*** e10b
-*** e11b
-
-
-** Controlador B
-+
-*** e10b
-*** e11b
+*** e10b (Armazenamento)
+*** e11b (Armazenamento)
 +
 *Cabos 100GbE*
 
