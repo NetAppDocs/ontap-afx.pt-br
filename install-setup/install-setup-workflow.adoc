@@ -41,5 +41,12 @@ Conecte o hardware, ligue e configure os switches para seu sistema de armazename
 [role="quick-margin-para"]
 Ligue cada prateleira de armazenamento e atribua uma ID de prateleira exclusiva antes de ligar os nós do controlador para identificar claramente cada prateleira na configuração.
 
+[NOTE]
+====
+Se você estiver implementando o AFX 1K com AI Data Engine (AIDE), poderá instalar os nós de computação de dados do AIDE após concluir a instalação do sistema AFX.
 
-NOTE: Se você estiver implementando o AFX 1K com o AI Data Engine (AIDE), instale os nós de computação de dados do AIDE após ligar o sistema AFX. Consulte link:https://docs.netapp.com/us-en/ai-data-engine/install-setup/aide-hardware-requirements.html["Instalar nós de computação de dados AIDE"] para mais informações.
+* Para implantações de servidores de terceiros, consulte  https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["Requisitos para AI Data Engine com o software AIDE em servidores de terceiros"^] e  https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["instalar o software AIDE em servidores de terceiros"^].
+* Para implantações de NetApp DCN, consulte  https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["Requisitos para AI Data Engine em nós de computação de dados fornecidos pela NetApp"^].
+
+
+====
