@@ -26,19 +26,44 @@ Há vários recursos opcionais de gerenciamento de armazenamento e desempenho qu
 
 === Gerenciamento de armazenamento NAS ONTAP
 
-O Network Attached Storage (NAS) fornece armazenamento de arquivos dedicado que pode ser acessado por vários clientes na rede.  O ONTAP suporta vários protocolos NAS. Consulte https://docs.netapp.com/us-en/ontap/nas-management/index.html["Gerenciamento de armazenamento NAS"^] para maiores informações.
+O Network Attached Storage (NAS) fornece storage de arquivos dedicado que pode ser acessado por vários clientes na rede. ONTAP suporta diversos protocolos NAS. Saiba mais sobre  https://docs.netapp.com/us-en/ontap/nas-management/index.html["Gerenciamento de armazenamento NAS"^].
 
 
 
 === Volumes ONTAP FlexCache
 
-FlexCache é um recurso de cache remoto ONTAP .  Ele aproxima os dados dos clientes, o que melhora o desempenho do acesso e reduz custos.  A criação de um volume FlexCache , que inicialmente copia apenas os metadados do sistema de arquivos de origem, simplifica a distribuição de arquivos e reduz o tráfego WAN. Consulte https://docs.netapp.com/us-en/ontap/flexcache/index.html["Saiba mais sobre os volumes ONTAP FlexCache"^] para maiores informações.
+FlexCache é um recurso de armazenamento em cache remoto do ONTAP. Ele aproxima os dados dos clientes, o que melhora o desempenho de acesso e reduz custos. A criação de um volume FlexCache, que inicialmente copia apenas os metadados do sistema de arquivos de origem, simplifica a distribuição de arquivos e reduz o tráfego da WAN. Saiba mais sobre  https://docs.netapp.com/us-en/ontap/flexcache/index.html["Volumes ONTAP FlexCache"^].
 
 
 
 === Volumes ONTAP FlexGroup
 
-Um volume FlexGroup consiste em vários volumes membros que compartilham o tráfego de forma automática e transparente.  Os volumes FlexGroup oferecem vários benefícios, incluindo alto desempenho e gerenciamento simplificado. Consulte https://docs.netapp.com/us-en/ontap/flexgroup/creation-workflow-task.html["Configuração de volume do FlexGroup"^] para maiores informações.
+Um FlexGroup volume consiste em vários volumes membros que compartilham o tráfego de forma automática e transparente. FlexGroup volumes oferecem diversas vantagens, incluindo alto desempenho e gerenciamento simplificado. Saiba mais sobre https://docs.netapp.com/us-en/ontap/flexgroup/creation-workflow-task.html["Configuração de volume do FlexGroup"^].
+
+
+
+=== Leitura sequencial de arquivos cruzados
+
+A Leitura Sequencial de Arquivos Cruzados (CFSR) é um recurso disponível nos sistemas AFX a partir do ONTAP 9.19.1 que melhora o desempenho da edição de vídeo e aplicativos relacionados. Para fluxos de trabalho que armazenam quadros de vídeo como arquivos sequenciais individuais, geralmente de 50 a 250 MB cada, a CFSR prevê e busca antecipadamente os próximos arquivos com base em padrões sequenciais de nomes de arquivos. É possível buscar antecipadamente até 10 arquivos ou 500 MB de dados, reduzindo significativamente a latência e garantindo a reprodução fluida de vídeo bruto 4K/8K a 30 quadros por segundo.
+
+O CFSR está habilitado por padrão em sistemas AFX com ONTAP 9.19.1 ou posterior, mas você precisa habilitá-lo explicitamente nos volumes individuais. Os administradores de storage podem configurar o recurso com a CLI do ONTAP ou uma chamada equivalente de API REST. Usando a CLI, você pode habilitar o CFSR como parte da criação de um novo volume. Você também pode atualizar um volume existente com o seguinte comando:
+
+`volume modify -volume <volume_name> -aggressive-readahead-mode [cross_file_sequential_read|none]`
+
+.Exemplo
+[source, bash]
+----
+volume modify -volume myvolume -aggressive-readahead-mode cross_file_sequential_read
+volume show -volume myvolume -fields aggressive-readahead-mode
+----
+O recurso CFSR é compatível com volumes FlexVol e FlexGroup e é independente da extensão do arquivo, suportando esquemas de numeração de nomes de arquivos decimais e hexadecimais. Para protocolos NFSv4.x, o CFSR integra-se com os recursos de leitura de I/O multiprotocolo (MPIO) para aprimorar ainda mais o desempenho, fornecendo leituras subsequentes diretamente da memória. O CFSR está disponível exclusivamente em sistemas AFX, com limitações nos volumes suportados. Não é compatível com os seguintes tipos de volume:
+
+* FabricPool-volumes habilitados
+* FlexCache volumes de ponto final
+* SnapMirror volumes de destino
+
+
+O CFSR não é compatível com nenhuma outra plataforma ONTAP (FAS, AFF ou ASA) nem com implantações em nuvem, como Cloud Volumes ONTAP. Ele pode operar usando volumes FlexGroup com GDD ativado ou desativado. No entanto, como os arquivos de quadros de vídeo geralmente são muito menores que o tamanho mínimo de segmento do GDD, o GDD não distribui esses arquivos de forma eficaz entre os constituintes do FlexGroup. Isso significa que o GDD tem impacto direto mínimo no comportamento de pré-busca de arquivos do CFSR.
 
 
 
@@ -50,13 +75,29 @@ Há vários recursos opcionais de proteção de dados que você pode configurar 
 
 === Grupos de consistência
 
-Um grupo de consistência é uma coleção de volumes que são gerenciados como uma única unidade. Consulte https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Saiba mais sobre grupos de consistência ONTAP"^] para maiores informações.
+Um grupo de consistência é uma coleção de volumes gerenciados como uma única unidade. Saiba mais sobre  https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Grupos de consistência ONTAP"^].
 
 
 
 === SnapLock
 
-Você pode proteger seus arquivos convertendo-os para um estado WORM (write once read many) em nível de volume.  O SnapLock suporta dois modos.  O modo de conformidade garante que os arquivos não possam ser excluídos até que seu período de retenção expire, o que atende a mandatos governamentais ou específicos do setor.  O modo empresarial permite que usuários privilegiados excluam arquivos antes que o período de retenção expire. Consulte https://docs.netapp.com/us-en/ontap/snaplock/index.html["Saiba mais sobre o ONTAP SnapLock"^] para maiores informações.
+Você pode proteger seus arquivos convertendo-os para o estado WORM (write once read many) em nível de volume. SnapLock oferece suporte a dois modos. O modo de conformidade garante que os arquivos não possam ser excluídos até que seu período de retenção expire, atendendo a exigências governamentais ou específicas do setor. O modo corporativo permite que usuários com privilégios excluam arquivos antes que seu período de retenção expire. Saiba mais sobre https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^].
+
+
+
+== Eficiência de storage
+
+ONTAP oferece diversos recursos de eficiência de storage que podem ajudar você a otimizar o uso do seu storage e reduzir custos.
+
+
+
+=== Desduplicação global
+
+https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["Desduplicação"^] é um https://docs.netapp.com/us-en/ontap/volumes/deduplication-data-compression-efficiency-concept.html["Eficiência de storage ONTAP"^] recurso que reduz os requisitos de storage físico ao identificar e remover blocos de dados duplicados. A deduplicação tradicional opera em nível de volume ou agregado. Essa capacidade existente proporciona eficiência de storage significativa para clientes em todas as plataformas ONTAP.
+
+A partir do ONTAP 9.19.1, o AFX introduz um novo escopo operacional, estendendo a deduplicação para toda a Storage Availability Zone (SAZ). A deduplicação global se baseia na deduplicação em nível de volume, eliminando automaticamente blocos duplicados em todos os volumes da SAZ. As sessões de deduplicação global são acionadas automaticamente, o que garante economia ideal sem intervenção manual.
+
+A deduplicação global está habilitada por padrão nos sistemas AFX A1K e opera de forma transparente em segundo plano, com impacto mínimo no desempenho. Não é necessária nenhuma licença de recurso e o recurso se integra perfeitamente às tecnologias de eficiência de storage existentes, incluindo compressão e compactação. A economia obtida com a deduplicação global é relatada por meio das métricas de eficiência de storage. Esse recurso pode ser particularmente benéfico para cargas de trabalho de aplicativos em que os dados são frequentemente compartilhados ou replicados em vários volumes.
 
 
 
@@ -68,13 +109,13 @@ Há vários recursos de segurança opcionais que você pode configurar e usar co
 
 === Política de F
 
-FPolicy é uma estrutura de notificação de acesso a arquivos usada para monitorar e gerenciar eventos de acesso a arquivos em máquinas virtuais de armazenamento (SVMs).  Você pode usar o FPolicy para criar políticas que definem quais operações de arquivo monitorar e, opcionalmente, bloquear, com base em critérios definidos por você.  O FPolicy é comumente usado para auditoria de segurança, conformidade e governança de dados. Consulte https://docs.netapp.com/us-en/ontap/nas-audit/two-parts-fpolicy-solution-concept.html["Saiba mais sobre as soluções ONTAP FPolicy."^] para mais informações.
+O FPolicy é uma estrutura de notificação de acesso a arquivos usada para monitorar e gerenciar eventos de acesso a arquivos em máquinas virtuais de armazenamento (SVMs). Você pode usar o FPolicy para criar políticas que definem quais operações de arquivo monitorar e, opcionalmente, bloquear, com base em critérios que você define. O FPolicy é comumente usado para auditoria de segurança, conformidade e governança de dados. Saiba mais sobre https://docs.netapp.com/us-en/ontap/nas-audit/two-parts-fpolicy-solution-concept.html["Soluções FPolicy do ONTAP"^].
 
 
 
 == Monitoramento de eventos e desempenho do ONTAP
 
-Você pode monitorar a saúde e o desempenho de um cluster. Isso inclui configurar alertas para eventos e gerenciar notificações para alertas de integridade do sistema. Consulte https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoramento de eventos, desempenho e saúde"^] para mais informações.
+Você pode monitorar a saúde e o desempenho de um cluster. Isso inclui configurar alertas para eventos e gerenciar notificações para alertas de saúde do sistema. Saiba mais sobre  https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoramento de eventos, desempenho e saúde"^].
 
 
 

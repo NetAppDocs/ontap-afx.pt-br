@@ -34,6 +34,9 @@ As tarefas administrativas do ONTAP que você executa com a AFX geralmente se en
 
 É importante observar que esses níveis descrevem como as tarefas administrativas são organizadas e atribuídas, e não necessariamente como a segurança associada é configurada.  Por exemplo, embora uma conta de administrador de cluster seja necessária para executar a administração no nível do cluster, ela também pode ser usada para administração de SVM.
 
+
+NOTE: A partir do ONTAP 9.19.1, os administradores de SVM podem monitorar e gerenciar suas próprias SVMs usando um painel de controle dedicado do System Manager. Saiba mais sobre o https://docs.netapp.com/us-en/ontap/concept-svm-admin-dashboard-sm.html["ONTAP System Manager painel de administração do SVM"^]
+
 Administrador de cluster:: O administrador do cluster tem controle total do cluster AFX, incluindo todas as SVMs. O nível administrativo do cluster AFX inclui apenas as tarefas que um administrador de cluster pode executar e nenhuma das tarefas de administração específicas do SVM. Verlink:../administer/view-dashboard.html["Administre seu cluster"] para mais informações.
 Administrador SVM:: Uma função de administrador de SVM tem controle de uma SVM específica e, portanto, é mais restrita em comparação ao administrador de cluster. A administração do SVM envolve a execução de tarefas com objetos e recursos que têm um escopo SVM, como a criação de um volume. Verlink:../manage-data/prepare-manage-data.html["Administre suas VMs de armazenamento e dados"] para mais informações.
 
@@ -111,9 +114,12 @@ Com o AFX, uma nova VLAN HA é adicionada aos switches do cluster de backend par
 
 == Limitações de implantação do cluster AFX
 
-Há várias limitações, incluindo mínimos e máximos, impostas pela AFX ao configurar e usar seu cluster. Esses limites se enquadram em várias categorias, incluindo:
+Existem diversas limitações, incluindo valores mínimos e máximos, impostas pelo AFX ao configurar e usar seu cluster. Esses limites se enquadram em várias categorias.
 
-Nós controladores por cluster:: Cada cluster AFX deve ter pelo menos quatro nós.  O número máximo de nós varia de acordo com a versão do ONTAP .
+
+CAUTION: Antes de aumentar um parâmetro operacional do seu sistema de storage AFX, você deve avaliar como isso pode impactar seus aplicativos e o cluster como um todo. Por exemplo, embora expandir o número de nós controladores aumente a capacidade geral, isso também pode aumentar o tráfego na rede do cluster. É importante entender as implicações dessas alterações de configuração e como elas podem afetar seu ambiente.
+
+Nós controladores por cluster:: Cada cluster AFX deve ter pelo menos quatro nós. O número máximo de nós varia de acordo com a release do ONTAP; por exemplo, a release 9.19.1 RC permite até 32 nós por cluster AFX.
 Capacidade de armazenamento:: Esta é a capacidade total em todos os discos SSD na Zona de Disponibilidade de Armazenamento (SAZ) do cluster. A capacidade máxima de armazenamento varia de acordo com a versão do ONTAP .
 Comutadores de cluster:: Você precisa de pelo menos dois switches em sua rede de armazenamento em cluster.  O máximo permitido é determinado com base no número total de nós controladores no cluster.
 

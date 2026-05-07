@@ -4,25 +4,42 @@ permalink: administer/monitor-cluster-performance.html
 keywords: afx, afx system, cluster performance 
 summary: Você pode exibir uma visão geral de alto nível do desempenho do seu cluster AFX. 
 ---
-= Monitorar o desempenho do cluster do sistema de armazenamento AFX
+= Monitore o desempenho do cluster do sistema de storage AFX e a utilização do storage
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Você pode exibir uma visão geral de alto nível do desempenho do seu cluster AFX.
+Você pode exibir uma visão geral de alto nível do desempenho e da utilização do storage do seu cluster AFX.
 
 
 
 == Capacidade de armazenamento
 
-O painel do System Manager inclui uma exibição de alto nível da utilização do armazenamento do cluster.
+Monitore a utilização do storage para garantir que você tenha capacidade de storage suficiente para as cargas de trabalho atuais e futuras.
+
+
+
+=== Monitorar utilização do storage em alto nível
+
+No ONTAP System Manager, você pode visualizar uma exibição de alto nível da utilização do storage em todo o cluster.
 
 .Passos
 . No Gerenciador do Sistema, selecione *Painel* no painel de navegação.
 . Localize o bloco *Capacidade* e visualize o armazenamento físico disponível e usado.
 . Selecione *Histórico* para acessar o Active IQ e visualizar os dados históricos.
+
+
+
+
+=== Monitorar detalhes da capacidade da zona de disponibilidade de storage
+
+A partir do ONTAP 9.19.1, você pode visualizar os detalhes de capacidade da sua disponibilidade de storage, incluindo limites de espaço, espaço consumido por snapshots e redução de dados. Você também pode definir limites de uso de espaço para a porcentagem na qual deseja que ONTAP gere alertas de aviso e críticos.
+
+.Passos
+. No System Manager, selecione *Cluster > Overview* e, em seguida, selecione *Availability zone*.
+. Para modificar os limites de espaço de aviso ou crítico, selecione image:icon_edit_pencil_blue_outline.png["ícone de edição de lápis azul"] sob o limite que deseja editar.
 
 
 
