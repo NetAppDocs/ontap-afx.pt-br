@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: release-notes/changes-to-limits-defaults.html 
+keywords: release notes, changes, updates, defaults, limits, afx storage system, afx system, afx 
+summary: Saiba mais sobre as alterações nos limites e valores padrão que afetam os sistemas AFX. NetApp se esforça para ajudar seus clientes a entender as alterações mais importantes nos valores padrão e nos limites em cada versão do ONTAP. 
+---
+= Alterações nos limites e valores padrão do ONTAP que afetam os sistemas AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre as alterações nos limites e valores padrão que afetam os sistemas AFX. NetApp se esforça para ajudar seus clientes a entender as alterações mais importantes nos valores padrão e nos limites em cada versão do ONTAP.
+
+
+TIP: Você deve consultar os detalhes disponíveis na ferramenta NetApp Hardware Universe and Interoperability Matrix para determinar as capacidades do seu cluster AFX.
+
+
+
+== Alterações nos limites do ONTAP
+
+[cols="2,4,4"]
+|===
+| Recurso | Alteração de limite | Alterado na versão 
+
+
+| Nós por cluster  a| 
+Você pode expandir seu cluster AFX para um máximo de 32 nós. Isso permite dimensionar seu sistema de storage AFX para atender às crescentes demandas de suas cargas de trabalho e aplicativos.
+| ONTAP 9.19.1 RC 
+|===
+
+
+== Informações relacionadas
+
+* https://hwu.netapp.com/["Hardware Universe da NetApp"^]
+* https://imt.netapp.com/["Ferramenta de Matriz de Interoperabilidade da NetApp"^]
+* https://docs.netapp.com/us-en/interoperability-matrix-tool/["Visão geral da ferramenta Matriz de Interoperabilidade"^]
+

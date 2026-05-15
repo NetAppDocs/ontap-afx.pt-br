@@ -8,3 +8,5 @@ entries:
   url: "/release-notes/whats-new-9181.html"
 - title: Novidades no ONTAP 9.17.1
   url: "/release-notes/whats-new-9171.html"
+- title: Alterações nos padrões e limites do ONTAP
+  url: "/release-notes/changes-to-limits-defaults.html"

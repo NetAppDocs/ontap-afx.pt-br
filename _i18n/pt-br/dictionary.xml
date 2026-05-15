@@ -1881,9 +1881,6 @@
   <block id="1f237fc34e7dd74398581eefc40958c3" category="admonition">Saiba mais sobre o novo e aprimorado suporte para<block ref="50cef57effbd6fcf26f3b3db513271ba" category="inline-link-rx"></block>.</block>
   <block id="10d7bfdf332491f86c54ec3d92031af9" category="summary">Saiba mais sobre os novos recursos incluídos no ONTAP 9.19.1 que estão disponíveis com o seu sistema de storage AFX.</block>
   <block id="9ebdbbd8dbfbcf6224092a44e6772af0" category="doc">Novidades do ONTAP 9.19.1 para sistemas de armazenamento AFX</block>
-  <block id="a0c84a4c41f756ea7750bb10b0423e11" category="section-title">Desempenho e escala</block>
-  <block id="0d0331cbf0e501ed4e4912dc043a60c7" category="cell">Tamanho expandido do cluster AFX</block>
-  <block id="25bb096e1dae008973cf4d1cbcb776f6" category="paragraph">ONTAP 9.19.1 suporta a expansão de um cluster AFX para um máximo de 32 nós. Isso permite dimensionar seu sistema de storage AFX para atender às crescentes demandas de suas cargas de trabalho e aplicativos.</block>
   <block id="5713c60dfa0d2bc57e54b11e4a1b6cfe" category="cell">Leitura Sequencial de Arquivos Cruzados (CFSR)</block>
   <block id="4c400b26187ab8dd0971020d23077db3" category="paragraph">A Leitura Sequencial entre Arquivos pode melhorar significativamente o desempenho de leitura para determinadas cargas de trabalho de mídia e entretenimento. O recurso pré-busca de forma inteligente quadros de vídeo sequenciais para melhorar drasticamente a taxa de transferência e reduzir a latência em aplicativos de edição de vídeo. Consulte <block ref="d20869026a82d2608dc3e8932f1a0bfe" category="inline-link-macro-rx"></block> para mais informações.</block>
   <block id="9d8ca8942805bbef83b9c607e5358741" category="paragraph">A deduplicação global estende as economias de espaço da deduplicação do ONTAP para toda a Storage Availability Zone (SAZ). Ao eliminar blocos de dados duplicados em todos os volumes da SAZ, ela pode melhorar significativamente a eficiência de storage e reduzir o custo de propriedade. O recurso é ativado por padrão nos sistemas AFX e opera de forma transparente, sem a necessidade de configuração administrativa. Consulte <block ref="d20869026a82d2608dc3e8932f1a0bfe" category="inline-link-macro-rx"></block> para obter mais informações.</block>
@@ -1906,4 +1903,18 @@
   <block id="368f083985829ad76ae5f8d7530fbd0e" category="cell"><block ref="368f083985829ad76ae5f8d7530fbd0e" category="inline-link-macro-rx"></block></block>
   <block id="2b1cc84feb959647df3e34b19f0fa843" category="paragraph">Ao executar verificações automatizadas de pré-atualização, os erros e avisos são exibidos separadamente para ajudá-lo a identificar facilmente os problemas que devem ser resolvidos antes de você atualizar.</block>
   <block id="7ceef35284e2093e2f3f2e17a1256628" category="sidebar">O que há de novo no ONTAP 9.19.1</block>
+  <block id="b48fd339e170a9f069029f36a4c5c062" category="inline-link-macro">Alterações nos limites e valores padrão do ONTAP</block>
+  <block id="86c7db31d90416abec90b535da924b25" category="paragraph">Você deve consultar os detalhes disponíveis na NetApp Hardware Universe e Ferramenta de Matriz de Interoperabilidade para determinar as capacidades do seu cluster AFX. Consulte também <block ref="8bef5b3500e1d2396e08db40f86c62db" category="inline-link-macro-rx"></block> na seção de notas de versão do AFX.</block>
+  <block id="4cc2a31dced9a524a1b76972ce8cabf5" category="summary">Saiba mais sobre as alterações nos limites e valores padrão que afetam os sistemas AFX. NetApp se esforça para ajudar seus clientes a entender as alterações mais importantes nos valores padrão e nos limites em cada versão do ONTAP.</block>
+  <block id="d119e4d4dc8f9b894c96d18128e78e46" category="doc">Alterações nos limites e valores padrão do ONTAP que afetam os sistemas AFX</block>
+  <block id="d579ca395df40cbbb953cb531ce23a3d" category="section-title">Alterações nos limites do ONTAP</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Recurso</block>
+  <block id="4d209cddba5e4e3f517cda6d0180e867" category="cell">Alteração de limite</block>
+  <block id="534453c63ab1c5041c53f8bbc059a9b7" category="cell">Alterado na versão</block>
+  <block id="8010ab2f71c733c1a8013b31b901be79" category="cell">Nós por cluster</block>
+  <block id="355836185b6feaed32d56f19e33032eb" category="paragraph">Você pode expandir seu cluster AFX para um máximo de 32 nós. Isso permite dimensionar seu sistema de storage AFX para atender às crescentes demandas de suas cargas de trabalho e aplicativos.</block>
+  <block id="5148c61a8c3e3afeb285a73e9241d26c" category="cell">ONTAP 9.19.1 RC</block>
+  <block id="f80f1ede0c7983dcab18fc7104224f56" category="cell">Eficiência de storage dinâmica</block>
+  <block id="00e7d9732d9f1a308baa60f42ec78d16" category="paragraph">A Eficiência Dinâmica de Storage otimiza de forma inteligente as operações de eficiência de storage (compressão, deduplicação e compactação) para grandes cargas de trabalho que exigem alto desempenho e taxa de transferência máxima. Ela detecta automaticamente condições de gravação de alto volume e suspende temporariamente os processos de eficiência de storage em linha e em segundo plano para evitar a degradação do desempenho durante picos de carga. Quando a taxa de transferência cai abaixo de um limite definido, as operações de eficiência de storage são retomadas e a economia é recuperada sem intervenção manual. O recurso está disponível nos sistemas de storage AFX e ativado por padrão, sem necessidade de configuração.</block>
+  <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Alterações nos padrões e limites do ONTAP</block>
 </blocks>

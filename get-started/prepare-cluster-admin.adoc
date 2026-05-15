@@ -124,7 +124,7 @@ Capacidade de armazenamento:: Esta é a capacidade total em todos os discos SSD 
 Comutadores de cluster:: Você precisa de pelo menos dois switches em sua rede de armazenamento em cluster.  O máximo permitido é determinado com base no número total de nós controladores no cluster.
 
 
-Você deve consultar os detalhes disponíveis na ferramenta NetApp Hardware Universe and Interoperability Matrix para determinar as capacidades do seu cluster AFX.
+Você deve consultar os detalhes disponíveis na NetApp Hardware Universe e Ferramenta de Matriz de Interoperabilidade para determinar as capacidades do seu cluster AFX. Consulte também link:../release-notes/changes-to-limits-defaults.html["Alterações nos limites e valores padrão do ONTAP"] na seção de notas de versão do AFX.
 
 
 
