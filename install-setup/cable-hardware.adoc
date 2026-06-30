@@ -147,7 +147,7 @@ Certifique-se de que possui os cabos e conectores corretos para seus switches. V
 image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
 
 +
-image::../media/drw_afx_ha_cluster_storage_a_ieops-2779.svg[Cluster de controladores com cabos,HA,and storage to switch A]
+image::../media/drw_afx_ha_cluster_storage_a_ieops-2779.svg[Cluster de controladores com cabos,800px,and storage to switch A]
 
 
 
@@ -178,7 +178,7 @@ Certifique-se de que possui os cabos e conectores corretos para seus switches. V
 image::../media/oie_cable100_gbe_qsfp28.png[Cabo de 100 Gb]
 
 +
-image::../media/drw_afx_ha_cluster_storage_b_ieops-2780.svg[Cluster de controladores com cabos,HA,and storage to switch B]
+image::../media/drw_afx_ha_cluster_storage_b_ieops-2780.svg[Cluster de controladores com cabos,800px,and storage to switch B]
 
 
 

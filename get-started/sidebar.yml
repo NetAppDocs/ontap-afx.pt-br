@@ -16,30 +16,58 @@ entries:
   url: "/get-started/quick-start.html"
 - title: Instale seu sistema AFX
   entries:
-  - title: Fluxo de trabalho de instalação
-    url: "/install-setup/install-setup-workflow.html"
-  - title: Revisar requisitos de hardware
-    url: "/install-setup/install-setup-requirements.html"
-  - title: Preparar para instalar
-    url: "/install-setup/prepare-hardware.html"
-  - title: Instalar hardware
+  - title: AFX 1K
     entries:
-    - title: Instalar interruptores
-      url: "/install-setup/install-switches.html"
-    - title: Instalar sistema de armazenamento e prateleiras
-      url: "/install-setup/deploy-hardware.html"
-  - title: Cabeamento
+    - title: Fluxo de trabalho de instalação
+      url: "/install-setup/install-setup-workflow.html"
+    - title: Revisar requisitos de hardware
+      url: "/install-setup/install-setup-requirements.html"
+    - title: Preparar para instalar
+      url: "/install-setup/prepare-hardware.html"
+    - title: Instalar hardware
+      entries:
+      - title: Instalar interruptores
+        url: "/install-setup/install-switches.html"
+      - title: Instalar sistema de armazenamento e prateleiras
+        url: "/install-setup/deploy-hardware.html"
+    - title: Cabeamento
+      entries:
+      - title: Revisar configurações suportadas
+        url: "/install-setup/afx-cable-overview.html"
+      - title: Reúna informações de rede
+        url: "/install-setup/install-network-reqs.html"
+      - title: Hardware de cabo
+        url: "/install-setup/cable-hardware.html"
+    - title: Ligar e configurar interruptores
+      url: "/install-setup/power-on-configure-switch.html"
+    - title: Ligar o sistema
+      url: "/install-setup/power-on-hardware.html"
+  - title: AFX 2K
     entries:
-    - title: Revisar configurações suportadas
-      url: "/install-setup/afx-cable-overview.html"
-    - title: Reúna informações de rede
-      url: "/install-setup/install-network-reqs.html"
-    - title: Hardware de cabo
-      url: "/install-setup/cable-hardware.html"
-  - title: Ligar e configurar interruptores
-    url: "/install-setup/power-on-configure-switch.html"
-  - title: Ligar o sistema
-    url: "/install-setup/power-on-hardware.html"
+    - title: Fluxo de trabalho de instalação
+      url: "/install-afx-2k/install-setup-workflow.html"
+    - title: Revisar requisitos de hardware
+      url: "/install-afx-2k/install-setup-requirements.html"
+    - title: Preparar para instalar
+      url: "/install-afx-2k/prepare-hardware.html"
+    - title: Instalar hardware
+      entries:
+      - title: Instalar interruptores
+        url: "/install-afx-2k/install-switches.html"
+      - title: Instalar sistema de armazenamento e prateleiras
+        url: "/install-afx-2k/deploy-hardware.html"
+    - title: Cabeamento
+      entries:
+      - title: Revisar configurações suportadas
+        url: "/install-afx-2k/afx-cable-overview.html"
+      - title: Reúna informações de rede
+        url: "/install-afx-2k/install-network-reqs.html"
+      - title: Hardware de cabo
+        url: "/install-afx-2k/cable-hardware.html"
+    - title: Ligar e configurar interruptores
+      url: "/install-afx-2k/power-on-configure-switch.html"
+    - title: Ligar o sistema
+      url: "/install-afx-2k/power-on-hardware.html"
 - title: Configure seu sistema AFX
   url: "/install-setup/cluster-setup.html"
 - title: Prepare-se para administrar o AFX

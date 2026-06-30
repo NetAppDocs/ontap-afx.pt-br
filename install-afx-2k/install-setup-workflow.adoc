@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: install-afx-2k/install-setup-workflow.html 
+keywords: afx, afx 2k, install, setup, workflow 
+summary: Comece a instalação e configuração do sistema de storage AFX 2K e implemente-o em seu ambiente ONTAP. 
+---
+= Fluxo de trabalho de instalação e configuração para sistemas de storage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para instalar e configurar seu sistema de storage AFX 2K, você deve revisar os requisitos de hardware, preparar seu site, instalar os switches, instalar e conectar os componentes de hardware, ligar o sistema e configurar seu cluster ONTAP AFX.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"]link:../install-setup/install-setup-requirements.html["Revise os requisitos de instalação de hardware"]
+[role="quick-margin-para"]
+Verifique os requisitos de hardware para instalar seu sistema de storage AFX 2K.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"]link:../install-setup/prepare-hardware.html["Prepare-se para instalar seu sistema de storage AFX 2K"]
+[role="quick-margin-para"]
+Prepare-se para instalar seu sistema de storage AFX 2K preparando o local, verificando os requisitos ambientais e elétricos, garantindo espaço em rack, desembalando o equipamento, conferindo o conteúdo com o packing slip e registrando o hardware para suporte.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"]link:install-switches.html["Instale os switches para o seu sistema de storage AFX 2K"]
+[role="quick-margin-para"]
+Instale os switches Cisco Nexus 9808, 9332D-GX2B ou 9364D-GX2A no gabinete ou rack. Instale um kit de painel de passagem se estiver usando o switch Cisco Nexus 9364D-GX2A.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"]link:deploy-hardware.html["Instale o hardware para o seu sistema de storage AFX 2K"]
+[role="quick-margin-para"]
+Instale os kits de trilhos para seu sistema de armazenamento e prateleiras.  Proteja seu sistema de armazenamento no gabinete ou no rack de telecomunicações.  Em seguida, deslize as prateleiras sobre os trilhos instalados.  Por fim, conecte os dispositivos de gerenciamento de cabos na parte traseira do sistema de armazenamento para organizar o roteamento dos cabos.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:cable-hardware.html["Conecte os controladores e prateleiras do seu sistema de storage AFX 2K"]
+[role="quick-margin-para"]
+Para conectar o hardware, primeiro conecte os nós do controlador de armazenamento à sua rede e, em seguida, conecte os nós do controlador e as prateleiras de armazenamento aos switches do cluster.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"]link:power-on-configure-switch.html["Ligue e configure os switches do seu sistema de storage AFX 2K"]
+[role="quick-margin-para"]
+Ligue e configure os switches para o seu sistema de storage AFX 2K. Verifique as instruções de configuração para os switches Cisco Nexus 9808, 9332D-GX2B e 9364D-GX2A.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sete"]link:power-on-hardware.html["Ligue seu sistema de storage AFX 2K"]
+[role="quick-margin-para"]
+Ligue cada prateleira de armazenamento e atribua uma ID de prateleira exclusiva antes de ligar os nós do controlador para identificar claramente cada prateleira na configuração.

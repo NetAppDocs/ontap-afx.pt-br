@@ -21,7 +21,7 @@ A configuração inicial do sistema de armazenamento AFX 1K suporta no mínimo q
 
 Nós de controlador e prateleiras de disco adicionais expandem a configuração inicial do sistema de armazenamento AFX 1K.  As configurações expandidas do AFX 1K seguem a mesma metodologia de cabeamento baseada em switch do esquema descrito abaixo.
 
-image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemplo de cabeamento do sistema de armazenamento AFK 1K"]
+image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemplo de cabeamento do sistema de storage AFX 1K, largura=1000px"]
 
 
 

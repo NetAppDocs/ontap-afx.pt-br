@@ -39,9 +39,10 @@ O controlador de armazenamento AFX e as prateleiras de armazenamento são pesado
 
 Tome as precauções necessárias ao mover ou levantar seu controlador de armazenamento AFX 1K.
 
-Um controlador de armazenamento AFX 1K pode pesar até 28,5 kg (62,83 lbs).  Para levantar o controlador de armazenamento, use duas pessoas ou um elevador hidráulico.
+Um controlador de armazenamento AFX 1K pode pesar até 62,83 lb (28,5 kg). Para levantar o controlador de armazenamento, use duas pessoas ou um elevador hidráulico.
 
-image::../media/drw_a1k_weight_caution_ieops-1698.svg[Ícone de cautela de elevação ASA A1K]
+.Precaução ao levantar o controlador AFX 1K.
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Ícone de alerta de elevação AFX 1K]
 
 
 
@@ -51,8 +52,9 @@ Tome as precauções necessárias ao mover ou levantar sua prateleira.
 
 .Prateleira NX224
 --
-Uma prateleira NX224 pode pesar até 27,3 kg (60,1 lbs).  Para levantar a prateleira, use duas pessoas ou um elevador hidráulico.  Mantenha todos os componentes na prateleira (frontal e traseira) para evitar desequilíbrio no peso da prateleira.
+Uma prateleira NX224 pode pesar até 60,1 lb (27,3 kg). Para levantar a prateleira, use duas pessoas ou um elevador hidráulico. Mantenha todos os componentes na prateleira (tanto na parte frontal quanto na traseira) para evitar o desbalanceamento do peso da prateleira.
 
+.Precaução ao levantar a prateleira NX224.
 image::../media/drw_nx224_lifting_weight_ieops-2437.svg[Cuidado com o levantamento do NX224 NSM100]
 
 .Informações relacionadas

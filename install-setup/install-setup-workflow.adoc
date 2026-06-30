@@ -50,3 +50,11 @@ Se você estiver implementando o AFX 1K com AI Data Engine (AIDE), poderá insta
 
 
 ====
+* Para implantações de servidores de terceiros, consulte  https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["Requisitos para AI Data Engine com o software AIDE em servidores de terceiros"^] e  https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["instalar o software AIDE em servidores de terceiros"^].
+* Para implantações de NetApp DCN, consulte  https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["Requisitos para AI Data Engine em nós de computação de dados fornecidos pela NetApp"^].
+
+
+[]
+====
+
+====

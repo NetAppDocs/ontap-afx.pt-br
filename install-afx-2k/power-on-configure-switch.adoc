@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: install-afx-2k/power-on-configure-switch.html 
+keywords: afx, afx 2k, cable controllers, Cisco Nexus 9332D-GX2B, Cisco Nexus 9364D-GX2A, switches, switch, power on, configure switches, 
+summary: Aprenda como ligar e configurar os switches do seu sistema de storage AFX 2K. 
+---
+= Ligue e configure os switches do seu sistema de storage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Após conectar os cabos do seu sistema de storage AFX 2K, você precisa ligar e configurar os switches Cisco Nexus 9808, 9332D-GX2B ou 9364D-GX2A.
+
+.Passos
+. Conecte os cabos de alimentação dos interruptores nas fontes de alimentação.
+. Conecte os cabos ISL entre os dois switches.
++
+** Para obter mais informações sobre os switches Cisco Nexus 9808, consulte a link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-modular-overview-ph2.html["Guia de Instalação de Hardware do Switch Cisco Nexus 9808 Mode"^].
+** Para switches Cisco Nexus 9332D-GX2B, use as portas 31/32 para as conexões ISL. Consulte a link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide/m_overview1.html["Cisco Nexus 9332D-GX2B Guia de Instalação de Hardware do Switch"^] para obter mais informações.
+** Para switches Cisco Nexus 9364D-GX2A, use as portas 63/64 para as conexões ISL. Consulte a link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide/m_overview1.html["Guia de Instalação de Hardware do Switch de Modo Cisco Nexus 9364D-GX2A"^] para obter mais informações.
+
+
+. Ligue cada interruptor.
+. Configure os switches para suportar o sistema de storage AFX 2K.
++
+** Para obter mais informações sobre como configurar os switches, consulte o link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configurar switches para sistemas de storage AFX"^].
+
+
+
+
+.O que vem a seguir?
+Após configurar os switches para o seu sistema de storage AFX 2K, link:power-on-hardware.html["Ligue o sistema de storage AFX 2K"].

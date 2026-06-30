@@ -51,9 +51,9 @@ TIP: Você deve revisar olink:../faq-ontap-afx.html["Perguntas frequentes sobre 
 
 Os seguintes componentes de hardware são usados com clusters AFX:
 
-* Controladores AFX 1K
+* Controladores AFX 1K ou 2K
 * Prateleiras NX224
-* Switches Cisco Nexus 9332D-GX2B ou Nexus 9364D-GX2A
+* Cisco Nexus 9332D-GX2B, Nexus 9364D-GX2A ou Nexus 9808 switches
 
 
 
