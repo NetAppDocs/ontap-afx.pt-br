@@ -18,18 +18,21 @@ NOTE: Os recursos e a administração do ONTAP descritos são comuns aos sistema
 
 
 
+[[licensing]]
 == Licenciamento
 
 Os sistemas AFX são licenciados de forma semelhante aos sistemas Unified ONTAP AFF e FAS .  Um cluster AFX inclui a maioria dos recursos por padrão para os protocolos suportados.
 
 
 
+[[ontap-license-management]]
 === Gerenciamento de licenças ONTAP
 
 Uma licença ONTAP é um registro de um ou mais direitos de software.  Todas as licenças são definidas e fornecidas usando um arquivo de licença NetApp (NLF). Consulte https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Visão geral do licenciamento ONTAP"^] para maiores informações.
 
 
 
+[[install-a-license-on-an-afx-system]]
 === Instalar uma licença em um sistema AFX
 
 Você pode instalar arquivos de licença para ativar recursos adicionais conforme necessário para seu sistema de armazenamento AFX.
@@ -45,12 +48,14 @@ Você pode instalar arquivos de licença para ativar recursos adicionais conform
 
 
 
+[[performance]]
 == Desempenho
 
 Utilize recursos comuns do ONTAP para otimizar o desempenho do cluster do seu sistema de storage AFX.
 
 
 
+[[modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases]]
 === Modifique as configurações padrão que controlam os aumentos automáticos do teto de taxa de transferência do QoS
 
 Os grupos de políticas de QoS adaptativas e não adaptativas são ativados automaticamente para aumentar temporariamente o limite de throughput de uma carga de trabalho em 50% por 1 segundo para responder a demandas de curto prazo por maior desempenho por padrão. A partir do ONTAP 9.19.1, é possível modificar essas configurações padrão. No ONTAP 9.18.1 e versões anteriores, essas configurações não podem ser alteradas.
@@ -59,30 +64,35 @@ Consulte link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-th
 
 
 
+[[security]]
 == Segurança
 
 Há vários recursos de segurança opcionais que você pode configurar e usar com sua implantação do AFX.
 
 
 
+[[ontap-security-and-data-encryption]]
 === Segurança ONTAP e criptografia de dados
 
 É importante proteger a segurança e a privacidade do seu sistema de armazenamento AFX. Consulte  https://docs.netapp.com/us-en/ontap/security-encryption/index.html["Segurança e criptografia de dados"^]
 
 
 
+[[ontap-authentication-and-access-control]]
 === Autenticação e controle de acesso ONTAP
 
 O sistema de armazenamento AFX oferece diversas opções para configurar serviços de autenticação e controle de acesso. Consulte https://docs.netapp.com/us-en/ontap/authentication-access-control/index.html["Autenticação e controle de acesso"^] para maiores informações.
 
 
 
+[[ontap-tls-hardware-offload]]
 === Descarregamento de hardware TLS do ONTAP
 
 Você pode descarregar a criptografia e descriptografia do Transport Layer Security (TLS) de todo o seu cluster para placas Ethernet compatíveis. Isso reduz a sobrecarga da CPU e melhora o desempenho de sistemas que usam TLS. Consulte  https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["Configurar o descarregamento de hardware TLS do ONTAP"^] para mais informações.
 
 
 
+[[administer-oauth-2-0-on-an-afx-system]]
 === Administrar OAuth 2.0 em um sistema AFX
 
 OAuth 2.0 é a estrutura de autorização padrão do setor usada para restringir e controlar o acesso a recursos protegidos usando tokens de acesso assinados.
@@ -97,6 +107,7 @@ OAuth 2.0 é a estrutura de autorização padrão do setor usada para restringir
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * link:../faq-ontap-afx.html["Perguntas frequentes sobre sistemas de armazenamento AFX"]

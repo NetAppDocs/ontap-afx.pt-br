@@ -18,6 +18,7 @@ Esta lista de perguntas frequentes fornece respostas para dúvidas que você pos
 
 
 
+[[general]]
 == Em geral
 
 .O que é uma personalidade ONTAP ?
@@ -50,6 +51,7 @@ O segundo conceito relacionado ao armazenamento desagregado é que os agregados 
 
 
 
+[[interoperability]]
 == Interoperabilidade
 
 .Posso misturar nós do sistema AFX com nós do sistema AFF, ASA ou FAS no mesmo cluster ONTAP ?
@@ -68,6 +70,7 @@ Não. Somente a API REST ONTAP é suportada pelo AFX.  Qualquer código de autom
 
 
 
+[[advanced-concepts]]
 == Conceitos avançados
 
 .Quais são os protocolos de dados suportados por um sistema de armazenamento AFX?

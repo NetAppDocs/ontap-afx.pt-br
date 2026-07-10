@@ -18,6 +18,7 @@ TIP: A documentação do AFX inclui links para vários tópicos no site de docum
 
 
 
+[[configuration-differences]]
 == Diferenças de configuração
 
 Existem algumas áreas em que a configuração do AFX difere dos sistemas AFF e FAS .
@@ -27,12 +28,14 @@ Balanceamento de Capacidade Avançado:: O recurso avançado de balanceamento de 
 
 
 
+[[unsupported-or-restricted-unified-ontap-capabilities]]
 == Recursos do Unified ONTAP não suportados ou restritos
 
 NetApp AFX é otimizado para cargas de trabalho NAS e de objetos de alto desempenho. Por isso, existem diferenças em relação aos sistemas de armazenamento AFF e FAS. Os seguintes recursos não estão disponíveis no NetApp AFX; a lista está organizada por recurso principal ou área funcional. Você também deve revisar as atualizações e alterações do AFX em link:../release-notes/whats-new-9171.html["O que há de novo"] com base na sua versão do ONTAP.
 
 
 
+[[block-and-san]]
 === Bloco e SAN
 
 * Administração SAN e acesso do cliente
@@ -42,6 +45,7 @@ NetApp AFX é otimizado para cargas de trabalho NAS e de objetos de alto desempe
 
 
 
+[[aggregates-and-physical-storage]]
 === Agregados e armazenamento físico
 
 * MetroCluster
@@ -56,6 +60,7 @@ NetApp AFX é otimizado para cargas de trabalho NAS e de objetos de alto desempe
 
 
 
+[[data-replication-snapmirror]]
 === Replicação de dados (SnapMirror)
 
 
@@ -67,6 +72,7 @@ NOTE: A replicação de dados é suportada em ambas as direções entre o Unifie
 
 
 
+[[manageability]]
 === Gerenciabilidade
 
 * API ONTAPI (ZAPI)
@@ -78,6 +84,7 @@ NOTE: A replicação de dados é suportada em ambas as direções entre o Unifie
 
 
 
+[[changes-to-the-command-line-interface]]
 == Alterações na interface da linha de comando
 
 O ONTAP CLI disponível com o AFX geralmente espelha o CLI disponível com os sistemas AFF e FAS .  Mas há várias diferenças, incluindo:
@@ -95,6 +102,7 @@ O ONTAP CLI disponível com o AFX geralmente espelha o CLI disponível com os si
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * link:../get-started/system-design.html["Características do sistema AFX"]

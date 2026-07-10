@@ -21,6 +21,7 @@ TIP: Saiba mais sobre o novo e aprimorado suporte para https://docs.netapp.com/u
 
 
 
+[[storage-resource-management-enhancements]]
 == Melhorias no gerenciamento de recursos de armazenamento
 
 [cols="2,4"]

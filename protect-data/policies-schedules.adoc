@@ -15,6 +15,7 @@ Você pode usar políticas de snapshot para proteger dados em seus grupos de con
 
 
 
+[[create-a-new-protection-policy-schedule]]
 == Criar um novo cronograma de política de proteção
 
 Um cronograma de política de proteção define a frequência com que uma política de snapshots é executada.  Você pode criar agendamentos para execução em intervalos regulares com base em um número de dias, horas ou minutos.  Por exemplo, você pode criar uma programação para executar a cada hora ou apenas uma vez por dia.  Você também pode criar agendamentos para execução em horários específicos em dias específicos da semana ou do mês.  Por exemplo, você pode criar uma programação para ser executada às 00h15 do dia 20 de cada mês.
@@ -33,6 +34,7 @@ Agora que você criou um novo agendamento de políticas, pode usar o agendamento
 
 
 
+[[create-a-snapshot-policy]]
 == Criar uma política de snapshot
 
 Uma política de snapshot define a frequência com que os snapshots são tirados, o número máximo de snapshots permitidos e por quanto tempo os snapshots são retidos.
@@ -51,6 +53,7 @@ Agora que você criou uma política de snapshot, pode aplicá-la a um grupo de c
 
 
 
+[[apply-a-snapshot-policy-to-a-consistency-group]]
 == Aplicar uma política de snapshot a um grupo de consistência
 
 Aplique uma política de snapshot a um grupo de consistência para criar, reter e rotular snapshots do grupo de consistência automaticamente.
@@ -67,6 +70,7 @@ Agora que seus dados estão protegidos com instantâneos, você develink:snapsho
 
 
 
+[[edit-delete-or-disable-a-snapshot-policy]]
 == Editar, excluir ou desabilitar uma política de instantâneo
 
 Edite uma política de snapshot para modificar o nome da política, o número máximo de snapshots ou o rótulo do SnapMirror .  Exclua uma política para removê-la e seus dados de backup associados do seu cluster.  Desabilite uma política para interromper temporariamente a criação ou transferência de snapshots especificados pela política.
@@ -82,6 +86,7 @@ Você modificou, excluiu ou desabilitou a política de snapshot.
 
 
 
+[[edit-a-replication-policy]]
 == Editar uma política de replicação
 
 Edite uma política de replicação para modificar a descrição da política, o cronograma de transferência e as regras.  Você também pode editar a política para habilitar ou desabilitar a compactação de rede.

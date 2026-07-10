@@ -18,6 +18,7 @@ NOTE: Cada usuário do ONTAP precisa ter uma função atribuída.  Uma função 
 
 
 
+[[create-an-account-role]]
 == Criar uma função de conta
 
 As funções para administradores de cluster e administradores de VM de armazenamento são criadas automaticamente quando seu cluster AFX é configurado e inicializado.  Você pode criar funções de conta de usuário adicionais para definir funções específicas que os usuários atribuídos às funções podem executar no seu cluster.
@@ -32,6 +33,7 @@ As funções para administradores de cluster e administradores de VM de armazena
 
 
 
+[[create-a-cluster-account]]
 == Criar uma conta de cluster
 
 Você pode criar uma conta em nível de cluster para usar ao executar a administração do cluster ou do SVM.
@@ -54,6 +56,7 @@ Uma nova conta é criada e fica disponível para uso com seu cluster AFX.
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * link:../administer/prepare-authentication.html["Preparar serviços de autenticação"]

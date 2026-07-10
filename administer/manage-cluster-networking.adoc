@@ -18,6 +18,7 @@ NOTE: Criar um recurso de rede é um primeiro passo importante.  Você também p
 
 
 
+[[create-a-broadcast-domain]]
 == Criar um domínio de transmissão
 
 Um domínio de transmissão simplifica o gerenciamento da sua rede de cluster agrupando portas que fazem parte da mesma rede de camada dois.  As máquinas virtuais de armazenamento (SVMs) podem então ter portas atribuídas no grupo para tráfego de dados ou gerenciamento.
@@ -49,6 +50,7 @@ A MTU é o maior pacote de dados que pode ser aceito no domínio de transmissão
 
 
 
+[[create-an-ipspace]]
 == Criar um IPspace
 
 Um IPspace é um domínio administrativo para endereços IP e configurações de rede relacionadas.  Esses espaços podem ser usados para dar suporte às suas SVMs por meio de administração e roteamento isolados.  Por exemplo, eles são úteis quando clientes têm endereços IP sobrepostos do mesmo endereço IP e intervalo de sub-rede.
@@ -71,6 +73,7 @@ Você pode usar o IPspace para criar uma sub-rede.
 
 
 
+[[create-a-subnet]]
 == Criar uma sub-rede
 
 Uma sub-rede ou sub-rede impõe uma divisão lógica do espaço de endereço IP na sua rede.  Ele permite que você aloque blocos dedicados de endereços IP para a criação de uma interface de rede (LIF).  As sub-redes simplificam a criação de LIF, permitindo que você use o nome da sub-rede em vez de uma combinação específica de endereço IP e máscara de rede.
@@ -94,6 +97,7 @@ A nova sub-rede simplificará a criação de suas interfaces de rede.
 
 
 
+[[create-a-network-interface]]
 == Criar uma interface de rede
 
 Uma interface de rede lógica (LIF) consiste em um endereço IP e parâmetros de configuração de rede relacionados.  Ele pode ser associado a uma porta física ou lógica e normalmente é usado pelos clientes para acessar dados fornecidos por um SVM.  Os LIFs fornecem resiliência em caso de falha e podem migrar entre as portas do nó para que a comunicação não seja interrompida.
@@ -107,6 +111,7 @@ Uma interface de rede lógica (LIF) consiste em um endereço IP e parâmetros de
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * link:../administer/manage-ethernet-ports.html["Gerenciar portas Ethernet AFX"]

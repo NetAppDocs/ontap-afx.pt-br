@@ -15,6 +15,7 @@ Você pode revisar os eventos e mensagens de log de auditoria gerados pelo AFX p
 
 
 
+[[events]]
 == Eventos
 
 As mensagens de eventos fornecem um registro valioso da atividade do sistema.  Cada evento inclui uma descrição e um identificador exclusivo, juntamente com uma ação recomendada.
@@ -28,6 +29,7 @@ As mensagens de eventos fornecem um registro valioso da atividade do sistema.  C
 
 
 
+[[audit-log]]
 == Registro de auditoria
 
 O log de auditoria inclui um registro da atividade do sistema com base no uso de protocolos de acesso, como HTTP.
@@ -39,6 +41,7 @@ O log de auditoria inclui um registro da atividade do sistema com base no uso de
 
 
 
+[[manage-notifications]]
 == Gerenciar notificações
 
 Há vários tipos de notificações suportadas pelo AFX que você pode encaminhar.

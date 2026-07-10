@@ -43,12 +43,14 @@ CAUTION: Use sempre uma pulseira antiestática aterrada, conectada a um ponto de
 
 
 
+[[cisco-nexus-9808-switch-installation]]
 == Instalação do switch Cisco Nexus 9808
 
 Se você estiver instalando o switch Cisco Nexus 9808, consulte o link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-install-chassis.html["Guia de Instalação de Hardware do Switch Cisco Nexus 9808 Mode"^] para obter instruções detalhadas sobre como instalar os switches no gabinete ou rack.
 
 
 
+[[cisco-nexus-9332d-gx2b-and-9364d-gx2a-switch-installation]]
 == Instalação do switch Cisco Nexus 9332D-GX2B e 9364D-GX2A
 
 Se você estiver instalando Cisco Nexus 9332D-GX2B ou 9364D, execute as seguintes etapas para instalar os switches no gabinete ou rack.

@@ -15,6 +15,7 @@ Há várias tarefas administrativas que você pode executar como parte da admini
 
 
 
+[[create-a-qtree]]
 == Criar uma qtree
 
 Uma qtree é uma subdivisão lógica dentro de um volume que você pode criar para organizar e administrar dados.
@@ -27,6 +28,7 @@ Uma qtree é uma subdivisão lógica dentro de um volume que você pode criar pa
 
 
 
+[[create-a-quota]]
 == Criar uma cota
 
 Uma cota é um limite definido na quantidade de espaço de armazenamento ou número de arquivos que podem ser usados por um usuário, grupo ou qtree.  Cotas são usadas para gerenciar e controlar o uso de recursos dentro de um sistema AFX.

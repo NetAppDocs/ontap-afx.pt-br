@@ -15,6 +15,7 @@ Depois de instalar o hardware do rack para seu sistema de armazenamento AFX 1K e
 
 
 
+[[step-1-power-on-the-shelf-and-assign-shelf-id]]
 == Etapa 1: Ligue a prateleira e atribua o ID da prateleira
 
 Cada prateleira tem um ID de prateleira exclusivo, garantindo sua distinção na configuração do seu sistema de armazenamento.
@@ -122,6 +123,7 @@ A fonte de alimentação liga assim que você conecta o cabo de alimentação.  
 
 
 
+[[step-2-power-on-the-controller-nodes]]
 == Etapa 2: Ligue os nós do controlador
 
 Depois de ligar suas prateleiras de armazenamento e atribuir IDs exclusivos a elas, ligue a energia dos nós do controlador de armazenamento.
@@ -160,6 +162,7 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Diagrama de conexão
 
 
 
+[[step-3-verify-the-switch-connections]]
 == Passo 3: Verifique as conexões do switch
 
 A partir da CLI do switch, verifique se as portas do switch conectadas às portas do cluster estão ativas, se os nós do cluster estão em suas VLANs corretas e se a conexão ISL entre os dois switches está funcional.
@@ -407,13 +410,4 @@ cs1#
 
 
 .O que vem a seguir?
-Após ligar o seu sistema de storage AFX 1K, conclua a configuração de acordo com a opção de implementação:
-
-* Para implantações dedicadas do sistema de storage AFX 1K, acesse link:../install-setup/cluster-setup.html["Configurar um cluster AFX"].
-* Para implantações do AFX 1K com AI Data Engine (AIDE), instale servidores de terceiros do AIDE ou nós de computação de dados fornecidos pela NetApp:
-+
-** Para implantações de servidores de terceiros, conclua  https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["instalação de hardware para AI Data Engine em servidores de terceiros"^] e, em seguida,  https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["instalar o software AIDE em servidores de terceiros"^].
-** Para implantações de NetApp DCN, conclua  https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["instalação de hardware para AI Data Engine em nós de computação de dados fornecidos pela NetApp"^].
-
-
-
+Após ligar o seu sistema de storage AFX 1K, link:../install-setup/cluster-setup.html["Configure o cluster AFX"].

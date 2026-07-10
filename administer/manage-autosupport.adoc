@@ -20,6 +20,7 @@ NOTE: Você precisa fazer login no Gerenciador do Sistema usando uma conta de ad
 
 
 
+[[test-autosupport-connectivity]]
 == Teste a conectividade do AutoSupport
 
 Depois de configurar seu cluster, você deve testar sua conectividade do AutoSupport para verificar se o suporte técnico pode receber as mensagens geradas pelo AutoSupport.
@@ -32,6 +33,7 @@ Depois de configurar seu cluster, você deve testar sua conectividade do AutoSup
 
 
 
+[[add-autosupport-recipients]]
 == Adicionar destinatários do AutoSupport
 
 Opcionalmente, você pode adicionar membros da sua organização de suporte interno à lista de endereços de e-mail que recebem mensagens do AutoSupport .
@@ -54,6 +56,7 @@ Os endereços de e-mail que você adicionou receberão novas mensagens do AutoSu
 
 
 
+[[send-autosupport-data]]
 == Enviar dados do AutoSupport
 
 Se ocorrer um problema com seu sistema AFX, você deverá enviar manualmente os dados do AutoSupport .  Isso pode diminuir significativamente o tempo necessário para identificar e resolver o problema.
@@ -70,6 +73,7 @@ Seus dados do AutoSupport são enviados ao suporte técnico.
 
 
 
+[[suppress-support-case-generation]]
 == Suprimir a geração de casos de suporte
 
 Se você estiver realizando uma atualização ou manutenção no seu sistema AFX, talvez seja interessante suprimir a geração de casos de suporte do AutoSupport até que a atualização ou manutenção seja concluída.
@@ -86,6 +90,7 @@ Os casos de AutoSupport não serão gerados durante o período especificado.  Se
 
 
 
+[[resume-support-case-generation]]
 == Geração de caso de suporte de currículo
 
 Se você suprimiu a geração de casos de suporte durante uma janela de atualização ou manutenção, você deve retomar a geração de casos de suporte imediatamente após a conclusão da atualização ou manutenção.
@@ -102,6 +107,7 @@ Os casos de AutoSupport serão gerados automaticamente para seu sistema AFX conf
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * https://docs.netapp.com/us-en/ontap/system-admin/manage-autosupport-concept.html["Saiba mais sobre o ONTAP AutoSupport"^]

@@ -15,6 +15,7 @@ Você precisa preparar os serviços de autenticação e autorização usados pel
 
 
 
+[[configure-ldap]]
 == Configurar LDAP
 
 Você pode configurar um servidor Lightweight Directory Access Protocol (LDAP) para manter informações de autenticação em um local central.
@@ -32,6 +33,7 @@ Você deve ter gerado uma solicitação de assinatura de certificado e adicionad
 
 
 
+[[configure-saml-authentication]]
 == Configurar autenticação SAML
 
 A autenticação SAML (Security Assertion Markup Language) permite que os usuários sejam autenticados por um provedor de identidade seguro (IdP) em vez de provedores que usam outros protocolos, como LDAP.
@@ -59,6 +61,7 @@ O sistema IdP exibirá uma tela de autenticação.
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * link:../administer/manage-users-roles.html["Gerenciar usuários e funções do cluster AFX"]

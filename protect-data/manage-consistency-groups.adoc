@@ -15,6 +15,7 @@ Você pode gerenciar os grupos de consistência em um sistema AFX.  Isso pode ag
 
 
 
+[[add-snapshot-data-protection-to-a-consistency-group]]
 == Adicionar proteção de dados de instantâneo a um grupo de consistência
 
 Quando você adiciona proteção de dados de instantâneo a um grupo de consistência, instantâneos locais do grupo de consistência podem ser tirados em intervalos regulares com base em uma programação predefinida.
@@ -59,6 +60,7 @@ então selecioneimage:icon_dropdown_arrow.gif["seta azul apontando para baixo"] 
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Saiba mais sobre grupos de consistência ONTAP"^]

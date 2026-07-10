@@ -18,6 +18,7 @@ Registre as informações necessárias para cada rede que você conectar ao seu 
 
 
 
+[[gather-network-information]]
 == Reúna informações de rede
 
 Antes de iniciar a instalação do seu sistema de armazenamento AFX 1K, reúna as informações de rede necessárias
@@ -48,12 +49,14 @@ Durante a configuração do cluster, o ONTAP recomenda um conjunto de interfaces
 
 
 
+[[network-requirements-for-cisco-switches]]
 == Requisitos de rede para switches Cisco
 
 Para instalação e manutenção dos switches Cisco Nexus 9332D-GX2B e 9364D-GX2A, certifique-se de revisar os requisitos de cabeamento e rede.
 
 
 
+[[network-requirements]]
 === Requisitos de rede
 
 Você precisa das seguintes informações de rede para todas as configurações de switch.
@@ -65,6 +68,7 @@ Você precisa das seguintes informações de rede para todas as configurações 
 
 
 
+[[cabling-requirements]]
 === Requisitos de cabeamento
 
 * Você tem o número e o tipo apropriados de cabos e conectores de cabo para seus switches. Veja o https://hwu.netapp.com["Hardware Universe"^] .

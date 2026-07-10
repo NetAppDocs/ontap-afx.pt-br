@@ -15,6 +15,7 @@ Saiba mais sobre os componentes de hardware compatíveis e opções de cabeament
 
 
 
+[[supported-afx-2k-cabling-configuration]]
 == Configuração de cabeamento AFX 2K suportada
 
 A configuração inicial do sistema de storage AFX 2K suporta um mínimo de quatro nós controladores conectados aos gabinetes de discos de armazenamento por meio de switches duplos.
@@ -25,6 +26,7 @@ image:../media/drw_afx_2k_cable_overview_half_node_ieops-2871.svg["Exemplo de ca
 
 
 
+[[supported-hardware-components]]
 == Componentes de hardware suportados
 
 Verifique os gabinetes de discos de armazenamento, switches e tipos de cabos compatíveis com o sistema de storage AFX 2K.

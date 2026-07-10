@@ -18,6 +18,7 @@ Saiba mais sobre os novos recursos incluídos no ONTAP 9.17.1 que estão dispon�
 
 
 
+[[platforms]]
 == Plataformas
 
 [cols="2,4"]

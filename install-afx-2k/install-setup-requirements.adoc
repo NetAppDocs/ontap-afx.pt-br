@@ -15,6 +15,7 @@ Verifique o equipamento necessário e as precauções de elevação para seu con
 
 
 
+[[equipment-needed-for-install]]
 == Equipamento necessário para instalação
 
 Para instalar seu sistema de storage AFX 2K, você precisará dos seguintes equipamentos e ferramentas.
@@ -29,12 +30,14 @@ Para instalar seu sistema de storage AFX 2K, você precisará dos seguintes equi
 
 
 
+[[lifting-precautions]]
 == Precauções de elevação
 
 O controlador de armazenamento AFX e as prateleiras de armazenamento são pesados.  Tenha cuidado ao levantar e mover esses itens.
 
 
 
+[[storage-controller-weights]]
 === Pesos do controlador de armazenamento
 
 Tome as precauções necessárias ao mover ou levantar seu controlador de armazenamento AFX 2K.
@@ -46,6 +49,7 @@ image::../media/drw_afx_2k_weight_caution_ieops-2938.svg[Ícone de aviso ao leva
 
 
 
+[[storage-shelf-weights]]
 === Pesos de prateleiras de armazenamento
 
 Tome as precauções necessárias ao mover ou levantar sua prateleira.
@@ -58,6 +62,7 @@ image::../media/drw_nx224_lifting_weight_ieops-2437.svg[NX224 NSM100 ícone de a
 
 
 
+[[switch-weights]]
 === Pesos do switch
 
 Tome as precauções necessárias ao mover ou levantar o switch de rede.

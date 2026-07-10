@@ -15,6 +15,7 @@ Após instalar o hardware do rack para o seu sistema de storage AFX 2K e instala
 
 
 
+[[step-1-power-on-the-shelf-and-assign-shelf-id]]
 == Etapa 1: Ligue a prateleira e atribua o ID da prateleira
 
 Cada prateleira tem um ID de prateleira exclusivo, garantindo sua distinção na configuração do seu sistema de armazenamento.
@@ -122,6 +123,7 @@ A fonte de alimentação liga assim que você conecta o cabo de alimentação.  
 
 
 
+[[step-2-power-on-the-controller-nodes]]
 == Etapa 2: Ligue os nós do controlador
 
 Depois de ligar suas prateleiras de armazenamento e atribuir IDs exclusivos a elas, ligue a energia dos nós do controlador de armazenamento.
@@ -160,6 +162,7 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Diagrama de conexão
 
 
 
+[[step-3-verify-the-switch-connections]]
 == Passo 3: Verifique as conexões do switch
 
 A partir da CLI do switch, verifique se as portas do switch conectadas às portas do cluster estão ativas, se os nós do cluster estão em suas VLANs corretas e se a conexão ISL entre os dois switches está funcional.
@@ -639,7 +642,4 @@ cs1#
 
 
 .O que vem a seguir?
-Após ligar o seu sistema de storage AFX 2K, conclua a configuração de acordo com a opção de implementação:
-
-* Para implantações dedicadas do sistema de storage AFX 2K, acesse link:../install-setup/cluster-setup.html["Configurar um cluster AFX"].
-
+Após ligar o seu sistema de storage AFX 2K, link:../install-setup/cluster-setup.html["Configure o cluster AFX"].

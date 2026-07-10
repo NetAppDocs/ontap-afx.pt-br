@@ -26,6 +26,7 @@ Depois de se preparar para a atualização, é recomendável que você execute a
 
 
 
+[[execute-automated-pre-upgrade-checks-before-a-planned-upgrade]]
 == Execute verificações automatizadas de pré-atualização antes de uma atualização planejada
 
 Não é necessário estar em processo de atualização do software ONTAP para executar as verificações prévias à atualização automatizada do ONTAP. Executar essas verificações independentemente do processo de atualização automatizada do ONTAP permite visualizar quais verificações são realizadas no seu cluster e fornece uma lista de quaisquer erros ou avisos que devem ser corrigidos antes de iniciar a atualização propriamente dita.

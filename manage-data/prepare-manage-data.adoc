@@ -18,6 +18,7 @@ TIP: Como muitos dos conceitos e procedimentos de administração disponíveis n
 
 
 
+[[terminology-and-options]]
 == Terminologia e opções
 
 Há vários termos relacionados ao armazenamento AFX com os quais você deve estar familiarizado.
@@ -40,12 +41,14 @@ Análise do sistema de arquivos:: O File System Analytics (FSA) é um recurso do
 
 
 
+[[data-migration-options]]
 == Opções de migração de dados
 
 Existem várias opções de migração de dados.  O foco está na migração de dados externos para um cluster AFX.
 
 
 
+[[migrating-data-from-aff-or-fas-systems]]
 === Migração de dados de sistemas AFF ou FAS
 
 Um caminho de migração totalmente integrado dos sistemas AFF ou FAS (que executam a personalidade Unified ONTAP ) para o AFX está disponível usando as seguintes tecnologias:
@@ -59,18 +62,21 @@ Além disso, os volumes FlexCache podem ser anexados entre sistemas AFX e AFF ou
 
 
 
+[[migrating-data-from-a-non-ontap-source]]
 === Migrando dados de uma fonte não ONTAP
 
 A migração de dados de sistemas não ONTAP pode ser realizada usando operações de cópia em nível de arquivo. Utilitários de cópia rápida, como https://docs.netapp.com/us-en/xcp/["XCP"^] ou https://docs.netapp.com/us-en/data-services-copy-sync/["Copiar e sincronizar"^] Pode ser usado tanto com utilitários padrão como RoboCopy (para SMB) e rsync (para NFS), quanto com ferramentas de terceiros como DataDobi.
 
 
 
+[[migration-limitations]]
 === Limitações de migração
 
 Você pode replicar dados de sistemas AFF ou FAS para AFX se o volume de dados de origem não contiver LUNs ou namespaces NVMe. Ao replicar de sistemas AFX para AFF ou FAS , a versão mínima suportada do ONTAP para o sistema AFF ou FAS é 9.16.1. Esta é a primeira versão do ONTAP que oferece suporte ao Balanceamento de Capacidade Avançado.
 
 
 
+[[display-an-overview-of-your-storage]]
 == Exibir uma visão geral do seu armazenamento
 
 Para começar a gerenciar seus dados AFX, você deve exibir uma visão geral do armazenamento.
@@ -87,6 +93,7 @@ Você pode acessar todos os volumes e buckets definidos para o cluster AFX.  Cad
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 * https://docs.netapp.com/us-en/ontap/concept_nas_file_system_analytics_overview.html["Saiba mais sobre a análise do sistema de arquivos ONTAP."^]

@@ -17,6 +17,7 @@ Para configurar a replicação do Snapshot, você precisa estabelecer um relacio
 
 
 
+[[step-1-create-a-cluster-peer-relationship]]
 == Etapa 1: Criar um relacionamento de pares de cluster
 
 Antes de poder proteger seus dados replicando-os em um cluster remoto, você precisa criar um relacionamento de pares de cluster entre o cluster local e o remoto.
@@ -38,6 +39,7 @@ Você efetuou peering para um cluster AFX local com um cluster remoto.  Agora vo
 
 
 
+[[step-2-optionally-create-a-replication-policy]]
 == Etapa 2: Opcionalmente, crie uma política de replicação
 
 A política de replicação de snapshot define quando as atualizações executadas no cluster AFX são replicadas para o site remoto.
@@ -79,6 +81,7 @@ Você criou uma política de replicação e agora está pronto para criar um rel
 
 
 
+[[step-3-create-a-replication-relationship]]
 == Etapa 3: Criar um relacionamento de replicação
 
 Um relacionamento de replicação de instantâneo estabelece uma conexão entre seu sistema AFX e um local remoto para que você possa replicar grupos de consistência em um cluster remoto.  Grupos de consistência replicados podem ser usados para recuperação de desastres ou para migração de dados.
@@ -166,6 +169,7 @@ Agora que você criou uma política de replicação e um relacionamento, sua tra
 
 
 
+[[step-4-test-replication-failover]]
 == Etapa 4: teste de failover de replicação
 
 Opcionalmente, valide se você pode fornecer com sucesso dados de volumes replicados em um cluster remoto se o cluster de origem estiver offline.

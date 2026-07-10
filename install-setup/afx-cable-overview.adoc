@@ -15,6 +15,7 @@ Saiba mais sobre os componentes de hardware suportados e as opções de cabeamen
 
 
 
+[[supported-afx-1k-cabling-configuration]]
 == Configuração de cabeamento AFX 1K suportada
 
 A configuração inicial do sistema de armazenamento AFX 1K suporta no mínimo quatro nós de controlador conectados por meio de switches duplos às prateleiras de disco de armazenamento.
@@ -25,6 +26,7 @@ image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemplo de cabea
 
 
 
+[[supported-hardware-components]]
 == Componentes de hardware suportados
 
 Revise as prateleiras de disco de armazenamento, switches e tipos de cabos compatíveis com o sistema de armazenamento AFX 1K.

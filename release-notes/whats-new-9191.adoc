@@ -21,6 +21,7 @@ TIP: Saiba mais sobre o novo e aprimorado suporte para https://docs.netapp.com/u
 
 
 
+[[performance]]
 == Desempenho
 
 [cols="2,4"]
@@ -44,6 +45,7 @@ A Eficiência Dinâmica de Storage otimiza de forma inteligente as operações d
 |===
 
 
+[[rest-api]]
 == API REST
 
 [cols="2,4"]
@@ -57,6 +59,7 @@ ONTAP 9.19.1 adiciona seis parâmetros atualmente disponíveis no  `/storage/v
 |===
 
 
+[[security]]
 == Segurança
 
 [cols="2,4"]
@@ -75,6 +78,7 @@ Você pode descarregar a criptografia e descriptografia do Transport Layer Secur
 |===
 
 
+[[storage-resource-management]]
 == Gerenciamento de recursos de storage
 
 [cols="2,4"]
@@ -93,6 +97,7 @@ Você pode modificar as configurações padrão que controlam como os grupos de 
 |===
 
 
+[[upgrade]]
 == Atualizar
 
 [cols="2,4"]

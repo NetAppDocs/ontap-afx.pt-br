@@ -25,7 +25,7 @@ Após conectar os cabos do seu sistema de storage AFX 2K, você precisa ligar e 
 . Ligue cada interruptor.
 . Configure os switches para suportar o sistema de storage AFX 2K.
 +
-** Para obter mais informações sobre como configurar os switches, consulte o link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configurar switches para sistemas de storage AFX"^].
+** Para obter mais informações sobre como configurar os switches, consulte link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configurar switches para sistemas de storage AFX"^].
 
 
 
