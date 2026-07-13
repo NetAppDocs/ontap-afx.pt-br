@@ -24,8 +24,8 @@ Depois de conectar o cabeamento do seu sistema de armazenamento AFX 1K, você pr
 . Ligue cada interruptor.
 . Configure os switches para oferecer suporte ao sistema de armazenamento AFX 1K.
 +
-** Para switches Cisco Nexus 9332D-GX2B, consulte a documentação dos switches de cluster e armazenamentolink:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9332d-gx2b/configure-software-overview-9332d-cluster.html["Configurar o switch Cisco Nexus 9332D-GX2B"^] .
-** Para switches Cisco Nexus 9364D-GX2A, consulte a documentação dos switches de cluster e armazenamentolink:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9364d-gx2a/configure-software-overview-9364d-cluster.html["Configurar o switch Cisco Nexus 9364D-GX2A"^] .
+** Para switches Cisco Nexus 9332D-GX2B, consulte a documentação de switches de cluster e armazenamento link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9332d-gx2b/configure-switch-workflow-9332d.html["Configurar o switch Cisco Nexus 9332D-GX2B"^].
+** Para switches Cisco Nexus 9364D-GX2A, consulte a documentação de switches de cluster e armazenamento link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9364d-gx2a/configure-switch-workflow-9364d.html["Configurar o switch Cisco Nexus 9364D-GX2A"^].
 
 
 

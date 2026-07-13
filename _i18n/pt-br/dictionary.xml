@@ -978,9 +978,7 @@
   <block id="c62737cdd3f658b2c080ea393539da49" category="list-text">Ligue cada interruptor.</block>
   <block id="74d427d525eaaf37db5bbbb57657cb0c" category="list-text">Configure os switches para oferecer suporte ao sistema de armazenamento AFX 1K.</block>
   <block id="72295557ee935de6dcaaa496e9ffac7b" category="inline-link-macro">Configurar o switch Cisco Nexus 9332D-GX2B</block>
-  <block id="ee580ea5ba41decce9294581c1bf8a36" category="list-text">Para switches Cisco Nexus 9332D-GX2B, consulte a documentação dos switches de cluster e armazenamento<block ref="ebd0953e922f25f223b8dff6a58fb84a" category="inline-link-macro-rx"></block> .</block>
   <block id="1817109031f229042672af151b53e20f" category="inline-link-macro">Configurar o switch Cisco Nexus 9364D-GX2A</block>
-  <block id="addfd44612da2038c3e3649fc9c115c5" category="list-text">Para switches Cisco Nexus 9364D-GX2A, consulte a documentação dos switches de cluster e armazenamento<block ref="d5fe58e0155150b259ce0bf656e34478" category="inline-link-macro-rx"></block> .</block>
   <block id="20dca0630adbb0d8f903778442041063" category="inline-link-macro">ligue o sistema de armazenamento AFX 1K</block>
   <block id="daf056bef029d58c97e3fcabf3ff8cc1" category="paragraph">Depois de configurar os switches para seu sistema de armazenamento AFX 1K,<block ref="cae83d99a1d1cc2243a2d6bbc5469664" category="inline-link-macro-rx"></block> .</block>
   <block id="337e9239544f1891a09a6b9c13192533" category="summary">Ligue cada prateleira para atribuir um ID de prateleira exclusivo, ligue os nós do controlador AFX e prenda os cabos de alimentação.</block>
@@ -1995,7 +1993,6 @@
   <block id="5a5c4176551fe6dd6fe6ee11995ce220" category="list-text">Para switches Cisco Nexus 9332D-GX2B, use as portas 31/32 para as conexões ISL. Consulte a <block ref="2fc588ea5e031befba9fe0b0a6466061" category="inline-link-macro-rx"></block> para obter mais informações.</block>
   <block id="1f87cb3b672fcebc0f3e8c027541a0f4" category="list-text">Para switches Cisco Nexus 9364D-GX2A, use as portas 63/64 para as conexões ISL. Consulte a <block ref="9a6587d5653529e56536e1d546440a92" category="inline-link-macro-rx"></block> para obter mais informações.</block>
   <block id="3f09832565123d546de503a179a2a73a" category="list-text">Configure os switches para suportar o sistema de storage AFX 2K.</block>
-  <block id="6643d25175cee9ed135211156448f273" category="inline-link-macro">Configurar switches para sistemas de storage AFX</block>
   <block id="708b74e6831efbdefff002e1e0fa8f36" category="inline-link-macro">Ligue o sistema de storage AFX 2K</block>
   <block id="bdd33111aa5c5ee954d515d83c1a9731" category="paragraph">Após configurar os switches para o seu sistema de storage AFX 2K, <block ref="50a620d565af3ded921cd2d40d21ce59" category="inline-link-macro-rx"></block>.</block>
   <block id="e9cff4d9b0d60850bd0c9246eb98b0bc" category="paragraph">Após instalar o hardware do rack para o seu sistema de storage AFX 2K e instalar os cabos para os nós controladores e as prateleiras de storage, você deve ligar as prateleiras de storage e os nós controladores.</block>
@@ -2038,7 +2035,6 @@
   <block id="b1372c8bdf7b87f18c9db2e8270dce48" category="paragraph">Certifique-se de ter os cabos corretos para o seu tipo de conexão antes de conectar os switches.</block>
   <block id="f4bbdec8095912d05fc0863b38ab874a" category="inline-link-macro">Erros de link CRC detectados na placa de rede CX6-DX com cabos breakout mistos de cobre e fibra nas portas</block>
   <block id="81ee74208c5c71f60d84fb449cb06237" category="admonition">Para obter mais informações sobre como combinar tipos de conexão, consulte o artigo da Knowledge Base da NetApp <block ref="c262586745798e29d31312374a9bf860" category="inline-link-macro-rx"></block>.</block>
-  <block id="9a459af3fb0538682e15c7e05c266aeb" category="list-text">Para obter mais informações sobre como configurar os switches, consulte <block ref="c680c8d03caae4efc1e016b731ff8649" category="inline-link-macro-rx"></block>.</block>
   <block id="c1153f83175c5dee9b88a5e820d6bfef" category="inline-link-macro">Configure o cluster AFX</block>
   <block id="2a4823fb79409c272c92a0b82e9c3667" category="paragraph">Após ligar o seu sistema de storage AFX 2K, <block ref="2072e5ec3241d0a9ac16c974239f2f84" category="inline-link-macro-rx"></block>.</block>
   <block id="cb030b87229281c1b5ed398ba50abebb" category="list-text">Selecione *Cadastre-se agora* e crie uma conta.</block>
@@ -2050,4 +2046,8 @@
   <block id="373a0502633d2333dd8b952009c2d1ad" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Prepare-se para administrar seu cluster</block>
   <block id="b6bc9b43cb446eaa57e2615dc37d813a" category="summary">Após a instalação do hardware AFX, você pode concluir a configuração do cluster ONTAP. Esse processo envolve fases de configuração relacionadas que devem ser executadas sequencialmente.</block>
   <block id="79977d403c6d53cd9f671794eeca0ed7" category="paragraph">Antes de configurar seu cluster ONTAP, você deve revisar os requisitos principais do AFX para garantir que tenha todas as informações e recursos necessários para concluir o processo de configuração com sucesso.</block>
+  <block id="2c45e3fc76dd22d195877278acbafdf3" category="inline-link-macro">Configurar o switch Cisco Nexus 9808</block>
+  <block id="f177c581ed9f9f9a2ade361b69f40000" category="list-text">Para switches Cisco Nexus 9808, consulte a documentação de switches de cluster e armazenamento <block ref="fd812bd375b22a989715c699eb7ed44d" category="inline-link-macro-rx"></block>.</block>
+  <block id="414467ebb81a54b0d2bfde0829d9be94" category="list-text">Para switches Cisco Nexus 9332D-GX2B, consulte a documentação de switches de cluster e armazenamento <block ref="4267e88712cb2b91d08e1a42358e695f" category="inline-link-macro-rx"></block>.</block>
+  <block id="837d45987b31811e3c4dc00585c6683b" category="list-text">Para switches Cisco Nexus 9364D-GX2A, consulte a documentação de switches de cluster e armazenamento <block ref="b235e965e82dd587688a629268d671aa" category="inline-link-macro-rx"></block>.</block>
 </blocks>
