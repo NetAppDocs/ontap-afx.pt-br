@@ -126,7 +126,7 @@ Existem diversas limitações, incluindo valores mínimos e máximos, impostas p
 
 CAUTION: Antes de aumentar um parâmetro operacional do seu sistema de storage AFX, você deve avaliar como isso pode impactar seus aplicativos e o cluster como um todo. Por exemplo, embora expandir o número de nós controladores aumente a capacidade geral, isso também pode aumentar o tráfego na rede do cluster. É importante entender as implicações dessas alterações de configuração e como elas podem afetar seu ambiente.
 
-Nós controladores por cluster:: Cada cluster AFX deve ter pelo menos quatro nós. O número máximo de nós varia de acordo com a release do ONTAP; por exemplo, a release 9.19.1 RC permite até 32 nós por cluster AFX.
+Nós controladores por cluster:: Cada cluster AFX deve ter pelo menos quatro nós. O número máximo de nós varia de acordo com a versão do ONTAP; por exemplo, a versão 9.19.1 permite até 32 nós por cluster AFX.
 Capacidade de armazenamento:: Esta é a capacidade total em todos os discos SSD na Zona de Disponibilidade de Armazenamento (SAZ) do cluster. A capacidade máxima de armazenamento varia de acordo com a versão do ONTAP .
 Comutadores de cluster:: Você precisa de pelo menos dois switches em sua rede de armazenamento em cluster.  O máximo permitido é determinado com base no número total de nós controladores no cluster.
 

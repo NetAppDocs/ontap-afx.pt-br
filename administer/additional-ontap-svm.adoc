@@ -93,6 +93,13 @@ Você pode proteger seus arquivos convertendo-os para o estado WORM (write once 
 
 
 
+[[snapmirror-active-sync-for-nas]]
+=== SnapMirror active sync para NAS
+
+SnapMirror active sync permite que os serviços empresariais continuem funcionando em caso de falha completa do local. Essa tecnologia permite que os aplicativos migrem automaticamente para uma cópia secundária sem intervenção manual ou scripts personalizados. Saiba mais sobre  https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/protect-nas-task.html["SnapMirror active sync para NAS"^].
+
+
+
 [[storage-efficiency]]
 == Eficiência de storage
 
@@ -122,6 +129,13 @@ Há vários recursos de segurança opcionais que você pode configurar e usar co
 === Política de F
 
 O FPolicy é uma estrutura de notificação de acesso a arquivos usada para monitorar e gerenciar eventos de acesso a arquivos em máquinas virtuais de armazenamento (SVMs). Você pode usar o FPolicy para criar políticas que definem quais operações de arquivo monitorar e, opcionalmente, bloquear, com base em critérios que você define. O FPolicy é comumente usado para auditoria de segurança, conformidade e governança de dados. Saiba mais sobre https://docs.netapp.com/us-en/ontap/nas-audit/two-parts-fpolicy-solution-concept.html["Soluções FPolicy do ONTAP"^].
+
+
+
+[[nfs-over-tls]]
+=== NFS sobre TLS
+
+A partir do ONTAP 9.19.1, o ONTAP adiciona suporte local para NFS sobre TLS com TLS 1.3 para criptografar o tráfego NFS em trânsito em SVMs com NFS habilitado. A versão também oferece suporte opcional à autenticação mútua de host por LIF com TLS e controles de política de exportação para negar acesso TCP sem TLS para clientes correspondentes. NFS sobre TLS funciona com a infraestrutura NFS existente do ONTAP, então os aplicativos continuam usando NFS normalmente enquanto o TLS criptografa o tráfego NFS em trânsito. NFS sobre TLS não está disponível para plataformas em nuvem no ONTAP 9.19.1. Consulte  https://docs.netapp.com/us-en/ontap/nfs-admin/enable-nfs-over-tls-task.html["Habilitar NFS sobre TLS"^] para obter mais informações.
 
 
 
