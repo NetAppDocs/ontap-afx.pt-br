@@ -29,6 +29,11 @@ Saiba mais sobre os novos recursos incluídos no ONTAP 9.19.1 que estão dispon�
 | link:../administer/additional-ontap-svm.html["Proteja com ONTAP SnapMirror active sync para NAS"]  a| 
 SnapMirror active sync oferece suporte a cargas de trabalho NAS no nível de SVM usando NFS e SMB em clusters AFX (apenas 4 nós) e acesso somente leitura e gravação no cluster primário.
 
+
+
+| link:../manage-data/create-configure-bucket.html["O SnapMirror aumentou o limite de suporte na nuvem para 100 buckets do S3"]  a| 
+SnapMirror cloud aumenta o número de buckets S3 suportados para 100.
+
 |===
 
 
