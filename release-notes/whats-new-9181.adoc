@@ -17,6 +17,9 @@ summary: Saiba mais sobre os novos recursos incluídos no ONTAP 9.18.1 que estã
 Saiba mais sobre os novos recursos incluídos no ONTAP 9.18.1 que estão disponíveis com seu sistema de armazenamento AFX.
 
 
+NOTE: Existem diversos novos recursos disponíveis para o AFX com o ONTAP 9.18.1. Alguns deles são específicos do AFX, enquanto muitos outros são derivados de uma base de produto comum. Além de revisar os recursos do AFX descritos abaixo, você também deve consultar  https://docs.netapp.com/us-en/ontap/release-notes/whats-new-9181.html["Novidades no ONTAP 9.18.1"^].
+
+
 
 [[storage-resource-management-enhancements]]
 == Melhorias no gerenciamento de recursos de armazenamento
