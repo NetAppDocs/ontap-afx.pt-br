@@ -170,6 +170,10 @@ Você pode modificar as configurações padrão que controlam como os grupos de 
 Ao executar verificações automatizadas de pré-atualização, os erros e avisos são exibidos separadamente para ajudá-lo a identificar facilmente os problemas que devem ser resolvidos antes de você atualizar.
 
 |===
-.Informações relacionadas
+
+
+[[related-information]]
+== Informações relacionadas
+
 * https://docs.netapp.com/us-en/ontap/release-notes/index.html["Destaques do lançamento do ONTAP 9"^]
 
