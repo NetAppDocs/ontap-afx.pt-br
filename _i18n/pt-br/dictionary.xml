@@ -2,7 +2,6 @@
 <blocks>
   <block id="9300fda436a5cc421811b04dc04badf8" category="summary">Além da administração típica do cluster AFX, pode haver outras tarefas que você precisa executar com base no seu ambiente.  A maioria das tarefas adicionais pode ser executada usando o Gerenciador do Sistema, embora em alguns casos você possa precisar usar a CLI.</block>
   <block id="faede213fca7a18a345d45f0d29088a6" category="doc">Administração adicional para um cluster de sistema de armazenamento AFX</block>
-  <block id="7d36f828619651b0ec19095f0f25dfc8" category="admonition">Os recursos e a administração do ONTAP descritos são comuns aos sistemas de armazenamento AFX e aos sistemas AFF ou FAS que executam o Unified ONTAP.  Links para a documentação relevante do Unified ONTAP são incluídos conforme apropriado.</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="section-title">Licenciamento</block>
   <block id="92ff5239ce1b1631936446319c85a178" category="paragraph">Os sistemas AFX são licenciados de forma semelhante aos sistemas Unified ONTAP AFF e FAS .  Um cluster AFX inclui a maioria dos recursos por padrão para os protocolos suportados.</block>
   <block id="b378946fe8453b6639548e16e14e8d27" category="section-title">Gerenciamento de licenças ONTAP</block>
@@ -2092,4 +2091,22 @@
   <block id="6b10f0340ee90e881f251f6a6c1c50e5" category="paragraph"><block ref="6b10f0340ee90e881f251f6a6c1c50e5" category="inline-xref-macro-rx"></block></block>
   <block id="980de945038567285acd832eeffc81db" category="paragraph">Você pode usar condições para impor gravações condicionais para uploads de objetos e exclusões condicionais para exclusões de objetos. As gravações e exclusões condicionais permitem evitar sobrescritas ou exclusões acidentais de objetos.</block>
   <block id="2f3fb7b10644dc3204e82bf0a20ccfe1" category="paragraph">Para manter o acesso do usuário aos recursos do S3 caso a chave de acesso original expire, os administradores do cluster ONTAP podem gerar uma segunda chave de acesso para cada usuário do S3.</block>
+  <block id="11ba5c1727548057c68ac606191a008a" category="paragraph">Além da administração típica de clusters AFX, pode haver outras tarefas que você precise executar dependendo do seu ambiente. A maioria dessas tarefas adicionais pode ser realizada usando o System Manager, embora em alguns casos você precise usar a CLI. Os recursos e a administração do ONTAP descritos são comuns aos sistemas de armazenamento AFX e aos sistemas AFF ou FAS que executam o Unified ONTAP. Links para a documentação relevante do Unified ONTAP estão incluídos quando apropriado.</block>
+  <block id="95e6e1659bc28dbb709323a6e8ad256f" category="admonition">Leia as breves descrições dos recursos adicionais do ONTAP AFX e da configuração. Se você não encontrar a opção que procura, verifique também os links na parte inferior para obter recursos adicionais.</block>
+  <block id="8f1df3d891a92d7cf641c00a5d10a5e1" category="inline-link">Prepare-se para usar a segurança IP na rede ONTAP</block>
+  <block id="66a386fe45902150e921567e6268eea8" category="list-text"><block ref="66a386fe45902150e921567e6268eea8" category="inline-link-rx"></block></block>
+  <block id="0e39b789f7717bc975ea58eaf0db4905" category="inline-link">Configure a segurança de rede do ONTAP usando FIPS para todas as conexões SSL</block>
+  <block id="9c40aa856fab06d435d3012a0852a8b9" category="list-text"><block ref="9c40aa856fab06d435d3012a0852a8b9" category="inline-link-rx"></block></block>
+  <block id="f94158b9ac425f46f5e560391d7810ea" category="paragraph">Além da administração típica do AFX SVM, pode haver outras tarefas que você precise executar dependendo do seu ambiente. A maioria das tarefas adicionais pode ser realizada usando o System Manager, embora em alguns casos você precise usar a CLI. Os recursos e a administração do ONTAP descritos são comuns aos sistemas de armazenamento AFX e aos sistemas AFF ou FAS que executam o Unified ONTAP. Os links para a documentação relevante do Unified ONTAP estão incluídos quando apropriado.</block>
+  <block id="8a13505dd6946f762d484d5548520dad" category="inline-link">Grupos de políticas de QoS adaptativa</block>
+  <block id="cb0922a55eba1a82e50cf71c18ebe232" category="list-text"><block ref="cb0922a55eba1a82e50cf71c18ebe232" category="inline-link-rx"></block></block>
+  <block id="8e02fbebde6eda602f04ad6be7872598" category="inline-xref-macro">Administração adicional: descarregamento de hardware IPsec</block>
+  <block id="5b3998aa47cfda7a64ed6ff67b670846" category="paragraph"><block ref="5b3998aa47cfda7a64ed6ff67b670846" category="inline-xref-macro-rx"></block></block>
+  <block id="0e512d1b0e0eec22d9c82690b21dc8e3" category="paragraph">O suporte ao descarregamento de hardware IPsec foi estendido ao IPv6.</block>
+  <block id="dbdd0c87a08f7da829b770094938ec4f" category="inline-xref-macro">Administração adicional: algoritmos OpenSSL PQC</block>
+  <block id="5a9a17f2a80f4bf17ebd21e4bd62d32c" category="paragraph"><block ref="5a9a17f2a80f4bf17ebd21e4bd62d32c" category="inline-xref-macro-rx"></block></block>
+  <block id="4f6ab42dbc66c329bdc56764d3561476" category="paragraph">O ONTAP oferece suporte a algoritmos criptográficos pós-quânticos para SSL. Esses algoritmos fornecem proteção adicional contra possíveis ataques futuros de computação quântica e estão disponíveis quando o modo FIPS do SSL está desativado.</block>
+  <block id="8e2c307ef6e54871dce87c1828dc21fd" category="inline-xref-macro">Suporte para grupos de políticas de QoS aninhados em dois níveis em SVMs e volumes</block>
+  <block id="e08db9e8d24efaf5a7190ce782b11af3" category="paragraph"><block ref="e08db9e8d24efaf5a7190ce782b11af3" category="inline-xref-macro-rx"></block></block>
+  <block id="0d42fe34cb867538d9d93ccdd8b15ac7" category="paragraph">Você pode atribuir uma política de QoS a uma SVM e aos volumes sob a SVM ao mesmo tempo.</block>
 </blocks>
