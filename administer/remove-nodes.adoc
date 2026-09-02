@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: netapp afx, remove node, unjoin, cluster remove-node, evacuate volumes, zero-copy volume move 
+summary: Aprenda como remover nós de armazenamento de um cluster AFX da NetApp, incluindo evacuação de volumes, migração de LIF e desvinculação do parceiro de par de HA. 
+---
+= Remova nós de um cluster do sistema de storage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode ser necessário remover nós do seu cluster AFX para manutenção ou substituição de hardware. Você só pode remover um nó por vez e, após remover um nó, também deve remover seu parceiro de HA.
+
+.Sobre esta tarefa
+* Nos sistemas de storage AFX, todo o storage está contido em uma única Storage Availability Zone (SAZ) acessível a todos os nós do cluster. Como resultado, quando um nó é removido, os dados não precisam ser copiados do nó que está saindo. Em vez disso, os ponteiros para os volumes no nó que está saindo são atualizados entre os nós restantes. Isso é chamado de Zero Copy Volume Move (ZCVM) e acontece instantaneamente porque nenhum dado é realmente copiado ou movido.
++
+[NOTE]
+====
+Antes de remover o nó, manipule manualmente quaisquer volumes que não possam ser movidos pelo ZCVM. Isso inclui clones de volume, volumes offline, volumes criptografados cuja chave de criptografia original foi alterada ou recodificada e volumes restaurados usando SnapMirror cloud. Os volumes de preparação de auditoria e os volumes raiz são movidos pelo ZCVM durante o processo de desassociação do nó.
+
+** Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/nas-audit/basic-auditing-concept.html["volumes de preparação de auditoria"^].
+** Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/rekey-encrypted-volume-task.html["volumes criptografados com nova chave"^].
+
+
+====
+* A remoção bem-sucedida de um nó do cluster realiza o seguinte:
++
+** Marca o nó como inelegível e fora do quórum do CLAM.
+** Encerra o nó corretamente e transfere a propriedade para um nó sobrevivente.
+** Limpa o estado de alta disponibilidade (HA) do RAID no nó e o exclui do banco de dados do cluster.
+
+
+
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-afx-cluster]]
+== Etapa 1: Prepare-se para remover nós de um cluster AFX
+
+Antes de remover nós do seu cluster AFX, você deve verificar se o cluster está íntegro e se não há LIFs de dados no nó a ser removido.
+
+.Passos
+. Confirme se o cluster está íntegro:
++
+[source, cli]
+----
+cluster show
+----
+. Confirme que o nó que você deseja remover está online e saudável:
++
+[source, cli]
+----
+system node show -node <node> -health -epsilon
+----
+. Veja os LIFs no nó:
++
+[source, cli]
+----
+network interface show -curr-node <node>
+----
+. Migre as LIFs de dados do nó:
++
+[source, cli]
+----
+network interface migrate -vserver <SVM> -lif <LIF> -dest-node <destination_node> -dest-port <destination_port>
+----
++
+Repita este comando para todas as LIFs de dados. Somente as LIFs de cluster e as LIFs de gerenciamento de nós devem permanecer no nó.
+
+. Verifique se todos os LIFs de dados foram removidos e se apenas os LIFs de cluster e os LIFs de gerenciamento de nós permanecem no nó:
++
+[source, cli]
+----
+network interface show -curr-node <node>
+----
+
+
+.Qual o próximo passo?
+Após concluir as etapas de preparação, você pode remover o primeiro nó do par de HA do cluster e, em seguida, remover seu parceiro de HA.
+
+
+
+[[step-2-unjoin-a-single-node-from-an-afx-cluster]]
+== Etapa 2: Remova um único nó de um cluster AFX
+
+Remova um nó de um cluster AFX somente após concluir as etapas necessárias para prepará-lo para remoção. Após remover um nó do cluster, você deve remover em seguida seu parceiro de HA.
+
+.Antes de começar
+É recomendável que você link:manage-autosupport.html["emitir uma mensagem AutoSupport"] notifique o suporte técnico da NetApp que está removendo um nó do seu cluster.
+
+.Passos
+. Esvazie os volumes do nó:
++
+[source, cli]
+----
+system node evacuate-volumes start -node <node_to_remove>
+----
+. Verifique se os volumes do nó foram evacuados:
++
+[source, cli]
+----
+system node evacuate-volumes show -node <node_to_remove>
+----
++
+Aguarde até que a *contagem pendente* seja 0 antes de prosseguir. Não mova epsilon ou elegibilidade até que os volumes estejam totalmente evacuados.
+
++
+Se necessário, você pode usar o comando  `system node evacuate-volumes abort -node <node>` para abortar o processo de evacuação.
+
+. Identifique o nó que contém epsilon:
++
+[source, cli]
+----
+cluster show -epsilon true
+----
++
+.. Se o nó que você deseja remover contiver epsilon, mova epsilon para outro nó:
++
+[source, cli]
+----
+cluster modify -node <surviving_node> -epsilon true
+----
+
+
+. Identifique o nó primário atual:
++
+[source, cli]
+----
+cluster ring show
+----
++
+.. Se o nó que você está removendo for o nó primário atual, torne-o inelegível:
++
+[source, cli]
+----
+cluster modify -node <node_to_remove> -eligibility false
+----
+
+
+. Exiba o nó principal dos LIFs de dados restantes:
++
+[source, cli]
+----
+network interface show -home-node <node_to_remove>
+----
+. Altere o nó de origem dos LIFs de dados restantes para outro nó:
++
+[source, cli]
+----
+network interface modify -vserver <SVM> -lif <LIF> -home-node <surviving_node>
+----
++
+Deixe as LIFs de cluster e as LIFs de gerenciamento de nós no nó que está saindo.
+
+. Desative a tomada de controle do nó a ser removido:
++
+[source, cli]
+----
+storage failover modify -node <node_to_remove> -enable-takeover-of false
+----
+. Verifique se a opção de takeover está desativada para o nó que será removido:
++
+[source, cli]
+----
+storage failover show
+----
++
+A tomada de controle não é possível no par de HA enquanto o failover estiver desativado.
+
+. Em um nó sobrevivente e saudável, defina o nível de privilégio como avançado:
++
+[source, cli]
+----
+privilege set -level advanced
+----
+. Remova o nó do cluster:
++
+[source, cli]
+----
+cluster remove-node -node <node_to_remove>
+----
++
+Confirme os avisos. A tarefa deve terminar com *Node remove succeeded*.
+
+
+
+.O que vem a seguir?
+Repita os passos anteriores para remover o parceiro de HA do cluster. Você não pode remover nós adicionais até que o parceiro de HA do nó não adicionado seja removido.
+
+
+
+[[step-3-optionally-clean-the-removed-hardware]]
+== Passo 3: opcionalmente, limpe o hardware removido
+
+Se você estiver reutilizando um nó que foi removido de um cluster, deverá apagar a configuração do nó e inicializar todos os discos antes que ele possa se reintegrar ao cluster.
+
+.Passos
+. Durante o processo de inicialização, quando solicitado, pressione Ctrl+C para exibir o menu de inicialização.
+. Selecione a opção do menu de inicialização *(4) Limpar configuração e inicializar todos os discos*.
+
+
+.O que vem a seguir?
+Você pode usar o comando  `cluster add-node` para reutilizar o par de HA no mesmo cluster.

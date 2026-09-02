@@ -2113,4 +2113,55 @@
   <block id="05ac85f50d8d37906293d2e2a6c88604" category="list-text"><block ref="05ac85f50d8d37906293d2e2a6c88604" category="inline-link-rx"></block></block>
   <block id="99a1ee6766885a2da62b660dd8ea16ac" category="paragraph"><block ref="99a1ee6766885a2da62b660dd8ea16ac" category="inline-xref-macro-rx"></block></block>
   <block id="d71e1a06e0aeac0cc6a7a6eb58601633" category="paragraph">Os volumes criados em SVMs recém-criadas em clusters ONTAP alocados para protocolos NAS têm o File System Analytics (FSA) ativado por padrão. O FSA é ativado automaticamente assim que um volume é criado, fornecendo recursos de análise imediatos sem configuração adicional.</block>
+  <block id="7a5cd40812fc4b3d065db77f8ad471a2" category="summary">Aprenda como remover nós de armazenamento de um cluster AFX da NetApp, incluindo evacuação de volumes, migração de LIF e desvinculação do parceiro de par de HA.</block>
+  <block id="4e5ba73143016dcff33719a396a6a145" category="doc">Remova nós de um cluster do sistema de storage AFX</block>
+  <block id="6f0c0dcb367b5c75b40798fbe71ce6cf" category="paragraph">Pode ser necessário remover nós do seu cluster AFX para manutenção ou substituição de hardware. Você só pode remover um nó por vez e, após remover um nó, também deve remover seu parceiro de HA.</block>
+  <block id="4dc248d72f6d53f41520e119f1f1df61" category="list-text">Nos sistemas de storage AFX, todo o storage está contido em uma única Storage Availability Zone (SAZ) acessível a todos os nós do cluster. Como resultado, quando um nó é removido, os dados não precisam ser copiados do nó que está saindo. Em vez disso, os ponteiros para os volumes no nó que está saindo são atualizados entre os nós restantes. Isso é chamado de Zero Copy Volume Move (ZCVM) e acontece instantaneamente porque nenhum dado é realmente copiado ou movido.</block>
+  <block id="2dbbd7a8acfe4ab40ac6e02f5b4365bd" category="paragraph">Antes de remover o nó, manipule manualmente quaisquer volumes que não possam ser movidos pelo ZCVM. Isso inclui clones de volume, volumes offline, volumes criptografados cuja chave de criptografia original foi alterada ou recodificada e volumes restaurados usando SnapMirror cloud. Os volumes de preparação de auditoria e os volumes raiz são movidos pelo ZCVM durante o processo de desassociação do nó.</block>
+  <block id="7b556ab7df79413da0cc234f3e94ae5c" category="inline-link-macro">volumes de preparação de auditoria</block>
+  <block id="b94fbeba18cc08b1ba75cabcbc2e50a0" category="list-text">Saiba mais sobre <block ref="9fec2c3b1c6739fae6e26aee450a7911" category="inline-link-macro-rx"></block>.</block>
+  <block id="791417c8f8a45d10a1481c1cdb8725eb" category="inline-link-macro">volumes criptografados com nova chave</block>
+  <block id="1ddf84f2c214ffe15e58979d29d13e7e" category="list-text">Saiba mais sobre <block ref="c62dc8115ddd949100052ee500f4ed05" category="inline-link-macro-rx"></block>.</block>
+  <block id="03f868c6a771736d2ede498b24db10fd" category="list-text">A remoção bem-sucedida de um nó do cluster realiza o seguinte:</block>
+  <block id="da83a680025062a416e893d926036b59" category="list-text">Marca o nó como inelegível e fora do quórum do CLAM.</block>
+  <block id="1d6d051efd8278e7af988bc240035964" category="list-text">Encerra o nó corretamente e transfere a propriedade para um nó sobrevivente.</block>
+  <block id="81969b995904bbc6ec383d70d109fe78" category="list-text">Limpa o estado de alta disponibilidade (HA) do RAID no nó e o exclui do banco de dados do cluster.</block>
+  <block id="ee564f7d2a41885a7b7c447302897684" category="section-title">Etapa 1: Prepare-se para remover nós de um cluster AFX</block>
+  <block id="20f6fea895a9042d4cb497b9b561472f" category="paragraph">Antes de remover nós do seu cluster AFX, você deve verificar se o cluster está íntegro e se não há LIFs de dados no nó a ser removido.</block>
+  <block id="50ab3243fc412f508feaf2651e35de5a" category="list-text">Confirme se o cluster está íntegro:</block>
+  <block id="6ed6db99070eb594c7294b2758336a36" category="list-text">Confirme que o nó que você deseja remover está online e saudável:</block>
+  <block id="c8bd62f17e39fb32ef39057543588fff" category="list-text">Veja os LIFs no nó:</block>
+  <block id="b296f30bfe1b8d15961aace982c88ede" category="list-text">Migre as LIFs de dados do nó:</block>
+  <block id="b7fb269285f339c28cc4295e470228ce" category="paragraph">Repita este comando para todas as LIFs de dados. Somente as LIFs de cluster e as LIFs de gerenciamento de nós devem permanecer no nó.</block>
+  <block id="67ad2de6e0aebb768d64f688a26f3263" category="list-text">Verifique se todos os LIFs de dados foram removidos e se apenas os LIFs de cluster e os LIFs de gerenciamento de nós permanecem no nó:</block>
+  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="paragraph-title">Qual o próximo passo?</block>
+  <block id="af7028a97133d9d6579e0120e4d2ac54" category="paragraph">Após concluir as etapas de preparação, você pode remover o primeiro nó do par de HA do cluster e, em seguida, remover seu parceiro de HA.</block>
+  <block id="129a0f9dbb25cd859dc8156de126758f" category="section-title">Etapa 2: Remova um único nó de um cluster AFX</block>
+  <block id="9e84e50094430ea932ef692f2de2fd8d" category="paragraph">Remova um nó de um cluster AFX somente após concluir as etapas necessárias para prepará-lo para remoção. Após remover um nó do cluster, você deve remover em seguida seu parceiro de HA.</block>
+  <block id="ff13cd92e9c877582383685ad84e1408" category="inline-link-macro">emitir uma mensagem AutoSupport</block>
+  <block id="e1e010021551213000f9a5ad8268a504" category="paragraph">É recomendável que você <block ref="389d719ba9fa696dc8807adb3c915714" category="inline-link-macro-rx"></block> notifique o suporte técnico da NetApp que está removendo um nó do seu cluster.</block>
+  <block id="61ef46349dc8aeb8c96f3f89d14d2e3b" category="list-text">Esvazie os volumes do nó:</block>
+  <block id="4352398a52fe792d0d9bc8cd2e093100" category="list-text">Verifique se os volumes do nó foram evacuados:</block>
+  <block id="4fa4b393f4bd68dcb2697caa0d486054" category="paragraph">Aguarde até que a *contagem pendente* seja 0 antes de prosseguir. Não mova epsilon ou elegibilidade até que os volumes estejam totalmente evacuados.</block>
+  <block id="073a5eccc26b37d386010ab2297fb4ad" category="paragraph">Se necessário, você pode usar o comando <block ref="1800c917431345cdd794d19f800ce56a" prefix=" " category="inline-code"></block> para abortar o processo de evacuação.</block>
+  <block id="2cca63e4c1d7ec175a21377faff9a6ec" category="list-text">Identifique o nó que contém epsilon:</block>
+  <block id="e23022fe3595885bf954a01c22683bad" category="list-text">Se o nó que você deseja remover contiver epsilon, mova epsilon para outro nó:</block>
+  <block id="49e8d819c7a12b23ca983a3bc99e1bdf" category="list-text">Identifique o nó primário atual:</block>
+  <block id="14029d6b9a69926c796b630bd649fe4a" category="list-text">Se o nó que você está removendo for o nó primário atual, torne-o inelegível:</block>
+  <block id="7f6abdd99160e3d3527591b98c573c7f" category="list-text">Exiba o nó principal dos LIFs de dados restantes:</block>
+  <block id="b77fc9ce12284fe9cb0ed31c9a1f86d5" category="list-text">Altere o nó de origem dos LIFs de dados restantes para outro nó:</block>
+  <block id="c9b5aae4621661ad2ffccfee6c9b3874" category="paragraph">Deixe as LIFs de cluster e as LIFs de gerenciamento de nós no nó que está saindo.</block>
+  <block id="f73e9b92493b90c37101390646ee7ff4" category="list-text">Desative a tomada de controle do nó a ser removido:</block>
+  <block id="2f6504307623c74dfa94926c73a36268" category="list-text">Verifique se a opção de takeover está desativada para o nó que será removido:</block>
+  <block id="398e3c6027c9ad5a579ba201dbdf1422" category="paragraph">A tomada de controle não é possível no par de HA enquanto o failover estiver desativado.</block>
+  <block id="e66ad8765eff08cc92ad6062c3b5484e" category="list-text">Em um nó sobrevivente e saudável, defina o nível de privilégio como avançado:</block>
+  <block id="8e9c4f7e32d6d0c0b5026f9b1bd4cb0e" category="list-text">Remova o nó do cluster:</block>
+  <block id="248d96fc2d0062d179e38ec920bbc9a6" category="paragraph">Confirme os avisos. A tarefa deve terminar com *Node remove succeeded*.</block>
+  <block id="fd7d664fcabce9a7163ddf544905c254" category="paragraph">Repita os passos anteriores para remover o parceiro de HA do cluster. Você não pode remover nós adicionais até que o parceiro de HA do nó não adicionado seja removido.</block>
+  <block id="ebe7c0cf5ca9d4767514a83c4598b75c" category="section-title">Passo 3: opcionalmente, limpe o hardware removido</block>
+  <block id="3212383e8d23d729b6cb21418a172111" category="paragraph">Se você estiver reutilizando um nó que foi removido de um cluster, deverá apagar a configuração do nó e inicializar todos os discos antes que ele possa se reintegrar ao cluster.</block>
+  <block id="9e870c65221f5c544b31efc1da95daeb" category="list-text">Durante o processo de inicialização, quando solicitado, pressione Ctrl+C para exibir o menu de inicialização.</block>
+  <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">Selecione a opção do menu de inicialização *(4) Limpar configuração e inicializar todos os discos*.</block>
+  <block id="e482842fa3fe9110a14b09a7990fc7e3" category="paragraph">Você pode usar o comando <block ref="5fc60967dddffb3c388156e897d54aad" prefix=" " category="inline-code"></block> para reutilizar o par de HA no mesmo cluster.</block>
+  <block id="92157b9dae17603751a4d60f0f94bf8c" category="sidebar">Remova nós do cluster</block>
 </blocks>
