@@ -1,0 +1,104 @@
+---
+permalink: administer/fabricpool-configure.html 
+sidebar: sidebar 
+keywords: afx, fabricpool, object store, cluster object-store, tiering policy, attach, capacity tier 
+summary: Em linhas gerais, configurar e ativar o FabricPool em um sistema de storage AFX envolve processos em dois níveis distintos. Primeiro, você precisa definir uma camada de nuvem no nível do cluster para seus dados. Em seguida, você pode ativar o armazenamento em camadas em volumes específicos usando uma das diversas políticas de armazenamento em camadas disponíveis. 
+---
+= Configure o FabricPool para sistemas de storage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Em linhas gerais, configurar e ativar o FabricPool em um sistema de storage AFX envolve processos em dois níveis distintos. Primeiro, você precisa definir uma camada de nuvem no nível do cluster para seus dados. Em seguida, você pode ativar o armazenamento em camadas em volumes específicos usando uma das diversas políticas de armazenamento em camadas disponíveis.
+
+
+
+[[configure-fabricpool-at-the-ontap-cluster-level]]
+== Configure o FabricPool no nível do cluster ONTAP
+
+Você precisa definir um único bucket de objetos que esteja disponível para todo o cluster ONTAP. Todos os volumes habilitados para o armazenamento em camadas de dados do FabricPool usam o mesmo bucket.
+
+.Sobre esta tarefa
+Ao contrário do processo de duas etapas do ONTAP, que inclui uma conexão por agregado, o AFX utiliza um único processo com escopo de cluster para configurar o armazenamento de objetos e conectar todos os nós ao bucket. A conectividade também é confirmada, e a associação ao armazenamento de objetos é permanente.
+
+A configuração da camada de nuvem é descrita usando o System Manager, mas outras opções estão disponíveis. Por exemplo, você pode usar o comando `cluster object-store config create` com a interface de linha de comando. Consulte link:../administer/fabricpool-additional.html["Considerações adicionais ao usar o FabricPool em sistemas de armazenamento AFX"] para obter mais informações.
+
+.Antes de começar
+* Verifique os pré-requisitos do AFX FabricPool. Por exemplo, confirme se o cluster está na versão 9.19.1 ou posterior e se não foi atualizado de uma versão anterior. Consulte link:../administer/fabricpool-prepare.html["Prepare-se para implementar FabricPool em um sistema de storage AFX"] para obter mais detalhes.
+* Provisione um bucket de armazenamento de objetos. Crie um bucket no StorageGRID da NetApp ou no ONTAP S3 com capacidade adequada para seus dados. Opcionalmente, você pode instalar um certificado de CA para o armazenamento de objetos para fornecer uma conexão mais segura.
+* Crie as LIFs intercluster e verifique a conectividade com o armazenamento de objetos. Você precisa definir um par de LIFs intercluster para alcançar o armazenamento de objetos em cada nó do cluster AFX. Verifique se todos os nós conseguem alcançar o endpoint do armazenamento de objetos e se a resolução de nomes está operacional.
+
+
+.Passos
+. No System Manager, selecione o item de menu *Cloud Tiers* no painel de navegação à esquerda.
++
+Se nenhum nível de nuvem estiver configurado, uma página de estado vazia será exibida com um botão Adicionar.
+
+. Selecione *Adicionar* para iniciar a criação da camada de nuvem; uma caixa de diálogo é exibida com duas opções.
+. Selecione o StorageGRID ou o ONTAP S3 como seu provedor. O formulário *Adicionar Nível de Nuvem* correspondente é aberto.
+. Forneça as informações necessárias do armazenamento de objetos, incluindo:
++
+.. Nome do armazenamento de objetos (identificador de configuração)
+.. Nome do servidor (FQDN ou endereço IP do endpoint do armazenamento de objetos)
+.. Nome do contêiner (nome do bucket)
+.. Chave de acesso e chave secreta (credenciais do armazenamento de objetos)
+.. Configurações de validação de certificado (recomendado: habilite com o certificado de CA adequado)
+
+
+. Selecione as LIFs de intercluster que transportarão o tráfego da camada de nuvem.
++
+Caso não existam interfaces adequadas, é fornecida a opção de criar novas interfaces.
+
+. Selecione *Salvar*.
++
+O System Manager cria a configuração de armazenamento de objetos em nível de cluster e a anexa automaticamente a todos os nós do cluster após verificar a conectividade de rede.
+
+. Verifique os detalhes da camada de nuvem no cartão da página Cloud Tiers.
+
+
+.Depois que você terminar
+Confirme se o cartão Capacidade do painel do cluster exibe o uso da camada de nuvem. Observe que o bucket atribuído não pode ser renomeado depois de ser identificado para uso pelo FabricPool. Você pode habilitar o armazenamento em camadas nos volumes de dados individuais, conforme necessário.
+
+
+
+[[enable-tiering-with-volume-level-policies]]
+== Habilite o armazenamento em camadas com políticas em nível de volume
+
+Após a configuração do FabricPool no nível do cluster, você pode habilitar o armazenamento em camadas nos volumes individuais definindo a política de armazenamento em camadas apropriada. Em geral, as políticas funcionam da mesma forma com AFX e com ONTAP.
+
+* *Classificação em categorias no nível do volume.* A classificação em categorias é habilitada por volume. Você pode definir uma política de classificação em categorias diferente para cada volume. Os dados do volume podem ser movidos para a camada de nuvem com base na política.
+* *Políticas de hierarquização.* Existem quatro políticas de hierarquização que podem ser definidas para um volume, incluindo:
++
+** `snapshot-only`
+** `auto`
+** `all`
+** `none`
+
+
+* *Política de disposição em camadas padrão.* A política padrão é `none`, o que significa que nenhum dado está qualificado para ser movido para a camada de nuvem. Em comparação, os volumes ONTAP em um agregado recém-conectado têm como padrão `snapshot-only` em sistemas AFF e FAS.
+* *Acionador de política.* Definir uma política diferente de `none` aciona uma conexão com a nuvem e ativa o armazenamento em camadas de dados.
+* *Período de resfriamento.* O período de resfriamento determina por quanto tempo os dados devem permanecer inativos antes de serem elegíveis para o armazenamento em camadas. Ao usar a CLI, isso normalmente é definido usando o parâmetro  `-tiering-minimum-cooling-days`. O período de resfriamento padrão é de 31 dias para a política auto e, efetivamente, ~2 dias para snapshot-only. Você pode ajustar isso para cada volume de acordo com a carga de trabalho.
+* *Monitoramento de temperatura.* Com o AFX, o monitoramento de temperatura é realizado por volume, em vez de no nível agregado.
+
+
+Para obter mais informações sobre as políticas de classificação do FabricPool, consulte  https://docs.netapp.com/us-en/ontap/fabricpool/tiering-policies-concept.html["Categorize os dados com eficiência com as políticas do ONTAP FabricPool"^].
+
+
+
+[[activate-volume-level-tiering-and-next-steps]]
+=== Ative o escalonamento no nível do volume e as próximas etapas
+
+Para habilitar o armazenamento em camadas em um volume, no System Manager navegue até a página *Volumes* e selecione *Editar* e, em seguida, *Configurações de camada na nuvem* para configurar uma política de armazenamento em camadas e um período de resfriamento para cada volume, conforme necessário. A política padrão é nenhuma, portanto, o armazenamento em camadas deve ser habilitado explicitamente para cada volume. Você pode usar os comandos de volume existente na CLI.
+
+Após o início do armazenamento em camadas, você deve monitorar o armazenamento em camadas e a utilização da capacidade. Verifique também o estado do armazenamento em camadas do volume e observe o uso do espaço na camada de desempenho e na camada de capacidade. Observe que o Relatório de Dados Inativos (IDR/AutoIDR) está desativado no AFX, portanto, planeje avaliar os dados em camadas/dados inativos de forma diferente do que nos sistemas AFF ou FAS.
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:../administer/fabricpool-prepare.html["Prepare-se para implementar FabricPool em um sistema de storage AFX"]
+* link:../administer/fabricpool.html["Saiba mais sobre o FabricPool para sistemas de storage AFX"]
+

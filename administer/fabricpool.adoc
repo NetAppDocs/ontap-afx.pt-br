@@ -1,0 +1,65 @@
+---
+permalink: administer/fabricpool.html 
+sidebar: sidebar 
+keywords: afx, fabricpool, tiering, data tiering, cloud tier, object store 
+summary: A partir do ONTAP 9.19.1 P3, você pode configurar o FabricPool para ampliar a capacidade utilizável do seu sistema de storage AFX, além de reduzir custos e aumentar a eficiência. 
+---
+= Saiba mais sobre o FabricPool para sistemas de storage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partir do ONTAP 9.19.1 P3, você pode configurar o FabricPool para ampliar a capacidade utilizável do seu sistema de storage AFX, além de reduzir custos e aumentar a eficiência.
+
+
+
+[[fabricpool-overview]]
+== Visão geral do FabricPool
+
+O FabricPool é um recurso do ONTAP que move dados entre uma camada local de alto desempenho e uma camada remota de nuvem ou de capacidade de menor custo, com base na atividade ou "temperatura" dos dados. Ele mantém os dados _hot_, acessados com frequência, em storage SSD local rápido, enquanto move os dados _cold_, usados raramente, para um storage de objetos mais econômico. O FabricPool opera automática e transparentemente em segundo plano; não requer alterações no aplicativo nem administração contínua significativa. Os recursos relacionados de eficiência de storage do ONTAP, como compressão e deduplicação, são preservados quando os dados se movem para a camada de nuvem e de volta.
+
+O tiering do FabricPool é compatível com sistemas de storage AFX com o ONTAP 9.19.1 P3 e versões posteriores, expandindo a capacidade do cluster AFX além da camada local para cargas de trabalho com grande volume de dados. Embora a implementação do AFX do FabricPool introduza algumas mudanças arquitetônicas, a operação principal e as características do recurso do ONTAP permanecem as mesmas.
+
+Os administradores continuam a controlar a disposição em camadas de dados por meio de políticas por volume, bem como de um período mínimo de resfriamento que define quando os dados inativos se tornam elegíveis para serem movidos. Esse modelo voltado a políticas melhora a economia de storage, recuperando a capacidade dispendiosa de flash e oferecendo um caminho simples para um ambiente de storage híbrido. Ele mantém os dados em camadas protegidos e disponíveis com impacto mínimo no desempenho do conjunto de trabalho ativo.
+
+
+
+[[compare-aff-and-fas-with-afx-implementations]]
+== Compare AFF e FAS com implementações de AFX
+
+Embora o comportamento do FabricPool seja muito semelhante entre as personalidades do ONTAP (o ONTAP unificado para sistemas AFF e FAS e a personalidade ONTAP AFX para sistemas AFX), a arquitetura desagregada do AFX introduz diversas diferenças. As áreas mais importantes para comparação entre essas duas implementações estão resumidas abaixo.
+
+[cols="1,2,2"]
+|===
+| Área ou operação | O storage AFF e FAS | Storage AFX 
+
+
+| Escopo do armazenamento de objetos | Configurado por agregado em duas etapas: criação da configuração e, em seguida, anexação | Configurado no nível do cluster com um único comando; um bucket definido por cluster 
+
+
+| Política de disposição em camadas padrão | A política padrão é `none`; é necessário definir explicitamente uma política de volume para iniciar o armazenamento em camadas | A política padrão é `none`; é necessário definir explicitamente uma política de volume para iniciar o armazenamento em camadas 
+
+
+| Monitoramento de temperatura | Granularidade por volume | Granularidade por volume 
+
+
+| Provedores de camada de nuvem | O StorageGRID, o ONTAP S3 e várias nuvens públicas importantes | Somente o StorageGRID ou o ONTAP S3 
+
+
+| Espelhamento com o MetroCluster | Suportado | Não suportado 
+
+
+| Movimentação de volume | Movimentação de volume padrão e otimizada | Movimentação de volume sem cópia (ZCVM) sem mover dados da camada de capacidade 
+|===
+
+
+[[related-information]]
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/concepts/fabricpool-concept.html["FabricPool conceitos básicos"^]
+* https://docs.netapp.com/us-en/ontap/fabricpool/index.html["Aprenda sobre o armazenamento em camadas de dados com o ONTAP FabricPool"^]
+* https://docs.netapp.com/us-en/ontap-technical-reports/tiering.html["Relatórios técnicos de hierarquização do ONTAP"^]
+* link:../faq-ontap-afx.html["Perguntas frequentes sobre sistemas de armazenamento AFX"]
+

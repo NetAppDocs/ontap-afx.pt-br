@@ -155,6 +155,11 @@ Você pode visualizar os detalhes da capacidade da sua zona de disponibilidade d
 | link:../administer/additional-ontap-cluster.html["Suporte para modificar as configurações padrão que controlam os aumentos automáticos do teto de taxa de transferência do QoS"]  a| 
 Você pode modificar as configurações padrão que controlam como os grupos de políticas de QoS aumentam automaticamente o limite de throughput de QoS em resposta a necessidades de curto prazo por maior desempenho. Essas configurações não podem ser modificadas no ONTAP 9.18.1 e versões anteriores.
 
+
+
+| link:../administer/fabricpool.html["Hierarquização do FabricPool"]  a| 
+O FabricPool é um recurso do ONTAP que move dados entre uma camada local de alto desempenho e uma camada remota de nuvem ou de capacidade de menor custo, com base na atividade dos dados. A partir do ONTAP 9.19.1 P3, o FabricPool foi estendido ao sistema de storage AFX. Ele permite uma escala de dados muito maior para dar suporte a cargas de trabalho com grande volume de dados. Embora a implementação do AFX introduza várias mudanças arquitetônicas, as características principais do recurso do ONTAP permanecem as mesmas.
+
 |===
 
 

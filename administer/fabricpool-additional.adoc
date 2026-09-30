@@ -1,0 +1,114 @@
+---
+permalink: administer/fabricpool-additional.html 
+sidebar: sidebar 
+keywords: afx, fabricpool, mirrors, commands, cli, encryption, nve 
+summary: Existem diversas considerações adicionais ao implantar o FabricPool em um sistema de storage AFX. 
+---
+= Considerações adicionais ao usar o FabricPool em sistemas de armazenamento AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Existem diversas considerações adicionais ao implantar o FabricPool em um sistema de storage AFX.
+
+
+
+[[fabricpool-mirrors]]
+== O FabricPool espelha
+
+O espelhamento do FabricPool é uma configuração de alta disponibilidade para dados de nuvem em camadas, criada ao anexar um segundo armazenamento de objetos a um único FabricPool. Depois que o espelho adicional é configurado, o ONTAP organiza dados em camadas de forma síncrona para ambos os armazenamentos de objetos ao mesmo tempo, garantindo que os dados permaneçam acessíveis durante um desastre ou uma interrupção do armazenamento de objetos. Como o AFX configura um único armazenamento de objetos no nível do cluster, *o espelhamento do FabricPool não é compatível com o AFX na versão inicial.
+
+
+
+[[encryption]]
+== Criptografia
+
+A criptografia funciona com FabricPool no AFX sem necessidade de configuração adicional. Mas você deve estar ciente do seguinte:
+
+* O AFX suporta a criptografia de volume NetApp (NVE); a criptografia de agregados NetApp (NAE) não é suportada.
+* O NVE usa a mesma chave para a camada de desempenho e a camada de capacidade.
+* Uma operação de rechaveamento regrava todos os dados do volume com a nova chave, incluindo os dados da camada de nuvem.
+* Uma operação de rechaveamento e o Zero Copy Volume Move não podem ser executados ao mesmo tempo.
+
+
+
+
+[[alternative-administrative-interfaces]]
+== Interfaces administrativas alternativas
+
+O System Manager é a interface administrativa principal e recomendada para configurar e gerenciar o FabricPool no AFX. Mas você também pode usar a interface de linha de comando (CLI) ou a API REST para realizar essas tarefas.
+
+
+
+[[command-line-interface]]
+=== Interface de linha de comando
+
+A CLI do AFX foi redesenhada para oferecer suporte ao FabricPool e se alinhar ao foco em clusters e à ausência de agregados.
+
+
+
+==== Comandos de armazenamento de objetos em nível de cluster
+
+Os seguintes comandos, disponíveis no nível  `admin`, são usados para gerenciar o armazenamento de objetos para dados em camadas:
+
+* *cluster object-store config create* Define a configuração para um armazenamento de objetos do StorageGRID ou do ONTAP S3 e o anexa automaticamente a todos os flexaggrs no cluster. Este único comando substitui o processo de duas etapas (config create + attach) usado no ONTAP unificado. A operação é idempotente e pode ser executada novamente se a anexação inicial falhar.
+* *cluster object-store config modify* Modifica os atributos de configuração do armazenamento de objetos. Os mesmos atributos que podem ser modificados no ONTAP unificado (configurações de conexão, credenciais, opções de certificado) podem ser modificados no AFX.
+* *cluster object-store config rename* Renomeia uma configuração de armazenamento de objetos existente.
+* *cluster object-store config show* Exibe a configuração atual do armazenamento de objetos, incluindo detalhes da conexão e o status de anexação.
+* *cluster space show* Exibe a utilização de espaço no nível do cluster, incluindo o uso acumulado do armazenamento de objetos. A saída inclui a capacidade lógica usada, a capacidade lógica referenciada, a capacidade lógica não referenciada e o espaço físico total usado na camada de nuvem.
+
+
+
+
+==== Comandos de hierarquização em nível de volume (modo de administrador e avançado):
+
+Todos os comandos de criação e modificação de volumes do ONTAP que controlam o comportamento de armazenamento em camadas são totalmente compatíveis com o AFX com a mesma sintaxe. Isso inclui os comandos padrão de criação e modificação de volumes com os parâmetros relacionados ao armazenamento em camadas, incluindo:
+
+* -política-de-níveis
+* -dias-mínimos-de-resfriamento-por-níveis
+* -política-de-recuperação-na-nuvem
+* -is-cloud-write-enabled
+* -tags-de-objetos-em-camadas
+
+
+Por padrão, os volumes têm uma política de armazenamento em camadas definida como "nenhuma", portanto o armazenamento em camadas deve ser explicitamente ativado para cada volume.
+
+
+
+[[rest-api]]
+=== API REST
+
+Os endpoints da API REST do FabricPool no AFX oferecem suporte ao gerenciamento de armazenamento de objetos em nível de cluster e à configuração de hierarquização em nível de volume. Os endpoints baseados em agregação não são suportados devido à arquitetura em nível de cluster.
+
+Existem vários endpoints compatíveis, incluindo:
+
+* GET e POST para `/cloud/targets`
+* GET e PATCH para `/cloud/targets/{uuid}`
+* GET e POST para `/storage/volumes`
+* GET e PATCH para `/storage/volumes/{uuid} com os seguintes parâmetros de tiering:
++
+** tiering.policy
+** tiering.min_cooling_days
+** tiering.object_tags
+** política_de_recuperação_na_nuvem
+** cloud_write_enabled
+
+
+
+
+Os endpoints e parâmetros sem suporte incluem:
+
+* EXCLUIR `/cloud/targets/{uuid}`
+* `tiering.supported parameter` em operações de volume
+* Todas as operações para `/storage/aggregates/{aggregate.uuid}/cloud-stores`
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/fabricpool/commands-manage-aggregates-reference.html["Comandos do ONTAP para gerenciamento de recursos do FabricPool"^]
+

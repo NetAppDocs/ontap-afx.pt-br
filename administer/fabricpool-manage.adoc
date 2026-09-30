@@ -1,0 +1,41 @@
+---
+permalink: administer/fabricpool-manage.html 
+sidebar: sidebar 
+keywords: afx, oam, fabricpool, manage, monitor, space, tiering policy, zcvm, volume move, node join, node unjoin, flexaggr 
+summary: O gerenciamento contínuo do FabricPool em sistemas AFX é semelhante ao dos sistemas AFF e FAS. Você precisa monitorar a utilização do espaço, gerenciar volumes e ajustar as políticas de armazenamento em camadas. Há algumas adições notáveis para o ambiente AFX, incluindo o comportamento quando nós entram ou saem do cluster AFX. 
+---
+= Gerencie o FabricPool para sistemas de storage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O gerenciamento contínuo do FabricPool em sistemas AFX é semelhante ao dos sistemas AFF e FAS. Você precisa monitorar a utilização do espaço, gerenciar volumes e ajustar as políticas de armazenamento em camadas. Há algumas adições notáveis para o ambiente AFX, incluindo o comportamento quando nós entram ou saem do cluster AFX.
+
+
+
+[[monitor-space-and-manage-volumes]]
+== Monitore o espaço e gerencie os volumes
+
+Os procedimentos usados com o AFX para monitorar o uso da camada de capacidade e da camada de desempenho, bem como o gerenciamento de volumes de rotina, geralmente são os mesmos usados com o ONTAP. Observe que, no AFX, o relatório de espaço leva em consideração a arquitetura desagregada. As informações de espaço da camada de capacidade estão disponíveis por meio de relatórios no nível do cluster e da zona de disponibilidade, em vez de por meio de um agregado visível para o administrador.
+
+
+
+[[node-join-and-node-unjoin]]
+== Junção de nó e remoção de nó
+
+As operações de nó reconhecem o FabricPool em sistemas AFX, o que representa uma diferença significativa em relação ao ONTAP. Observe os seguintes comportamentos:
+
+* *Ingresso de nó.* Quando um nó ingressa no cluster AFX e já existe uma configuração de armazenamento de objetos do cluster, a anexação do armazenamento de objetos é acionada automaticamente. Se a anexação falhar, a operação de ingresso do nó também falhará.
+* *Desassociação de nó.* Quando um nó é desassociado ou removido do cluster, os dados são rotulados como "defunct". Os volumes associados são realocados usando ZCVM. Os metafiles do objeto defunct são mantidos para que seus objetos de nuvem permaneçam acessíveis e possam ser coletados como lixo.
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* https://docs.netapp.com/us-en/ontap/fabricpool/determine-data-inactive-reporting-task.html["Gerenciar o FabricPool"^]
+* link:../administer/expand-cluster.html["Expandir um cluster de sistema de armazenamento AFX"]
+
