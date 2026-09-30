@@ -4,7 +4,7 @@ permalink: manage-data/manage-buckets.html
 keywords: afx, afx system, manage buckets 
 summary: Há várias tarefas administrativas que você pode executar como parte do gerenciamento de buckets do AFX S3 e acesso do cliente.  A configuração e o suporte do S3 no AFX são os mesmos fornecidos no Unified ONTAP.  Consulte a documentação do Unified ONTAP para obter detalhes. 
 ---
-= Gerenciar os buckets do sistema de armazenamento AFX
+= Opções de gerenciamento de buckets do AFX S3
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -39,7 +39,7 @@ Embora o comportamento do FabricPool seja muito semelhante entre as personalidad
 | Escopo do armazenamento de objetos | Configurado por agregado em duas etapas: criação da configuração e, em seguida, anexação | Configurado no nível do cluster com um único comando; um bucket definido por cluster 
 
 
-| Política de disposição em camadas padrão | A política padrão é `none`; é necessário definir explicitamente uma política de volume para iniciar o armazenamento em camadas | A política padrão é `none`; é necessário definir explicitamente uma política de volume para iniciar o armazenamento em camadas 
+| Política de disposição em camadas padrão | A política padrão é `none`, exceto para agregados habilitados para FabricPool, em que o padrão é `snapshot` | A política padrão é `none` 
 
 
 | Monitoramento de temperatura | Granularidade por volume | Granularidade por volume 
