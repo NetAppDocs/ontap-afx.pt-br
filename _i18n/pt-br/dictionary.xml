@@ -2332,4 +2332,5 @@
   <block id="5933d9a0441d1f9543a9286674ef11b5" category="doc">Opções de gerenciamento de buckets do AFX S3</block>
   <block id="b8efc14136159d215438d8120125f40e" category="doc">Saiba mais sobre como gerenciar os dados do sistema de storage AFX</block>
   <block id="f71f016f7ff1ffe09fcc0bb6c3f2c337" category="doc">Fluxo de trabalho de replicação de Snapshot para sistemas de armazenamento AFX</block>
+  <block id="320808ffdec6f54122d23d5939b758f2" category="admonition">O AFX não suporta tamanhos mistos de unidades em uma única gaveta de storage. Todas as unidades em uma gaveta devem ter o mesmo tamanho. Para obter informações completas sobre compatibilidade nas configurações do sistema de storage AFX, consulte<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>.</block>
 </blocks>

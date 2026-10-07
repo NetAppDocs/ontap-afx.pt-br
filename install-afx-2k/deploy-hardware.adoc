@@ -22,6 +22,9 @@ Após instalar os switches, você deve instalar o hardware do seu sistema de sto
 
 CAUTION: Use sempre uma pulseira antiestática aterrada, conectada a um ponto de aterramento verificado durante a instalação e os procedimentos de manutenção. A não observância das precauções adequadas contra ESD pode causar danos permanentes aos nós controladores, prateleiras de armazenamento e switches de rede.
 
+
+NOTE: O AFX não suporta tamanhos mistos de unidades em uma única gaveta de storage. Todas as unidades em uma gaveta devem ter o mesmo tamanho. Para obter informações completas sobre compatibilidade nas configurações do sistema de storage AFX, consulte https://hwu.netapp.com["Hardware Universe da NetApp"^].
+
 .Passos
 . Instale os kits de trilhos para seu sistema de armazenamento e prateleiras de armazenamento, conforme necessário, usando as instruções incluídas nos kits.
 . Instale e fixe seu controlador no gabinete ou no rack da empresa de telecomunicações:
