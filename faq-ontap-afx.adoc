@@ -117,3 +117,6 @@ Na versão inicial 9.17.1 do AFX, os volumes serão movidos apenas em cenários 
 
 .O AFX oferece suporte ao FabricPool?
 Sim. A partir do ONTAP 9.19.1 P3, os sistemas de storage AFX oferecem suporte ao FabricPool para categorizar dados em storage de objetos de capacidade. A implementação do AFX apresenta várias diferenças arquitetônicas em relação ao ONTAP. Por exemplo, a camada de nuvem é anexada a todo o cluster (ou SAZ), em vez de agregados individuais; e somente buckets do ONTAP S3 ou do StorageGRID podem ser usados. Para obter mais informações, consulte link:./administer/fabricpool.html["Saiba mais sobre o FabricPool para sistemas de storage AFX"].
+
+.Posso usar discos rígidos de tamanhos diferentes nas minhas gavetas de armazenamento AFX?
+Não. O AFX não suporta tamanhos de unidades diferentes em um único gabinete de armazenamento. Todas as unidades em um gabinete devem ter o mesmo tamanho. Consulte https://hwu.netapp.com/["Hardware Universe da NetApp"^] para obter informações completas de compatibilidade sobre as configurações do sistema de storage AFX.

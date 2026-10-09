@@ -2333,4 +2333,6 @@
   <block id="b8efc14136159d215438d8120125f40e" category="doc">Saiba mais sobre como gerenciar os dados do sistema de storage AFX</block>
   <block id="f71f016f7ff1ffe09fcc0bb6c3f2c337" category="doc">Fluxo de trabalho de replicação de Snapshot para sistemas de armazenamento AFX</block>
   <block id="320808ffdec6f54122d23d5939b758f2" category="admonition">O AFX não suporta tamanhos mistos de unidades em uma única gaveta de storage. Todas as unidades em uma gaveta devem ter o mesmo tamanho. Para obter informações completas sobre compatibilidade nas configurações do sistema de storage AFX, consulte<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>.</block>
+  <block id="df0a5fa7367c040e26263e7f6bd5d3bb" category="paragraph-title">Posso usar discos rígidos de tamanhos diferentes nas minhas gavetas de armazenamento AFX?</block>
+  <block id="a5ca85d705ee24e667c1206bd5c112b4" category="paragraph">Não. O AFX não suporta tamanhos de unidades diferentes em um único gabinete de armazenamento. Todas as unidades em um gabinete devem ter o mesmo tamanho. Consulte<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> para obter informações completas de compatibilidade sobre as configurações do sistema de storage AFX.</block>
 </blocks>
