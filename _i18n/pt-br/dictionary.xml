@@ -555,7 +555,6 @@
   <block id="515a19ff656ef4e9a76499b11053c88b" category="paragraph">Cada nó tem visibilidade de todo o armazenamento na SAZ.  Quando prateleiras de armazenamento são adicionadas a um cluster, o ONTAP adiciona automaticamente os discos.</block>
   <block id="0dffaaac24629ec57e41901c2c49b5e9" category="paragraph">O AFX inclui um recurso conhecido como Gerenciamento Automatizado de Topologia (ATM), que responde a desequilíbrios de objetos do sistema e do usuário.  O objetivo principal do ATM é equilibrar volumes em todo o cluster AFX.  Quando um desequilíbrio é detectado, uma tarefa interna é acionada para distribuir uniformemente os dados entre os nós ativos.  Os dados são realocados usando o ZCVM, que só precisa copiar e atualizar os metadados do objeto.</block>
   <block id="1bce74755c5e5305616eddc17873d185" category="summary">Os sistemas NetApp AFX executam uma personalidade personalizada do ONTAP que difere da personalidade do ONTAP (chamada de Unified ONTAP) que é executada no armazenamento AFF e FAS .  Você deve estar ciente de como os sistemas AFX são semelhantes e diferentes dos sistemas FAS e AFF .  Isso fornece uma perspectiva valiosa e pode ser útil ao implantar o AFX em seu ambiente.</block>
-  <block id="9f2c66d4e6da8c9b288f3ecdc75c974a" category="doc">Compare o sistema de armazenamento AFX com os sistemas AFF e FAS</block>
   <block id="99d6ed6b3347c27373da6da2f7b952a7" category="section-title">Diferenças de configuração</block>
   <block id="00ee6ecb3fb7eed883369282913b6d76" category="paragraph">Existem algumas áreas em que a configuração do AFX difere dos sistemas AFF e FAS .</block>
   <block id="51d20ad0622a1bf32203f0fd69eff8ee" category="list-text">Balanceamento de Capacidade Avançado</block>
@@ -577,8 +576,6 @@
   <block id="863a16df67e2ceabb787910e2b537e42" category="list-text">Os comandos de gerenciamento agregado não são mais necessários</block>
   <block id="f716c6e3202ed7d92fc8348d46cf91c0" category="inline-link-macro">Características do sistema AFX</block>
   <block id="ddd733c8c3891b4ecfcd87a0c6163694" category="list-text"><block ref="ddd733c8c3891b4ecfcd87a0c6163694" category="inline-link-macro-rx"></block></block>
-  <block id="82a5887f8adb06bd19d86cf8996f4769" category="inline-link-macro">Detalhes da arquitetura AFX</block>
-  <block id="ce3c74e16eea034f818cc30b0eea56e3" category="list-text"><block ref="ce3c74e16eea034f818cc30b0eea56e3" category="inline-link-macro-rx"></block></block>
   <block id="fc123d34fbcca975f8c6b4bcc69de12b" category="summary">O sistema de armazenamento NetApp AFX é baseado em uma arquitetura de armazenamento de última geração que evolui o modelo de armazenamento ONTAP para uma solução NAS desagregada de alto desempenho.  O AFX oferece suporte a cargas de trabalho de arquivos e objetos com tecnologias avançadas e técnicas de processamento que proporcionam desempenho extremamente alto.</block>
   <block id="eb945734dba0e6e93fb79ddc0d55d4bf" category="doc">Saiba mais sobre os sistemas de armazenamento AFX</block>
   <block id="b03a11c36ac9c614434dc119668e67f2" category="section-title">Cargas de trabalho típicas de aplicativos</block>
@@ -674,12 +671,10 @@
   <block id="67901f429b628d99fcc5a2d234be3c16" category="list-text"><block ref="67901f429b628d99fcc5a2d234be3c16" category="inline-link-rx"></block></block>
   <block id="be295ac553513eb5e74d13f03267efb7" category="inline-link">Aprenda sobre administração de cluster com o ONTAP CLI</block>
   <block id="b1ca62b8e216e4c4af0bae762b5c33bf" category="list-text"><block ref="b1ca62b8e216e4c4af0bae762b5c33bf" category="inline-link-rx"></block></block>
-  <block id="22735d3e264cefb0543000862e7f0904" category="doc">Início rápido para configurar um sistema de armazenamento AFX</block>
   <block id="d5158c215f75d40b3dc3a9efd519b60a" category="inline-link-macro">configurar</block>
   <block id="0ee63ccea22773b7b711a299adc32792" category="inline-link-macro">preparar</block>
   <block id="862b23ef0c9f5a6e409d8a2a17fe80e2" category="paragraph">Antes de implantar o AFX em um ambiente de produção, é essencial<block ref="8b4d8002fc8012c25c048b6e7a24771f" category="inline-link-macro-rx"></block> entendendo a estrutura administrativa, incluindo máquinas virtuais de armazenamento (SVMs), usuários, funções e interfaces de gerenciamento, para garantir um gerenciamento de cluster seguro, eficiente e eficaz.</block>
   <block id="0a6e83c5c4575b7e80d6da08f9735aa2" category="summary">A arquitetura AFX é composta por vários componentes de hardware e software.  Esses componentes do sistema são organizados em diferentes categorias.</block>
-  <block id="5f22b34c52ed9e5684053416c7412701" category="doc">Detalhes da arquitetura do sistema de armazenamento AFX</block>
   <block id="ff33f3d250bf1c214d487036a93cec89" category="section-title">Componentes físicos</block>
   <block id="bcd4325c773021c3146f76c78bf5c14d" category="paragraph">Ao começar a usar o AFX, é útil começar com uma visão geral dos componentes físicos conforme eles são instalados no seu data center.</block>
   <block id="96e16c6817f708a3a1c07d37d2e0d140" category="section-title">Nós controladores</block>
@@ -1602,7 +1597,6 @@
   <block id="d66c3d45d2bb8165afc4400849d5ef66" category="section-title">Restrições adicionais</block>
   <block id="110352dfc6688e1ab1d9271ac5a2552b" category="paragraph">Existem restrições adicionais que você deve considerar antes de migrar uma SVM.</block>
   <block id="937992c5285f166aa01c3633fc6cb85b" category="list-text">O sistema de armazenamento AFX não é compatível com o NetApp MetroCluster.  Isso cria uma limitação ao migrar uma SVM.  Não é possível migrar um SVM AFX de ou para um sistema AFF ou FAS (ou qualquer sistema NetApp executando a interface Unified ONTAP ) configurado para usar o MetroCluster.  Embora esses cenários de migração não sejam suportados, eles também não são explicitamente bloqueados pelas verificações prévias do AFX, portanto, você precisa ter cuidado para não tentar realizá-los.</block>
-  <block id="372a3016fd08d93f2bfe7c10abae9936" category="list-text"><block ref="372a3016fd08d93f2bfe7c10abae9936" category="inline-link-macro-rx"></block></block>
   <block id="f090951c6f34b76fa7499153d4fd51be" category="sidebar">Manutenção de hardware</block>
   <block id="e54c3f54834f8c71fc8b62702e6e49d6" category="paragraph-title">Como os dados são alocados em um cluster AFX?</block>
   <block id="8d32ce02a0e3a054354be2b6938e411d" category="paragraph">Quando os dados são alocados, eles podem ser colocados em qualquer disco na SAZ.  Uma vez que os dados são inseridos, não há necessidade de movê-los.  Um volume é criado com base nos dados subjacentes e atribuído a um nó específico.  Os volumes podem ser alterados pelo AFX, normalmente como parte de um processo de balanceamento.  Isso afeta qual NVRAM do nó confirma as operações de gravação no disco.  Uma movimentação de volume altera o nó proprietário do volume, mas os dados em si podem permanecer no mesmo local.</block>
@@ -2335,4 +2329,9 @@
   <block id="a5ca85d705ee24e667c1206bd5c112b4" category="paragraph">Não. O AFX não suporta tamanhos de unidades diferentes em um único gabinete de armazenamento. Todas as unidades em um gabinete devem ter o mesmo tamanho. Consulte<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> para obter informações completas de compatibilidade sobre as configurações do sistema de storage AFX.</block>
   <block id="147085887c747ae25d5c898682fdb3b2" category="doc">Acesse a documentação da API REST para os sistemas de storage AFX</block>
   <block id="e0bb0202db2abc666440192da58b5166" category="doc">Faça sua primeira chamada de API REST para o sistema de storage AFX</block>
+  <block id="9686282a3986f63a25dad9e06d5246cd" category="inline-link-macro">Como o AFX difere dos sistemas de storage AFF e FAS</block>
+  <block id="33b4dc9eb5421a6b2e47c0f3945d1458" category="list-text"><block ref="33b4dc9eb5421a6b2e47c0f3945d1458" category="inline-link-macro-rx"></block></block>
+  <block id="bfa05672c85840c82ceb3de90233d9fc" category="inline-link-macro">Arquitetura do sistema de storage AFX</block>
+  <block id="a061b4886dc8395b711334fbef7bb048" category="list-text"><block ref="a061b4886dc8395b711334fbef7bb048" category="inline-link-macro-rx"></block></block>
+  <block id="cffcf217d120cb1a72a68c2a76dd120c" category="doc">Guia rápido para sistemas de storage AFX</block>
 </blocks>
