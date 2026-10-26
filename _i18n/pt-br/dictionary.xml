@@ -1556,7 +1556,6 @@
   <block id="43d14ed81363c455618b5103ece599d4" category="paragraph-title">Quando os sistemas de armazenamento AFX ficaram disponíveis? Qual é a versão mais antiga do ONTAP suportada pelo AFX?</block>
   <block id="7f24225fb2bbf5b324522918a991d678" category="paragraph">O sistema de armazenamento AFX foi anunciado na conferência NetApp Insight em outubro de 2025. O AFX oferece suporte ao ONTAP 9.17.1 e versões posteriores. Entre em contato com seu representante de vendas da NetApp para obter mais detalhes.</block>
   <block id="3c9f430479263b3b25ec8e84988d27be" category="paragraph-title">Posso usar o FlexCache com um cluster de sistema AFX?</block>
-  <block id="d53231824f8827127654628ac3883d6c" category="paragraph">Sim. Os sistemas de armazenamento AFX oferecem suporte ao FlexCache tanto para um sistema AFF ou FAS executando a personalidade Unified ONTAP . A única restrição é que o FlexCache com modo write-back não é suportado pelo AFX.</block>
   <block id="f580013220a8ab44a2f9b864e7f6425a" category="paragraph-title">Se eu quiser usar um sistema AFF ou FAS (executando a personalidade Unified ONTAP ) com um sistema AFX para SnapMirror ou FlexCache, qual versão do ONTAP eu preciso?</block>
   <block id="4d4bcd00dec0ee009c6a6c831d33fda4" category="inline-link">NetApp AFX</block>
   <block id="7eee2dae65b99dd9a2020ea7343b8b68" category="list-text"><block ref="7eee2dae65b99dd9a2020ea7343b8b68" category="inline-link-rx"></block></block>
@@ -2334,4 +2333,5 @@
   <block id="bfa05672c85840c82ceb3de90233d9fc" category="inline-link-macro">Arquitetura do sistema de storage AFX</block>
   <block id="a061b4886dc8395b711334fbef7bb048" category="list-text"><block ref="a061b4886dc8395b711334fbef7bb048" category="inline-link-macro-rx"></block></block>
   <block id="cffcf217d120cb1a72a68c2a76dd120c" category="doc">Guia rápido para sistemas de storage AFX</block>
+  <block id="eaea4e2a08bd5c2b6c418b3299505e0f" category="paragraph">Sim. Os sistemas de armazenamento AFX oferecem suporte ao FlexCache tanto de quanto para um sistema AFF ou sistema FAS que executa a personalidade ONTAP unificada. No entanto, você não pode usar o write-back do FlexCache quando o FlexGroup Advanced Capacity Balancing estiver habilitado para o mesmo volume. O ACB é habilitado por padrão para todos os volumes, portanto, primeiro você deve desabilitá-lo (usando a opção<block ref="decee3a1bb405f7a75c75230927c0fdc" prefix=" " category="inline-code"></block>`--disable-acb`) antes de poder habilitar o write-back do FlexCache. Essa mesma restrição também existe com a personalidade ONTAP unificada.</block>
 </blocks>
