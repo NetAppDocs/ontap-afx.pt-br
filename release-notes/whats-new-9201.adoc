@@ -1,0 +1,340 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9201.html 
+keywords: 'afx, release notes, what"s new, 9.20.1' 
+summary: Saiba mais sobre os novos recursos incluídos no ONTAP 9.20.1 que estão disponíveis com o seu sistema de storage AFX. 
+---
+= Novidades do ONTAP 9.20.1 para sistemas de armazenamento AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos incluídos no ONTAP 9.20.1 que estão disponíveis com o seu sistema de storage AFX.
+
+
+NOTE: Existem diversos novos recursos disponíveis para o AFX com o ONTAP 9.20.1. Alguns deles são específicos do AFX, enquanto muitos outros são derivados de uma base de produto comum. Além de revisar os recursos do AFX descritos abaixo, você também deve consultar  https://docs.netapp.com/us-en/ontap/release-notes/whats-new-9201.html["O que há de novo no ONTAP 9.20.1"^].
+
+
+
+[[data-protection]]
+== Proteção de dados
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Replicação de um grupo de consistência de origem que não é SnapLock para um grupo de consistência de destino do SnapLock for SnapVault
+ a| 
+Você pode replicar de um grupo de consistência de origem sem SnapLock para um grupo de consistência de destino SnapLock for SnapVault. SnapLock for SnapVault protege os grupos de consistência replicados contra exclusão acidental ou maliciosa.
+
+
+
+ a| 
+Limites de objetos para o SnapMirror active sync para NAS
+ a| 
+A sincronização ativa do SnapMirror para NAS aumenta o número de volumes suportados para 600 nas plataformas AFX (4 x 4).
+
+
+
+ a| 
+Saiba mais sobre a recuperação síncrona de desastres do SnapMirror
+ a| 
+O SnapMirror synchronous aumenta o número de operações de replicação para 600 em plataformas AFX.
+
+
+
+ a| 
+Recuperação de desastres de SVM aprimorada
+ a| 
+O ONTAP 9.20.1 aprimora a recuperação de desastres de SVM ao permitir modificar atributos selecionados de volumes em volumes de destino do SVM-DR usando fluxos de trabalho padrão de modificação de volume com privilégio de administrador, reduzindo a necessidade de procedimentos com assistência do suporte. A versão também estende o suporte opcional à ressincronização rápida do SVM-DR para os constituintes do FlexGroup, ajudando SVMs de grande porte com FlexGroup a retornar a um estado protegido mais rapidamente após ensaios de DR, ressincronização ou fluxos de trabalho de flip-resync.
+
+
+
+ a| 
+Restauração no local do SnapMirror cloud para o volume de origem original
+ a| 
+O SnapMirror cloud oferece suporte a operações de restauração no local para volumes FlexVol, permitindo que você execute uma operação de restauração de snapshot na nuvem diretamente de volta para o volume de origem original. O ONTAP seleciona o snapshot comum mais recente e realiza uma transferência incremental, reduzindo o tempo de restauração.
+
+|===
+
+
+[[nas]]
+== NAS
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Implementar suporte a NormaliseNameInfo no protocolo SMB do NetApp ONTAP para garantir compatibilidade e desempenho com clientes Windows
+ a| 
+Os clientes Windows podem recuperar nomes canônicos de arquivos e diretórios em uma única solicitação, reduzindo a latência de abertura de arquivos e melhorando a compatibilidade com SMB para desktops, aplicativos e servidores de arquivos corporativos. O ONTAP retorna automaticamente os caminhos canônicos para arquivos e diretórios abertos, evitando pesquisas por componente em clientes Windows 11 24H2 e posteriores, sem necessidade de configuração adicional.
+
+
+
+ a| 
+Suporte para UNMAP automático com VAAI-NAS para permitir exigência de espaço
+ a| 
+O ONTAP oferece suporte à exigência de espaço automática para datastores NFS por meio do NetApp NFS Plug-in for VMware VAAI. Isso ajuda a recuperar espaço de intervalos de blocos VMDK com thin provisioning quando hosts VMware ESXi 9.0 ou posteriores emitem operações UNMAP.
+
+
+
+ a| 
+Tamanho máximo do diretório para volumes FlexVol do ONTAP
+ a| 
+O ONTAP melhora o desempenho de diretórios muito grandes que contêm até aproximadamente 25 milhões de arquivos ao qualificar tamanhos de diretório de até 4 GB. Os clientes que executam workloads que geram contagens de arquivos extremamente altas em um único diretório, como treinamento de IA, podem se beneficiar ao evitar as penalidades de desempenho observadas anteriormente com diretórios grandes. Ele também melhora a resiliência ao garantir que os diretórios permaneçam totalmente indexados após um failover de proteção de dados, para que as cópias replicadas tenham bom desempenho mesmo quando uma relação do SnapMirror é interrompida. Esse recurso está disponível com os sistemas de storage AFX e pode ser ativado em cada volume conforme necessário.
+
+
+
+ a| 
+Suporte para conversão automática de SID para ID UNIX
+ a| 
+O ONTAP introduz suporte à conversão automática de SID para ID UNIX em SVMs conectadas ao LDAP para gerar e reverter UIDs/GIDs POSIX a partir de SIDs do Windows. Isso elimina a necessidade de manter manualmente os atributos uidNumber/gidNumber no Active Directory, reduzindo a sobrecarga no gerenciamento e ajudando a garantir acesso a arquivos consistente em NFS e SMB. Esse recurso alinhado aos padrões do setor é especialmente valioso para clientes que migram grandes redes de plataformas NAS baseadas em SSSD e querem preservar a consistência do mapeamento de identidades. O recurso fica desativado por padrão e é configurado por SVM.
+
+|===
+
+
+[[networking]]
+== Rede
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+| link:../administer/additional-ontap-svm.html["Estender o FPolicy para NFS 4.2"]  a| 
+O FPolicy agora é compatível com o NFS 4.2, oferecendo monitoramento de atividades de arquivos e aplicação de políticas para a versão mais recente do protocolo NFS compatível com o ONTAP. O FPolicy monitora eventos de acesso a arquivos NFSv4.2 para dar suporte a casos de uso de auditoria, conformidade e resiliência cibernética. O monitoramento avançado de atributos de segurança proporciona proteção e classificação de dados mais robustas. O suporte a NFS com rótulos permite respostas voltadas a políticas a alterações nos rótulos de segurança para ambientes de dados classificados e sensíveis à conformidade. Use esse recurso para fortalecer a auditoria, a conformidade e a proteção contra ransomware.
+
+|===
+
+
+[[s3-object-storage]]
+== Storage de objetos S3
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+| link:../administer/additional-ontap-svm.html["O FPolicy para storage de objetos S3"]  a| 
+O FPolicy oferece monitoramento de segurança para fluxos de trabalho de objetos S3. Isso oferece uma estrutura unificada do FPolicy para arquivos e storage de objetos, simplificando as operações de segurança em ambientes de dados híbridos. O FPolicy para objetos S3 oferece visibilidade do ciclo de vida dos objetos para monitorar a criação e a exclusão de objetos, além de alterações nas tags de metadados, para atender aos requisitos de segurança, conformidade e auditoria. Esse recurso oferece monitoramento não intrusivo sem afetar o desempenho.
+
+
+
+ a| 
+Dimensionamento flexível do bucket do S3
+ a| 
+O ONTAP oferece suporte a um tamanho padrão configurável para novos buckets do S3. Isso ajuda a reduzir o redimensionamento manual quando os aplicativos criam buckets por meio da API do S3 sem especificar a capacidade. Se nenhum tamanho padrão for configurado, o comportamento de criação de buckets permanecerá inalterado.
+
+
+
+ a| 
+Permitir buckets NAS S3 do OnTAP no FlexCache com origem em FlexVol
+ a| 
+Os buckets S3 NAS em volumes FlexCache com origens FlexVol são compatíveis a partir do ONTAP 9.20.1. As operações S3 de objeto único (PUT, GET, DELETE, HEAD, LIST) são compatíveis. Os uploads multipartes não são compatíveis porque os volumes FlexVol subjacentes não são compatíveis com Granular Data Distribution.
+
+
+
+ a| 
+Suporte ao objeto COPY para buckets S3 NAS em volumes FC com origem FG
+ a| 
+A partir do ONTAP 9.20.1, os buckets NAS do S3 em volumes FlexCache oferecem suporte a operações de cópia de objetos no lado do servidor usando as APIs S3 CopyObject e UploadPartCopy. Você pode copiar objetos no mesmo bucket NAS FlexCache ou de um bucket NAS do S3 com suporte de um volume FlexGroup para um bucket NAS FlexCache.
+
+
+
+ a| 
+Suporte inicial para checksum do S3
+ a| 
+O ONTAP S3 oferece suporte a checksums CRC-64NVME compatíveis com a AWS para buckets NAS do S3. Quando um cliente S3 fornece informações de checksum para operações compatíveis de upload e multipart, o ONTAP valida e armazena o checksum e retorna informações de checksum para solicitações GET e HEAD compatíveis.
+
+|===
+
+
+[[san]]
+== SAN
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Suporte para melhorar o desempenho após a migração de dados de um sistema AFF ou FAS para um sistema AFX
+ a| 
+A partir do ONTAP 9.20.1, o ONTAP reduz a latência de leitura adicional e o uso da CPU que podem ocorrer após a migração de dados de um sistema AFF ou FAS para um sistema AFX.
+
+|===
+
+
+[[security]]
+== Segurança
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Controles aprimorados para políticas de resposta de instantâneo de ARP/AI
+ a| 
+Você pode configurar a política de resposta de snapshots do ARP/AI no nível da SVM ou do volume para controlar se o ARP/AI cria snapshots quando detecta atividade anormal. Há três políticas disponíveis: `alert-with-proactive-and-periodic-snapshot` (padrão, preserva o comportamento existente), `alert-with-proactive-snapshot` (somente snapshots de ataque, sem snapshots periódicos) e `alert-only` (somente alertas e logs de eventos, sem criação de snapshots). Após uma atualização para 9.20.1, a contagem máxima padrão de snapshots periódicos muda de 6 para 2, e o período de retenção padrão muda de 12 para 7 horas, a menos que essas opções no nível do nó tenham sido modificadas anteriormente. Consulte https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-snapshot-options-arpai.html["Controles aprimorados para políticas de resposta de instantâneo de ARP/AI"^] para obter mais informações.
+
+
+
+ a| 
+Melhorias no fluxo de trabalho de gerenciamento de chaves para SVMs de dados
+ a| 
+Ao habilitar um gerenciador de chaves externo em uma SVM de dados, o ONTAP pode migrar automaticamente as chaves de criptografia de volume dessa SVM do gerenciador de chaves com escopo de administrador para o novo gerenciador de chaves da SVM de dados. Isso simplifica a transição para o gerenciamento de chaves externo e elimina a necessidade de uma etapa de migração manual separada no fluxo de trabalho padrão.
+
+
+
+ a| 
+Suporte para grupos do IdP, AD e LDAP como aprovadores do MAV
+ a| 
+Os grupos de aprovação do MAV podem incluir o provedor de identidade (IdP), o Active Directory (AD) e grupos LDAP (nsswitch) como aprovadores, além de administradores individuais. Os tipos de grupo compatíveis incluem Entra ID, ADFS, grupos de domínio do AD e grupos LDAP. Adicionar ou remover usuários no diretório do IdP, AD ou LDAP não exige nenhuma alteração na configuração do MAV. As alterações na associação de um usuário a um grupo entram em vigor após a reautenticação no próximo login do usuário. Você pode usar o comando security multi-admin-verify registered-operations show para exibir todas as operações disponíveis no cluster atual que podem ser protegidas pelo MAV.
+
+
+
+ a| 
+Suporte à autenticação SNMPv3 SHA-512
+ a| 
+O ONTAP oferece suporte à autenticação SHA-512 para usuários do SNMPv3. Esse aprimoramento permite que você use uma autenticação SNMPv3 mais forte para clientes SNMP externos e para o monitoramento de switches, incluindo switches que exigem autenticação SHA-512. Para obter mais informações, consulte Configure SNMPv3 users in an ONTAP cluster e Configure SNMPv3 for Ethernet switch health monitoring.
+
+Consulte  https://docs.netapp.com/us-en/ontap-systems-switches/switch-cshm/config-snmpv3.html["Configurar o SNMPv3 para monitoramento da integridade do switch de rede Ethernet"^] para obter mais informações.
+
+|===
+
+
+[[storage-efficiency]]
+== Eficiência de storage
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Otimização do Agendador Automático de Desduplicação (ADS)
+ a| 
+O ONTAP aprimora o desempenho do ADS (Automatic Dedupe Scheduler), permitindo mais sessões simultâneas de deduplicação por nó, além de uma limitação mais inteligente e direcionada para equilibrar melhor a E/S do cliente. A atividade de deduplicação em volumes DP (de transferências do SnapMirror) e as sessões de Deduplicação Global são gerenciadas junto com a deduplicação regular de volumes, o que reduz a contenção e o crescimento dos metadados. Você pode se beneficiar da economia de eficiência de storage, especialmente em cargas de trabalho mistas, sem necessidade de alterações na configuração. Esse recurso está habilitado por padrão e está disponível em sistemas de storage AFX.
+
+|===
+
+
+[[storage-resource-management]]
+== Gerenciamento de recursos de storage
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Suporte empresarial para AFX de 32 nós
+ a| 
+Você pode implantar clusters AFX do ONTAP em escala total de 32 nós com suporte completo a recursos empresariais, igualando os recursos anteriormente disponíveis apenas com implantações AFX menores. Isso permite que clientes empresariais, especificamente aqueles que executam treinamento de IA/ML e pipelines de dados, criem clusters de storage maiores e mais densos sem sacrificar serviços de dados empresariais, como armazenamento em camadas, proteção de dados, snapshots e resiliência. O suporte completo a protocolos NAS e de objetos, incluindo NFS, SMB, S3, FlexGroup e FlexCache, foi validado nessa escala, juntamente com os fluxos de trabalho de HA e recuperação, para garantir uma operação confiável à medida que suas implantações AFX crescem.
+
+
+
+ a| 
+Hierarquização do FabricPool
+ a| 
+O FabricPool é um recurso do ONTAP que move dados entre uma camada local de alto desempenho e uma camada remota de nuvem ou de capacidade de menor custo, com base na atividade dos dados. O FabricPool foi formalmente estendido ao sistema de storage AFX a partir do ONTAP 9.20.1 e também está disponível com o ONTAP 9.19.1 P3. Isso possibilita uma escala de dados muito maior para dar suporte a cargas de trabalho com grande volume de dados. Embora a implementação do AFX introduza diversas mudanças arquitetônicas, as características principais do recurso do ONTAP permanecem as mesmas.
+
+
+
+ a| 
+FSA - Tempos precisos de acesso ao diretório
+ a| 
+O File System Analytics e a navegação no File System Explorer do System Manager preservam os metadados de hora de acesso ao diretório (atime). Isso ajuda a manter valores de atime precisos para fluxos de trabalho de arquivamento, hierarquização, conformidade e ciclo de vida dos dados.
+
+
+
+ a| 
+FlexCache Métricas de volume
+ a| 
+As métricas do volume FlexCache informam a quantidade de dados e metadados trocados entre um volume FlexCache e seu volume de origem. Duas novas propriedades foram adicionadas aos endpoints existentes da API REST do ONTAP de estatísticas e métricas de volume, que fornecem visibilidade da transferência de dados de FlexCache para origem e de origem para FlexCache. Os contadores são coletados automaticamente, sem necessidade de configuração; eles são úteis para planejamento de capacidade, análise de desempenho, solução de problemas de rede e análises de chargeback. Este recurso requer o ONTAP 9.20 ou posterior tanto nos nós de FlexCache quanto nos nós de origem. Consulte a documentação de automação do ONTAP para obter mais informações.
+
+
+
+ a| 
+Reequilíbrio intracluster
+ a| 
+O ONTAP introduz dois novos recursos do Balanced Placement para ajudar a manter os clusters com desempenho ideal, com o mínimo de esforço administrativo, à medida que suas cargas de trabalho e a capacidade do cluster evoluem. O controle de posicionamento no momento do provisionamento permite que os clientes indiquem se os requisitos de desempenho ou de espaço devem ser priorizados quando um novo volume é colocado por meio da API REST. O Space Performance Rebalance (SPR) é um processo em segundo plano que busca continuamente o surgimento de pontos críticos de desempenho ou pressão de espaço agregada em todo o cluster. Dependendo do modo configurado, o SPR recomenda movimentações corretivas de volumes por meio de notificações do EMS ou executa as movimentações automaticamente usando operações padrão e não disruptivas de movimentação de volume do ONTAP. Consulte a documentação de automação do ONTAP para obter mais informações.
+
+
+
+ a| 
+Suporte para excluir buckets S3 do ONTAP que contêm objetos
+ a| 
+Os administradores podem agendar a exclusão de buckets que contenham objetos ao usar uma janela de recuperação configurável baseada em retenção. Isso permite a recuperação do bucket antes que a janela de retenção expire. Esse recurso reduz o acúmulo de expiração e torna a capacidade reutilizável mais rapidamente para cargas de trabalho com alta rotatividade.
+
+
+
+ a| 
+Suporte à migração de SVM de buckets NAS S3
+ a| 
+O ONTAP 9.20.1 oferece suporte à migração de SVMs que hospedam buckets S3 NAS em volumes FlexVol, permitindo que os administradores migrem SVMs sem precisar remover primeiro a configuração do S3 NAS.
+
+
+
+ a| 
+Calcule o espaço recuperável em volumes FlexGroup
+ a| 
+O ONTAP oferece suporte ao cálculo do espaço recuperável antes da exclusão de snapshots em volumes FlexGroup.
+
+
+
+ a| 
+Melhoria de desempenho para exclusão assíncrona
+ a| 
+O ONTAP aprimora o desempenho da exclusão assíncrona e acelera a exigência de espaço para clientes NAS/SMB. Entre em contato com seu representante da NetApp para obter detalhes.
+
+
+
+ a| 
+Provisionamento automático de volumes FlexGroup de alto desempenho
+ a| 
+O ONTAP simplifica o provisionamento do FlexGroup com perfis de armazenamento que permitem aos clientes escolher um contêiner de dados equilibrado ou de alto desempenho para suas cargas de trabalho, reduzindo a necessidade de os administradores configurarem e dimensionarem manualmente os volumes constituintes para atender aos requisitos de desempenho.
+
+
+
+ a| 
+Suporte a NVFAIL com FlexCache
+ a| 
+Você pode criar relacionamentos do FlexCache com origens com NVFAIL habilitado. Você também pode habilitar o NVFAIL em volumes de cache, independentemente dos volumes de origem. Em volumes de origem ou de cache em que ocorreu NVFAIL, o ONTAP bloqueia leituras de dados ou modificações, enquanto preserva o write-back de dados em cache modificados, e a E/S normal é retomada após a recuperação.
+
+|===
+
+
+[[system-manager]]
+== Gerente do Sistema
+
+[cols="30%,70%"]
+|===
+| Atualizar | Descrição 
+
+
+ a| 
+Suporte para alertas de expiração de certificado e senha de usuário
+ a| 
+O System Manager exibe um alerta de integridade no painel 30 dias antes do vencimento do certificado de um cluster ou de uma máquina virtual de storage (SVM) e o atualiza diariamente com os dias restantes até o vencimento.
+
+Além disso, se a função associada a uma conta de usuário estiver configurada para alertas de expiração de senha, o usuário receberá um alerta em banner na parte superior da página no System Manager imediatamente após fazer login, a partir de 14 dias antes da expiração da senha. O alerta é atualizado cada vez que o usuário faz login para mostrar o número de dias restantes até a expiração da senha. Você pode configurar alertas de expiração ao adicionar ou editar uma função de administrador.
+
+
+
+ a| 
+Suporte para alertas adicionais do AutoSupport
+ a| 
+O System Manager exibe novos alertas de AutoSupport que podem ajudar você a resolver problemas de configuração do AutoSupport.
+
+|===
