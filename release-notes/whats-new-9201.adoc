@@ -17,7 +17,7 @@ summary: Saiba mais sobre os novos recursos incluídos no ONTAP 9.20.1 que estã
 Saiba mais sobre os novos recursos incluídos no ONTAP 9.20.1 que estão disponíveis com o seu sistema de storage AFX.
 
 
-NOTE: Existem diversos novos recursos disponíveis para o AFX com o ONTAP 9.20.1. Alguns deles são específicos do AFX, enquanto muitos outros são derivados de uma base de produto comum. Além de revisar os recursos do AFX descritos abaixo, você também deve consultar  https://docs.netapp.com/us-en/ontap/release-notes/whats-new-9201.html["O que há de novo no ONTAP 9.20.1"^].
+NOTE: Existem diversos novos recursos disponíveis para o AFX com o ONTAP 9.20.1. Alguns deles são específicos do AFX, enquanto muitos outros são derivados de uma base de produto comum. Além de revisar os recursos do AFX descritos abaixo, você também deve consultar  https://docs.netapp.com/us-en/ontap/release-notes/index.html["O que há de novo no ONTAP 9.20.1"^].
 
 
 
