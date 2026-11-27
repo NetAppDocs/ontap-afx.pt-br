@@ -2336,7 +2336,6 @@
   <block id="ba7ad22e1a81b751fd383ff85d5afdb0" category="inline-link">operações de arquivo e combinações de filtros compatíveis que o ONTAP FPolicy monitora para NFSv4</block>
   <block id="6a8ad412c3d9ebc0ab18e421d3127d72" category="paragraph">Saiba mais sobre<block ref="05cd43db8de5476d5e1977c9d95397ca" category="inline-link-rx"></block>.</block>
   <block id="e5b5010fb7d96e12a82e9bc806b23fce" category="inline-link">operações de arquivo e combinações de filtros suportadas que o FPolicy pode monitorar para o S3</block>
-  <block id="e50510d4bf96779c214f9db49c19a5c7" category="paragraph">Saiba mais sobre<block ref="92eebf3a041620ee5865a1f5090aa0f7" category="inline-link-rx"></block>.</block>
   <block id="786347e300cbffb5148b2ca2c681797d" category="paragraph">Existem algumas diferenças no suporte a volumes FlexGroup. Um volume FlexGroup no AFX não pode ser um volume de origem para um volume FlexCache usando o modo write-back.</block>
   <block id="fabdf2613f35f155197eae75e7a715c5" category="paragraph">A sincronização ativa do SnapMirror para NAS aumenta o número de volumes suportados para 600 nas plataformas AFX (4 x 4).</block>
   <block id="fa864467d02b35efb5b48d7a1226e621" category="cell">ONTAP 9.20.1</block>
@@ -2422,4 +2421,5 @@
   <block id="290121bb9aa53673a1305e69e7450334" category="paragraph">Suporte para alertas adicionais do AutoSupport</block>
   <block id="18770d28af8537961088ebf517a0919b" category="paragraph">O System Manager exibe novos alertas de AutoSupport que podem ajudar você a resolver problemas de configuração do AutoSupport.</block>
   <block id="ce5b4b8e40877f3059210dd9eb2c728c" category="admonition">Existem diversos novos recursos disponíveis para o AFX com o ONTAP 9.20.1. Alguns deles são específicos do AFX, enquanto muitos outros são derivados de uma base de produto comum. Além de revisar os recursos do AFX descritos abaixo, você também deve consultar <block ref="b9759575dd760b6d9ef8b5db42227b0c" category="inline-link-rx"></block>.</block>
+  <block id="79498987844b3ce9d7ea24ee59238d91" category="paragraph">Saiba mais sobre<block ref="69a372dbedd0136addf9b2f90e089772" category="inline-link-rx"></block>.</block>
 </blocks>
